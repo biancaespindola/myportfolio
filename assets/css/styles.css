@@ -1,0 +1,62 @@
+/* ============ google fonts ============ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ============ variables CSS ============ */
+
+:root {
+    --header-height: 3em;
+    /* ============ Colors ============ */
+    /* cor primaria da pagina, usando o padrão hsl é possivel mudar a cor muito facilmente e a intensidade assim fica 
+    *  assim fica muito mais facil colocar outras intensidades de cor em outros lugares
+    */
+    --hue-color: 214;
+    /*  core em hexa que pretendo usar:  #1A1C26 #3C6AA6 #F27272 #F2E088 #F2DABD paleta de cor da branca de neve (bem eu né)*/
+    /* --first-color: #3C6AA6;  aqui é a cor em hexadecimal*/
+    --first-color: hsl(var(--hue-color), 47%, 44%);
+    --first-color-second: hsl(var(--hue-color), 47%, 44%);
+    --first-color-alt: hsl(var(--hue-color), 35%, 36%);
+    --first-color-lighter: hsl(var(--hue-color), 90%, 80%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 60%, 99%);
+    --containet-color: #FFFF;
+    /*
+    */
+    /* ============ Fonte e typografia ============ */
+    --body-font: 'Poppins', sans-serif;
+    /*
+    */
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    /*
+    */
+    /* ============ Font weight ============ */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*
+    */
+    /* ============ Margenes Botton ============ */
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px  ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    /*
+    */
+    /* ============ Z index ============ */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
