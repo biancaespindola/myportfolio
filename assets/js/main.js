@@ -31,4 +31,6 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 // ====================== ACCORDION SKILLS ======================
 
+
+
 // ====================== QUALIFICATION TABS ======================
