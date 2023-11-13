@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <h1>Hello, this is my portfolio</h1>
-      <p>This is a test</p>
+      <p>This is a test!!</p>
     </>
   )
 }
