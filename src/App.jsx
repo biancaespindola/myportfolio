@@ -1,3 +1,6 @@
+import resume from "./assets/resumeBianca.pdf";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import perfil from "./assets/perfil.jpg";
 function App() {
     return (
@@ -32,27 +35,53 @@ function App() {
             {/** Header */}
             <body>
                 <div className="grid grid-cols-2">
-                    <div className="border p-10 flex justify-center items-center ">
+                    <div className="p-10 flex justify-center items-center ">
                         <img src={perfil} alt="" className=" rounded-full h-[300px]" />
                     </div>
-                    <div className="border p-10 flex justify-center items-center flex-col gap-4">
+                    <div className="p-10 flex justify-center items-center flex-col gap-4">
                         <div className=" flex justify-center items-center flex-col gap-2">
                             {" "}
-                            <p className="text-xl font-medium">Hi here, 🧡 </p>
-                            <h2 className="text-4xl font-bold">Bianca Espindola</h2>
-                            <p className="text-2xl font-medium">Frontend Developer</p>
+                            <p className="text-xl font-medium text-gray-800">
+                                Hi here, 🧡{" "}
+                            </p>
+                            <h2 className="text-4xl font-semibold ">Bianca Espindola</h2>
+                            <p className="text-2xl font-medium tracking-wide text-gray-900">
+                                Frontend Developer
+                            </p>
                         </div>
                         <div className="flex justify-center gap-2">
-                            <button className="relative border-2 border-gray-900 p-3 rounded-full px-6 ">
+                            {/* <a
+                                href="src\assets\CVBiancaEspindola.pdf"
+                                download="resume"
+                                target="_blank"
+                                rel="noreferrer"
+                            > */}
+                            <button
+                                onClick={() => window.open(resume)}
+                                className="relative border-2 bg-gray-50 border-gray-800 p-3 rounded-full px-6 hover:bg-gray-200 hover:border-gray-950 transition "
+                            >
                                 Download CV
                             </button>
-                            <button className=" bg-gray-900  text-gray-200 p-3 rounded-full px-6">
+                            {/* </a> */}
+                            <button className=" bg-gray-900  text-gray-50 p-3 rounded-full px-6 hover:bg-black transition">
                                 Contact info
                             </button>
                         </div>
-                        <div className="">
-                            <button>linkedin</button>
-                            <button>github</button>
+                        <div className=" flex justify-center gap-2">
+                            <a
+                                className="text-3xl"
+                                target="_new"
+                                href="https://www.linkedin.com/in/biancadeespindola/"
+                            >
+                                <FaLinkedin />
+                            </a>
+                            <a
+                                className="text-3xl"
+                                target="_new"
+                                href="https://github.com/biancaespindola"
+                            >
+                                <FaGithub />
+                            </a>
                         </div>
                     </div>
                 </div>
