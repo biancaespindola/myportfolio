@@ -35,7 +35,7 @@ function App() {
             {/** Navbar */}
 
             {/** Body */}
-            <body className="font-['Poppins']">
+            <body className="font-['Poppins'] max-w-6xl mx-auto ">
                 {/** Hero */}
                 <div className=" pt-10 h-100 mx-px-10 box-border flex min-w-fit justify-center ">
                     <div className="flex justify-center gap-10 h-1/5">
@@ -93,37 +93,48 @@ function App() {
                 {/** /Hero */}
 
                 {/** About */}
-                <div className="about" id="about">
-                    <p>Get To Know More</p>
-                    <h2>About Me</h2>
-                    <div className="container">
-                        <div className="photo">
-                            <img src={projects} alt="" />
+                <div
+                    className="about mt-10 p-20 h-100 mx-px-10 box-border flex flex-col min-w-fit  justify-center items-center"
+                    id="about"
+                >
+                    <p className="text-gray-500 text-lg">Get To Know More</p>
+                    <h2 className="text-gray-900 text-4xl font-semibold">About Me</h2>
+                    <div className="container flex justify-center gap-10 mt-10">
+                        <div className="photo max-w-[300px]">
+                            <img className="rounded-[25%]" src={projects} alt="" />
                         </div>
-                        <div className="about-details-container">
-                            <div className="about">
-                                <FaDesktop />
-                                <h3>Experience</h3>
+                        <div className=" flex flex-col gap-10">
+                            <div className="grid grid-cols-2 justify-center items-center gap-2">
+                                <div
+                                    className="about border-2 rounded-2xl p-6 flex justify-center items-center flex-col gap-2 text-center
+                                "
+                                >
+                                    <FaDesktop className="text-3xl text-gray-900" />
+                                    <div className="text-lg font-semibold text-gray-900">
+                                        Experience
+                                    </div>
+                                    <p className=" text-gray-600">
+                                        4+ years <br /> Frontend Developer
+                                    </p>
+                                </div>
+                                <div className="about border-2 rounded-2xl p-6 flex justify-center items-center flex-col gap-2 text-center">
+                                    <FaBookReader className="text-3xl text-gray-900" />
+                                    <h3 className="text-lg font-semibold text-gray-900">
+                                        Education
+                                    </h3>
+                                    <p className=" text-gray-600">
+                                        Computer Engineer <br /> UFSC
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="text-container">
                                 <p>
-                                    4+ years <br /> Frontend Developer
+                                    I am a frontend developer with a passion for creating
+                                    visually appealing and user-friendly websites. I have
+                                    a strong understanding of HTML, CSS, and JavaScript,
+                                    and React.js.
                                 </p>
                             </div>
-                            <div className="details">
-                                <FaBookReader />
-                                <h3>Education</h3>
-                                <p>
-                                    Computer Engineer <br /> Universidade Federal de Santa
-                                    Catarina
-                                </p>
-                            </div>
-                        </div>
-                        <div className="text-container">
-                            <p>
-                                I am a frontend developer with a passion for creating
-                                visually appealing and user-friendly websites. I have a
-                                strong understanding of HTML, CSS, and JavaScript, and
-                                React.js.
-                            </p>
                         </div>
                     </div>
                 </div>
