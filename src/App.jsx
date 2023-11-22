@@ -1,3 +1,4 @@
+import ModeToggler from "./ModeToggler";
 import resume from "./assets/resumeBianca.pdf";
 import { FaBookReader } from "react-icons/fa";
 import { FaDesktop, FaLinkedin } from "react-icons/fa6";
@@ -29,6 +30,7 @@ function App() {
                         <a href="" className="text-xl">
                             Contact
                         </a>
+                        <ModeToggler />
                     </ul>
                 </div>
             </nav>
