@@ -239,6 +239,13 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Host:** stayed on Netlify. It keeps the `biancaespindola.netlify.app` URL (decision 007), it's free, and `@netlify/plugin-nextjs` already ran the deploy previews. Vercel would fit Next 16 best but changes the URL. GitHub Pages can't work: the locale redirect in `proxy.ts` needs a server.
 - **How:** merged PR #1 into `main` (the only conflict was v1's `src/App.jsx`, deleted). The merged tree is byte-identical to `rebuild-nextjs`, and the full gate (lint, types, unit, build, 40 e2e) passed before the push. Netlify auto-published it in about a minute; every locale and page returns 200, and the old CV URL still returns 404.
 
+## 032 — Illustrated avatars for the fun facts · 2026-11-17
+
+- **What:** six 2D illustrations I made (book lover, gamer/skier, museum, royal trivia, Christmas market, festive mug) replace the hand-coded SVG mini-me on the About cards. They look much more like me than the SVG did, and the SVG component is deleted.
+- **Kit fixes:** the kit's `book-lover.png` was a bad crop (half the gamer, half the market), and `royal-trivia.png` was really a 3×2 sheet of all six. The book and royal tiles were cut from the sheet.
+- **Weight:** with `sharp`, 2.7 MB of PNGs became six 512×512 WebPs of about 11 KB each. Re-encoding also strips any metadata, and the privacy test checks every file in `public/images`.
+- **Theming:** each illustration fills its card edge to edge as a square with its own cream background, so it reads as artwork in Light, Dark and Festive with no recolouring. `alt=""`, because the card title right below says the same thing.
+
 ---
 
 ## Journal
@@ -266,3 +273,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** history purged (CVs + old photos incl. one with GPS); live v1 no longer serves the CV.
 - **2026-11-17:** personal logo + favicon from my logo kit, recoloured by theme tokens.
 - **2026-11-17:** old Netlify deploy deleted, GitHub Support ticket sent; the new site is live on biancaespindola.netlify.app.
+- **2026-11-17:** fun-fact avatars replaced by my illustrated set; the SVG mini-me was retired.

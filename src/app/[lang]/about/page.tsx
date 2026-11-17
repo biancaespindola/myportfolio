@@ -8,12 +8,12 @@ import {
   TreePine,
 } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import { AchievementBoard } from "@/components/delight/achievement-board";
 import { FocalImage } from "@/components/focal-image";
-import { MiniBianca, type Outfit } from "@/components/mini-bianca";
 import {
   button,
   card,
@@ -30,14 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const loveIcons = [BookOpen, Gamepad2, Landmark, Crown, TreePine, Coffee];
-const loveOutfits: Outfit[] = [
-  "book",
-  "gamer",
-  "museum",
-  "royal",
-  "market",
-  "mug",
-];
+const loveAvatars = ["book", "gamer", "museum", "royal", "market", "mug"];
 const languages = [
   { name: "Português", lang: "pt", level: 5 },
   { name: "English", lang: "en", level: 5 },
@@ -139,11 +132,14 @@ export default async function AboutPage() {
                 key={item.title}
                 className={`${card} grid grid-cols-1 content-start gap-2 overflow-hidden p-6`}
               >
-                <div className="-mx-6 -mt-6 mb-2 grid aspect-[4/3] place-items-center bg-surface-alt">
-                  <div className="size-[90%]">
-                    <MiniBianca outfit={loveOutfits[i]} />
-                  </div>
-                </div>
+                <Image
+                  src={`/images/avatar-${loveAvatars[i]}.webp`}
+                  alt=""
+                  width={512}
+                  height={512}
+                  sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+                  className="-mx-6 -mt-6 mb-2 aspect-square w-[calc(100%+3rem)] max-w-none"
+                />
                 <Icon aria-hidden className="size-8 text-primary" />
                 <h3 className="text-[22px] font-bold leading-tight">
                   {item.title}
