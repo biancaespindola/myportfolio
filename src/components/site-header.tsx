@@ -15,6 +15,7 @@ export function SiteHeader({
   dict: Dictionary;
 }) {
   const links = [
+    ["", dict.nav.home],
     ["work", dict.nav.work],
     ["case-studies", dict.nav.caseStudies],
     ["about", dict.nav.about],
@@ -37,7 +38,7 @@ export function SiteHeader({
           {links.map(([slug, label]) => (
             <Link
               key={slug}
-              href={`/${locale}/${slug}`}
+              href={slug ? `/${locale}/${slug}` : `/${locale}`}
               className="whitespace-nowrap hover:text-primary"
             >
               {label}
