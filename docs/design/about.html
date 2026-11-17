@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>About — Bianca Espindola</title>
+		<script>
+			try {
+				document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('theme')) || 'light';
+			} catch {}
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;700&family=Pixelify+Sans:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/site.css" />
+		<style>
+			.about-hero {
+				display: grid;
+				grid-template-columns: 440px 1fr;
+				gap: 64px;
+				align-items: center;
+				padding: 32px 0 48px;
+			}
+			.photo {
+				position: relative;
+			}
+			.photo img,
+			.photo .ph {
+				width: 100%;
+				aspect-ratio: 440/520;
+				object-fit: cover;
+				border-radius: var(--radius-xl);
+				transform: rotate(-2deg);
+				background: var(--brand-primary-soft);
+				border: 6px solid var(--bg-surface);
+				box-shadow: 0 16px 40px rgba(42, 27, 46, 0.15);
+			}
+			.sticker {
+				position: absolute;
+				display: inline-flex;
+				gap: 6px;
+				align-items: center;
+				padding: 8px 12px;
+				border-radius: 999px;
+				box-shadow: 0 6px 16px rgba(42, 27, 46, 0.15);
+			}
+			.sticker.s1 {
+				top: -10px;
+				right: -12px;
+				background: var(--brand-highlight);
+				color: #2a1b2e;
+				transform: rotate(6deg);
+			}
+			.sticker.s2 {
+				bottom: 18px;
+				left: -16px;
+				background: var(--brand-accent);
+				color: #fff;
+				transform: rotate(-5deg);
+			}
+			.story {
+				display: grid;
+				gap: 24px;
+			}
+			.story p {
+				font-size: 20px;
+			}
+			.journey {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			}
+			.stop {
+				flex: 1;
+			}
+			.stop.now {
+				background: var(--brand-primary-soft);
+				border: 2px solid var(--brand-primary);
+			}
+			.stop .row {
+				gap: 8px;
+				color: var(--brand-accent);
+			}
+			.stop.now .row {
+				color: var(--brand-primary);
+			}
+			.dash {
+				width: 40px;
+				border-top: 2px dashed var(--brand-primary);
+				flex: none;
+			}
+			.loves {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 24px;
+			}
+			.loves .ico {
+				width: 32px;
+				height: 32px;
+				color: var(--brand-primary);
+			}
+			.langs {
+				padding: 32px;
+				gap: 20px;
+			}
+			.lang {
+				display: grid;
+				grid-template-columns: 220px auto 1fr;
+				gap: 24px;
+				align-items: center;
+			}
+			.lang h3 {
+				font-size: 22px;
+			}
+			.bars {
+				display: flex;
+				gap: 6px;
+			}
+			.bars i {
+				width: 48px;
+				height: 12px;
+				border-radius: 6px;
+				background: var(--brand-primary-soft);
+			}
+			.bars i.on {
+				background: var(--brand-primary);
+			}
+			.shelf {
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				gap: 24px;
+			}
+			.cover {
+				aspect-ratio: 160/220;
+				border-radius: var(--radius-md);
+				display: grid;
+				place-items: center;
+				color: #fff;
+				margin-bottom: 12px;
+				transition: transform 0.2s;
+			}
+			.shelf > div:hover .cover {
+				transform: translateY(-6px) rotate(-2deg);
+			}
+			.cover .ico {
+				width: 44px;
+				height: 44px;
+				stroke-width: 1.5;
+			}
+			.shelf h3 {
+				font-size: 15px;
+			}
+			.shelf p {
+				font-size: 14px;
+			}
+			.badges {
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				gap: 16px;
+			}
+			.badge {
+				text-align: center;
+				align-items: center;
+				padding: 24px 16px;
+			}
+			.badge .medal {
+				width: 56px;
+				height: 56px;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				background: var(--border-default);
+				color: var(--text-muted);
+			}
+			.badge .medal .ico {
+				width: 28px;
+				height: 28px;
+			}
+			.badge.got {
+				border: 2px solid var(--brand-highlight);
+			}
+			.badge.got .medal {
+				background: var(--brand-highlight);
+				color: #2a1b2e;
+			}
+			.badge:not(.got) {
+				background: var(--bg-surface-alt);
+				border-style: dashed;
+			}
+			.badge p {
+				font-size: 14px;
+			}
+			.badge .state {
+				color: var(--brand-accent);
+				font-size: 12px;
+			}
+			.badge:not(.got) .state {
+				color: var(--text-muted);
+			}
+			@media (max-width: 960px) {
+				.about-hero {
+					grid-template-columns: 1fr;
+				}
+				.photo {
+					max-width: 360px;
+				}
+				.journey {
+					flex-direction: column;
+					align-items: stretch;
+				}
+				.dash {
+					width: 0;
+					height: 24px;
+					border-top: 0;
+					border-left: 2px dashed var(--brand-primary);
+					align-self: center;
+				}
+				.loves {
+					grid-template-columns: 1fr 1fr;
+				}
+				.shelf {
+					grid-template-columns: repeat(3, 1fr);
+				}
+				.badges {
+					grid-template-columns: repeat(3, 1fr);
+				}
+				.lang {
+					grid-template-columns: 1fr;
+					gap: 8px;
+				}
+			}
+		</style>
+	</head>
+	<body data-page="about">
+		<div data-nav></div>
+		<main class="wrap">
+			<section class="about-hero">
+				<div class="photo">
+					<img
+						src="../../public/images/perfil.jpg"
+						alt="Bianca smiling in front of a lake and mountains"
+						onerror="this.replaceWith(Object.assign(document.createElement('div'), { className: 'ph' }))"
+					/>
+					<span class="sticker s1 pixel">Half BR · Half IT</span>
+					<span class="sticker s2 pixel"
+						><svg class="ico" style="width: 16px; height: 16px"><use href="#i-coffee" /></svg>Coffee lvl
+						99</span
+					>
+				</div>
+				<div class="story">
+					<span class="pixel kicker">About me</span>
+					<h1>Hi, I’m Bianca.</h1>
+					<p>
+						I grew up in the south of Brazil and studied Computer Engineering at UFSC. A student-run company
+						taught me what I still believe most: good interfaces start with listening.
+					</p>
+					<p class="muted">
+						Today I live in Graz, Austria, and build sportsbook features at ComeOn. I’m the person who asks
+						one more question before writing code.
+					</p>
+					<div class="row"><a class="btn btn-secondary" href="cv.html">Download CV</a></div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="map-h">
+				<div class="section-head">
+					<span class="pixel kicker accent">My map</span>
+					<h2 id="map-h">Brazil → Austria</h2>
+				</div>
+				<ol class="journey" style="list-style: none; margin: 0; padding: 0">
+					<li class="card stop">
+						<span class="row pixel"
+							><svg class="ico"><use href="#i-pin" /></svg>2015 — 2021</span
+						>
+						<h3>Araranguá, Brazil</h3>
+						<p class="muted">UFSC · LARM · EJEC</p>
+					</li>
+					<li class="dash" aria-hidden="true"></li>
+					<li class="card stop">
+						<span class="row pixel"
+							><svg class="ico"><use href="#i-pin" /></svg>2021 — 2024</span
+						>
+						<h3>Florianópolis, Brazil</h3>
+						<p class="muted">Khomp</p>
+					</li>
+					<li class="dash" aria-hidden="true"></li>
+					<li class="card stop now">
+						<span class="row pixel"
+							><svg class="ico"><use href="#i-pin" /></svg>2024 — now</span
+						>
+						<h3>Graz, Austria</h3>
+						<p class="muted">ComeOn</p>
+					</li>
+				</ol>
+			</section>
+
+			<section class="section" aria-labelledby="love-h">
+				<div class="section-head">
+					<span class="pixel kicker">Off the clock</span>
+					<h2 id="love-h">Things that make me, me</h2>
+				</div>
+				<div class="loves">
+					<div class="card">
+						<svg class="ico"><use href="#i-book" /></svg>
+						<h3>Book lover</h3>
+						<p class="muted">Tolkien, Montgomery and a lot of Carl Sagan</p>
+					</div>
+					<div class="card">
+						<svg class="ico"><use href="#i-gamepad" /></svg>
+						<h3>Gamer</h3>
+						<p class="muted">Zelda forever, Stardew Valley to relax</p>
+					</div>
+					<div class="card">
+						<svg class="ico"><use href="#i-tree" /></svg>
+						<h3>Christmas person</h3>
+						<p class="muted">This site has a December mode. Of course it does.</p>
+					</div>
+					<div class="card">
+						<svg class="ico"><use href="#i-coffee" /></svg>
+						<h3>Coffee + music</h3>
+						<p class="muted">Lo-fi on, bugs off</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="shelf-h" data-bookshelf>
+				<div class="section-head">
+					<span class="pixel kicker accent">Bookshelf</span>
+					<h2 id="shelf-h">On my shelf &amp; in my Switch</h2>
+				</div>
+				<div class="shelf">
+					<div>
+						<div class="cover" style="background: var(--brand-accent)">
+							<svg class="ico"><use href="#i-book" /></svg>
+						</div>
+						<h3>The Lord of the Rings</h3>
+						<p class="muted">J.R.R. Tolkien</p>
+					</div>
+					<div>
+						<div class="cover" style="background: var(--brand-primary)">
+							<svg class="ico"><use href="#i-book" /></svg>
+						</div>
+						<h3>Anne of Green Gables</h3>
+						<p class="muted">L. M. Montgomery · the series</p>
+					</div>
+					<div>
+						<div class="cover" style="background: #2a1b2e">
+							<svg class="ico"><use href="#i-star" /></svg>
+						</div>
+						<h3>Pale Blue Dot</h3>
+						<p class="muted">Carl Sagan</p>
+					</div>
+					<div>
+						<div class="cover" style="background: var(--brand-highlight); color: #2a1b2e">
+							<svg class="ico"><use href="#i-book" /></svg>
+						</div>
+						<h3>The Demon-Haunted World</h3>
+						<p class="muted">Carl Sagan</p>
+					</div>
+					<div>
+						<div class="cover" style="background: var(--brand-accent)">
+							<svg class="ico"><use href="#i-gamepad" /></svg>
+						</div>
+						<h3>Zelda: Ocarina of Time</h3>
+						<p class="muted">…and the rest of the series</p>
+					</div>
+					<div>
+						<div class="cover" style="background: var(--brand-primary)">
+							<svg class="ico"><use href="#i-gamepad" /></svg>
+						</div>
+						<h3>Stardew Valley</h3>
+						<p class="muted">ConcernedApe</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="lang-h">
+				<div class="section-head">
+					<span class="pixel kicker accent">Polyglot-ish</span>
+					<h2 id="lang-h">Languages I live in</h2>
+				</div>
+				<div class="card langs">
+					<div class="lang">
+						<h3>Português</h3>
+						<div class="bars" role="img" aria-label="5 of 5">
+							<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+						</div>
+						<span class="pixel muted">Native</span>
+					</div>
+					<div class="lang">
+						<h3>English</h3>
+						<div class="bars" role="img" aria-label="4 of 5">
+							<i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i>
+						</div>
+						<span class="pixel muted">C1</span>
+					</div>
+					<div class="lang">
+						<h3>Italiano</h3>
+						<div class="bars" role="img" aria-label="1 of 5">
+							<i class="on"></i><i></i><i></i><i></i><i></i>
+						</div>
+						<span class="pixel muted">A1 · learning</span>
+					</div>
+					<div class="lang">
+						<h3>Deutsch</h3>
+						<div class="bars" role="img" aria-label="1 of 5">
+							<i class="on"></i><i></i><i></i><i></i><i></i>
+						</div>
+						<span class="pixel muted">A1 · learning</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="ach-h">
+				<div class="section-head">
+					<span class="pixel kicker" id="achCount">Achievements</span>
+					<h2 id="ach-h">Collect them all</h2>
+					<p class="muted" style="margin-top: 8px">
+						Explore the site, switch language or theme, and maybe try a famous cheat code.
+					</p>
+				</div>
+				<div class="badges" id="badges"></div>
+			</section>
+		</main>
+		<div data-footer></div>
+		<script type="module">
+			import { ACHIEVEMENTS, unlocked } from './assets/app.js';
+
+			function render() {
+				const got = unlocked();
+				document.getElementById('achCount').textContent =
+					`Achievements · ${got.size} / ${ACHIEVEMENTS.length} unlocked`;
+				document.getElementById('badges').innerHTML = ACHIEVEMENTS.map(a => {
+					const g = got.has(a.id);
+					return `<div class="card badge${g ? ' got' : ''}"><div class="medal"><svg class="ico"><use href="#i-trophy"/></svg></div>
+        <h3 style="font-size:16px">${g ? a.name : '???'}</h3><p class="muted">${a.hint}</p><span class="pixel state">${g ? 'Unlocked' : 'Locked'}</span></div>`;
+				}).join('');
+			}
+			document.addEventListener('achievements:change', render);
+			render();
+		</script>
+		<script type="module" src="assets/app.js"></script>
+	</body>
+</html>

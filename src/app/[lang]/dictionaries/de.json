@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Bianca Espindola · Frontend-Entwicklerin",
+    "description": "Frontend-Entwicklerin in Graz, Österreich. Ich verwandle knifflige Probleme in freundliche Oberflächen."
+  },
+  "a11y": {
+    "skip": "Zum Inhalt springen",
+    "language": "Sprache",
+    "theme": "Design wechseln"
+  },
+  "theme": { "light": "Hell", "dark": "Dunkel", "festive": "Festlich" },
+  "hero": {
+    "greeting": "Oi! · Ciao! · Hallo! · Hi!",
+    "title": "Ich verwandle knifflige Probleme in freundliche Oberflächen.",
+    "lead": "Frontend-Entwicklerin bei ComeOn in Graz, Österreich. Halb Brasilianerin, halb Italienerin – angetrieben von Kaffee, guten Büchern und viel zu viel Zelda.",
+    "ctaWork": "Meine Arbeit ansehen",
+    "ctaCv": "Lebenslauf herunterladen",
+    "location": "Graz, Österreich"
+  }
+}

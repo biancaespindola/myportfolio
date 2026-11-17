@@ -1,8 +1,22 @@
-# Bianca Espindola Portfolio
+# Bianca Espindola — Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio and CV. Warm, cute, a little nerdy, in four languages (EN · PT · IT · DE).
 
-Currently, two official plugins are available:
+- **Plan:** [docs/PLAN.md](docs/PLAN.md)
+- **Decision log** (source for the "How I built this site" case study): [docs/case-study/decisions.md](docs/case-study/decisions.md)
+- **Design:** [Figma](https://www.figma.com/design/Qw47mG7PdVWPnss9eQ5VFt) · HTML prototypes in [docs/design](docs/design)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
+
+Next.js 16 (App Router, Cache Components, React Compiler) · React 19 · TypeScript 7 · Tailwind CSS 4 · Biome · Vitest · Playwright + axe
+
+## Scripts
+
+| Command | What it does |
+|---|---|
+| `pnpm dev` | Dev server |
+| `pnpm build` / `pnpm start` | Production build / serve |
+| `pnpm lint` | Biome lint + format check |
+| `pnpm typecheck` | Generate route types, run `tsc` |
+| `pnpm test` | Unit tests (Vitest) |
+| `pnpm e2e` | Playwright end-to-end + axe accessibility checks (needs a build) |

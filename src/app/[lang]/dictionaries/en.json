@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Bianca Espindola · Frontend Developer",
+    "description": "Frontend developer in Graz, Austria. I turn tricky problems into friendly interfaces."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "language": "Language",
+    "theme": "Change theme"
+  },
+  "theme": { "light": "Light", "dark": "Dark", "festive": "Festive" },
+  "hero": {
+    "greeting": "Oi! · Ciao! · Hallo! · Hi!",
+    "title": "I turn tricky problems into friendly interfaces.",
+    "lead": "Frontend developer at ComeOn in Graz, Austria. Half Brazilian, half Italian — powered by coffee, good books and way too much Zelda.",
+    "ctaWork": "View my work",
+    "ctaCv": "Download CV",
+    "location": "Graz, Austria"
+  }
+}

@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Token names match the Figma variables (Theme · Light / Dark / Festive). */
+:root,
+[data-theme="light"] {
+  --bg-default: #fff7f2;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #ffedf3;
+  --text-default: #2a1b2e;
+  --text-muted: #6e5a6b;
+  --border-default: #f2dde5;
+  --brand-primary: #b4235a;
+  --brand-primary-shade: #861943;
+  --brand-on-primary: #ffffff;
+  --brand-primary-soft: #ffdce7;
+  --brand-accent: #276b5c;
+  --brand-accent-soft: #d8f0e8;
+  --brand-highlight: #ffd166;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg-default: #1a1220;
+  --bg-surface: #241a2b;
+  --bg-surface-alt: #2f2236;
+  --text-default: #f8eef4;
+  --text-muted: #c2afbd;
+  --border-default: #3e2e45;
+  --brand-primary: #ff7ba6;
+  --brand-primary-shade: #c95b80;
+  --brand-on-primary: #1a1220;
+  --brand-primary-soft: #4a2338;
+  --brand-accent: #7dd3bc;
+  --brand-accent-soft: #1d3a35;
+  --brand-highlight: #ffd166;
+  color-scheme: dark;
+}
+
+[data-theme="festive"] {
+  --bg-default: #fff8f1;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #fbeaea;
+  --text-default: #2b1416;
+  --text-muted: #6a4f51;
+  --border-default: #efd6d6;
+  --brand-primary: #c1121f;
+  --brand-primary-shade: #8e0d17;
+  --brand-on-primary: #ffffff;
+  --brand-primary-soft: #fde1e1;
+  --brand-accent: #14532d;
+  --brand-accent-soft: #dcefe3;
+  --brand-highlight: #e0a526;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg-default);
+  --color-surface: var(--bg-surface);
+  --color-surface-alt: var(--bg-surface-alt);
+  --color-ink: var(--text-default);
+  --color-muted: var(--text-muted);
+  --color-line: var(--border-default);
+  --color-primary: var(--brand-primary);
+  --color-primary-shade: var(--brand-primary-shade);
+  --color-on-primary: var(--brand-on-primary);
+  --color-primary-soft: var(--brand-primary-soft);
+  --color-accent: var(--brand-accent);
+  --color-accent-soft: var(--brand-accent-soft);
+  --color-highlight: var(--brand-highlight);
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+  --font-pixel: var(--font-pixelify), ui-monospace, monospace;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component-level animations */
+    animation: none !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component-level animations */
+    transition: none !important;
+  }
+}
