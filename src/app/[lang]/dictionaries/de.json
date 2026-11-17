@@ -148,8 +148,8 @@
     "education": "Bachelor Computer Engineering (Technische Informatik) — UFSC, 2015 – 2022",
     "languages": [
       "Portugiesisch — Muttersprache",
-      "Englisch — C1",
-      "Italienisch — A1 (lerne ich)",
+      "Englisch — zweisprachig",
+      "Italienisch — A2 (lerne ich)",
       "Deutsch — A1 (lerne ich)"
     ],
     "award": "Make It Happen — ComeOn Summer Awards 2026",
@@ -216,7 +216,12 @@
     "languages": {
       "kicker": "Fast polyglott",
       "title": "Sprachen, in denen ich lebe",
-      "levels": ["Muttersprache", "C1", "A1 · lerne ich", "A1 · lerne ich"]
+      "levels": [
+        "Muttersprache",
+        "Zweisprachig",
+        "A2 · lerne ich",
+        "A1 · lerne ich"
+      ]
     },
     "christmasAlt": "Bianca auf einem Weihnachtsmarkt mit Rentiergeweih",
     "bookAlt": "Frühstückstisch mit einem E-Reader, der „Quarto de despejo“ von Carolina Maria de Jesus zeigt, Kaffee und einer Weihnachtstasse",

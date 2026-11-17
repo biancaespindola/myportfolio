@@ -213,3 +213,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** award photo added to the Make It Happen card (4:5, anchored at the bottom so the trophy text stays in frame). The Work sidebar is no longer sticky: with the photo it's taller than the viewport, and a sticky element taller than the screen hides its own bottom.
 - **2026-11-17:** removed the old 2023 iPhone photos from the site and added a Vitest guard that parses each image's EXIF and fails on GPS, camera make or model (verified against an old iPhone photo). They still exist in git history; the planned history purge (decision 006) should drop them too.
 - **2026-11-17:** About page with my story, fun facts and four new photos, cropped to keep other people out.
+- **2026-11-17:** language levels updated: English is now bilingual (was C1), Italian A2 (was A1), on About and the CV in all four languages.

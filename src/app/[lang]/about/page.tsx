@@ -65,8 +65,8 @@ const lovePhotos: Record<
 };
 const languages = [
   { name: "Português", lang: "pt", level: 5 },
-  { name: "English", lang: "en", level: 4 },
-  { name: "Italiano", lang: "it", level: 1 },
+  { name: "English", lang: "en", level: 5 },
+  { name: "Italiano", lang: "it", level: 2 },
   { name: "Deutsch", lang: "de", level: 1 },
 ];
 
