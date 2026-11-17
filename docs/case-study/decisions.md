@@ -193,3 +193,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** Work page in 4 languages; German hyphenation fix with a regression test.
 - **2026-11-17:** CV page in 4 languages, one A4 page each, with the new headshot.
 - **2026-11-17:** new hero photo, framed on the face with a focal-point component.
+- **2026-11-17:** pushed 042d92d with a failing e2e test (my script grepped the output instead of checking the exit code). The overflow test was flagging the zoomed hero photo, which its circle clips. Fixed the test to ignore ancestor-clipped content and confirmed it still catches the German overflow bug.

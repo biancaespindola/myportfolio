@@ -47,16 +47,24 @@ test("long German words don't overflow on a phone", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   for (const path of ["/de", "/de/work"]) {
     await page.goto(path);
-    const overflowing = await page.evaluate(() =>
-      [...document.querySelectorAll("main *")]
+    const overflowing = await page.evaluate(() => {
+      const clippedByAncestor = (el: Element) => {
+        for (let a = el.parentElement; a; a = a.parentElement) {
+          const { overflowX } = getComputedStyle(a);
+          if (overflowX === "hidden" || overflowX === "clip") return true;
+        }
+        return false;
+      };
+      return [...document.querySelectorAll("main *")]
         .filter(
           (el) =>
             el.checkVisibility() &&
             !el.closest("[aria-hidden]") &&
+            !clippedByAncestor(el) &&
             el.getBoundingClientRect().right > window.innerWidth + 1,
         )
-        .map((el) => `${el.tagName} ${el.textContent?.slice(0, 40)}`),
-    );
+        .map((el) => `${el.tagName} ${el.textContent?.slice(0, 40)}`);
+    });
     expect(overflowing, path).toEqual([]);
   }
 });
