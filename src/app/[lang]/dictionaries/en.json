@@ -172,7 +172,7 @@
           "what": "UFSC · LARM · EJEC · Khomp"
         },
         {
-          "place": "Italy",
+          "place": "Bari, Italy",
           "years": "2022 — 2024",
           "what": "Khomp, remote"
         },
@@ -217,6 +217,24 @@
       "kicker": "Polyglot-ish",
       "title": "Languages I live in",
       "levels": ["Native", "Bilingual", "A2 · learning", "A1 · learning"]
+    }
+  },
+  "caseStudy": {
+    "back": "All case studies",
+    "indexLead": "Real problems, the options I weighed, and what happened.",
+    "role": "Role",
+    "timeline": "Timeline",
+    "stack": "Stack",
+    "englishOnly": "This case study is in English for now.",
+    "chosen": "Chosen",
+    "next": "Keep reading",
+    "sections": {
+      "problem": "The problem",
+      "constraints": "Constraints",
+      "options": "Options",
+      "decision": "Decision",
+      "outcome": "Outcome",
+      "learned": "What I learned"
     }
   }
 }

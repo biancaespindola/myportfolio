@@ -172,7 +172,7 @@
           "what": "UFSC · LARM · EJEC · Khomp"
         },
         {
-          "place": "Italia",
+          "place": "Bari, Italia",
           "years": "2022 — 2024",
           "what": "Khomp, da remoto"
         },
@@ -222,6 +222,24 @@
         "A2 · in apprendimento",
         "A1 · in apprendimento"
       ]
+    }
+  },
+  "caseStudy": {
+    "back": "Tutti i casi studio",
+    "indexLead": "Problemi reali, le opzioni che ho valutato e com’è andata.",
+    "role": "Ruolo",
+    "timeline": "Periodo",
+    "stack": "Stack",
+    "englishOnly": "Per ora questo caso studio è in inglese.",
+    "chosen": "Scelta",
+    "next": "Continua a leggere",
+    "sections": {
+      "problem": "Il problema",
+      "constraints": "Vincoli",
+      "options": "Opzioni",
+      "decision": "Decisione",
+      "outcome": "Risultato",
+      "learned": "Cosa ho imparato"
     }
   }
 }

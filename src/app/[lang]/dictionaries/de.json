@@ -172,7 +172,7 @@
           "what": "UFSC · LARM · EJEC · Khomp"
         },
         {
-          "place": "Italien",
+          "place": "Bari, Italien",
           "years": "2022 — 2024",
           "what": "Khomp, remote"
         },
@@ -222,6 +222,24 @@
         "A2 · lerne ich",
         "A1 · lerne ich"
       ]
+    }
+  },
+  "caseStudy": {
+    "back": "Alle Fallstudien",
+    "indexLead": "Echte Probleme, die Optionen, die ich abgewogen habe, und was dabei herauskam.",
+    "role": "Rolle",
+    "timeline": "Zeitraum",
+    "stack": "Stack",
+    "englishOnly": "Diese Fallstudie gibt es vorerst nur auf Englisch.",
+    "chosen": "Gewählt",
+    "next": "Weiterlesen",
+    "sections": {
+      "problem": "Das Problem",
+      "constraints": "Rahmenbedingungen",
+      "options": "Optionen",
+      "decision": "Entscheidung",
+      "outcome": "Ergebnis",
+      "learned": "Was ich gelernt habe"
     }
   }
 }

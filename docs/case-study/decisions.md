@@ -202,6 +202,14 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Bug found while doing it:** card text was clipped because the SVG stretched the card's implicit grid column. Fixed with `grid-cols-1` (`minmax(0,1fr)`).
 - **Accessibility:** the avatar is decorative (`aria-hidden="true"`); each card's title and text carry the meaning.
 
+## 027 — Case study pages · 2026-11-17
+
+- **Built:** `/[lang]/case-studies` (index) and three studies: this site, sportsbook at ComeOn, the IoMT security thesis. Each one follows the same arc: problem → constraints → options (chosen one marked) → decision → outcome → what I learned.
+- **English-first (decision 008):** long-form text is English; labels, cards and navigation are in all four languages, and PT/IT/DE readers see a note. The article is marked `lang="en"` so screen readers switch voice.
+- **Facts only:** the content comes from my CV, LinkedIn, the thesis abstract and this log. The sportsbook study stays high-level, with no internal numbers or unreleased screens.
+- **Real 404s with Cache Components:** a dynamic `[slug]` route streamed its static shell (HTTP 200) before `notFound()` ran, so unknown slugs were soft-404s. `dynamicParams` isn't available with Cache Components. Fix: one static route per study, sharing a `CaseStudyView` component. An e2e test asserts the 404 status.
+- **Shared `CaseStudyGrid`** for Home, the index and "keep reading".
+
 ---
 
 ## Journal
@@ -224,3 +232,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** language levels updated: English is now bilingual (was C1), Italian A2 (was A1), on About and the CV in all four languages.
 - **2026-11-17:** fun-fact photos replaced by a hand-coded SVG mini-me (curly hair, no glasses, six outfits).
 - **2026-11-17:** mini-me hair changed from tight curls to long waves.
+- **2026-11-17:** case study pages (3 + index); soft-404 found and fixed with static routes. About map: Bari, Italy.

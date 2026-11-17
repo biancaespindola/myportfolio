@@ -172,7 +172,7 @@
           "what": "UFSC · LARM · EJEC · Khomp"
         },
         {
-          "place": "Itália",
+          "place": "Bari, Itália",
           "years": "2022 — 2024",
           "what": "Khomp, remoto"
         },
@@ -217,6 +217,24 @@
       "kicker": "Quase poliglota",
       "title": "Idiomas em que eu vivo",
       "levels": ["Nativo", "Bilíngue", "A2 · aprendendo", "A1 · aprendendo"]
+    }
+  },
+  "caseStudy": {
+    "back": "Todos os estudos de caso",
+    "indexLead": "Problemas reais, as opções que considerei e o que aconteceu.",
+    "role": "Papel",
+    "timeline": "Período",
+    "stack": "Stack",
+    "englishOnly": "Este estudo de caso está em inglês por enquanto.",
+    "chosen": "Escolhida",
+    "next": "Continue lendo",
+    "sections": {
+      "problem": "O problema",
+      "constraints": "Restrições",
+      "options": "Opções",
+      "decision": "Decisão",
+      "outcome": "Resultado",
+      "learned": "O que aprendi"
     }
   }
 }

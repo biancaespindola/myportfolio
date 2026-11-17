@@ -11,7 +11,14 @@ test("redirects / to the visitor's language", async ({ browser }) => {
 });
 
 for (const lang of ["en", "pt", "it", "de"]) {
-  for (const path of ["", "/work", "/cv", "/about"]) {
+  for (const path of [
+    "",
+    "/work",
+    "/cv",
+    "/about",
+    "/case-studies",
+    "/case-studies/this-site",
+  ]) {
     test(`/${lang}${path} has no axe violations`, async ({ page }) => {
       await page.goto(`/${lang}${path}`);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -48,7 +55,12 @@ test("work page lists experience with localized dates", async ({ page }) => {
 
 test("long German words don't overflow on a phone", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  for (const path of ["/de", "/de/work", "/de/about"]) {
+  for (const path of [
+    "/de",
+    "/de/work",
+    "/de/about",
+    "/de/case-studies/iomt-security",
+  ]) {
     await page.goto(path);
     const overflowing = await page.evaluate(() => {
       const clippedByAncestor = (el: Element) => {
@@ -104,4 +116,17 @@ test("hero shows the photo, or the Christmas avatar in festive mode", async ({
   await page.reload();
   await expect(avatar).toBeVisible();
   await expect(photo).toBeHidden();
+});
+
+test("every case study renders, and unknown slugs 404", async ({ page }) => {
+  for (const [slug, title] of [
+    ["this-site", "How I built this site"],
+    ["sportsbook", "Sportsbook features at ComeOn"],
+    ["iomt-security", "Securing a cardiac wearable"],
+  ]) {
+    await page.goto(`/en/case-studies/${slug}`);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+  }
+  const res = await page.goto("/en/case-studies/nope");
+  expect(res?.status()).toBe(404);
 });
