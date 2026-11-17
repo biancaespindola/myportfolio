@@ -11,6 +11,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
+import { AchievementBoard } from "@/components/delight/achievement-board";
 import { FocalImage } from "@/components/focal-image";
 import { MiniBianca, type Outfit } from "@/components/mini-bianca";
 import {
@@ -186,6 +187,14 @@ export default async function AboutPage() {
             </li>
           ))}
         </ul>
+      </section>
+      <section aria-labelledby="ach-h" className="py-16">
+        <p className={`${kicker} text-primary`}>{dict.achievements.kicker}</p>
+        <h2 id="ach-h" className={`${sectionTitle} mt-2 mb-2`}>
+          {dict.achievements.title}
+        </h2>
+        <p className="mb-6 text-muted">{dict.achievements.hint}</p>
+        <AchievementBoard labels={dict.achievements} />
       </section>
     </main>
   );

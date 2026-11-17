@@ -241,5 +241,40 @@
       "outcome": "Risultato",
       "learned": "Cosa ho imparato"
     }
+  },
+  "achievements": {
+    "kicker": "Obiettivi",
+    "title": "Collezionali tutti",
+    "hint": "Esplora il sito, cambia lingua o tema… e magari prova un famoso trucco.",
+    "progress": "{n} / {total} sbloccati",
+    "unlocked": "Sbloccato",
+    "locked": "Bloccato",
+    "toast": "Obiettivo sbloccato",
+    "items": {
+      "explorer": {
+        "name": "Esploratrice",
+        "hint": "Visita tutte le pagine"
+      },
+      "polyglot": {
+        "name": "Poliglotta",
+        "hint": "Cambia lingua"
+      },
+      "bookworm": {
+        "name": "Topo di biblioteca",
+        "hint": "Trova la libreria"
+      },
+      "nightowl": {
+        "name": "Nottambula",
+        "hint": "Prova la modalità scura"
+      },
+      "hohoho": {
+        "name": "Ho ho ho",
+        "hint": "Trova il tema festivo"
+      },
+      "konami": {
+        "name": "Konami",
+        "hint": "Conosci il codice"
+      }
+    }
   }
 }

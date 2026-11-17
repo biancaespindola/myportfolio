@@ -236,5 +236,40 @@
       "outcome": "Outcome",
       "learned": "What I learned"
     }
+  },
+  "achievements": {
+    "kicker": "Achievements",
+    "title": "Collect them all",
+    "hint": "Explore the site, switch language or theme… and maybe try a famous cheat code.",
+    "progress": "{n} / {total} unlocked",
+    "unlocked": "Unlocked",
+    "locked": "Locked",
+    "toast": "Achievement unlocked",
+    "items": {
+      "explorer": {
+        "name": "Explorer",
+        "hint": "Visit every page"
+      },
+      "polyglot": {
+        "name": "Polyglot",
+        "hint": "Switch the language"
+      },
+      "bookworm": {
+        "name": "Bookworm",
+        "hint": "Find the bookshelf"
+      },
+      "nightowl": {
+        "name": "Night owl",
+        "hint": "Try dark mode"
+      },
+      "hohoho": {
+        "name": "Ho ho ho",
+        "hint": "Find the festive theme"
+      },
+      "konami": {
+        "name": "Konami",
+        "hint": "You know the code"
+      }
+    }
   }
 }

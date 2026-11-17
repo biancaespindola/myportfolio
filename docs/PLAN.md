@@ -61,7 +61,7 @@ Each phase ends with a deploy preview and a decision-log entry.
 2. **Content**: write `content/profile.ts`, `experience.ts`, `skills.ts`, `projects.ts` in EN; gather 2–3 testimonials; refresh the CV (see open questions).
 3. **Core build** (Home ✅, Work ✅, About ✅, Case studies ✅ 2026-11-17): layout, nav, Home, Work, About, Contact, i18n routing, dark mode that actually works.
 4. ✅ **CV page** (2026-11-17): `/[locale]/cv` + print CSS; check the PDF output in Chrome/Safari.
-5. **Delight**: achievements, Konami easter egg, December theme + snow, bookshelf, optional "Ask Bianca" AI chat + `/llms.txt`.
+5. ✅ **Delight** (2026-11-17, AI chat not built): achievements, Konami easter egg, December theme + snow, bookshelf, optional "Ask Bianca" AI chat + `/llms.txt`.
 6. **Quality**: Lighthouse ≥ 95 on every category, axe clean, keyboard-only pass, OG images per locale, sitemap, `hreflang`.
 7. **Case study**: write "How I built this site" from `decisions.md` (EN first).
 8. **Launch**: merge, swap Netlify to v2, update the GitHub profile README (it still says "learning React/Next" and "working on Voice Notes Ease").

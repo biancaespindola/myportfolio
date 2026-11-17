@@ -241,5 +241,40 @@
       "outcome": "Ergebnis",
       "learned": "Was ich gelernt habe"
     }
+  },
+  "achievements": {
+    "kicker": "Erfolge",
+    "title": "Sammle sie alle",
+    "hint": "Erkunde die Seite, wechsle Sprache oder Design … und probier vielleicht einen berühmten Cheatcode.",
+    "progress": "{n} / {total} freigeschaltet",
+    "unlocked": "Freigeschaltet",
+    "locked": "Gesperrt",
+    "toast": "Erfolg freigeschaltet",
+    "items": {
+      "explorer": {
+        "name": "Entdeckerin",
+        "hint": "Besuche jede Seite"
+      },
+      "polyglot": {
+        "name": "Polyglott",
+        "hint": "Wechsle die Sprache"
+      },
+      "bookworm": {
+        "name": "Bücherwurm",
+        "hint": "Finde das Bücherregal"
+      },
+      "nightowl": {
+        "name": "Nachteule",
+        "hint": "Probiere den Dunkelmodus"
+      },
+      "hohoho": {
+        "name": "Ho ho ho",
+        "hint": "Finde das Festtagsdesign"
+      },
+      "konami": {
+        "name": "Konami",
+        "hint": "Du kennst den Code"
+      }
+    }
   }
 }

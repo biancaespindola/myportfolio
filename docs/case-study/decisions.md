@@ -210,6 +210,14 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Real 404s with Cache Components:** a dynamic `[slug]` route streamed its static shell (HTTP 200) before `notFound()` ran, so unknown slugs were soft-404s. `dynamicParams` isn't available with Cache Components. Fix: one static route per study, sharing a `CaseStudyView` component. An e2e test asserts the 404 status.
 - **Shared `CaseStudyGrid`** for Home, the index and "keep reading".
 
+## 028 — Delight: achievements, snow and lights · 2026-11-17
+
+- **Achievements (gamer side):** six to unlock (Explorer, Polyglot, Bookworm, Night owl, Ho ho ho, Konami). A Zustand store with `persist` (same pattern as at work) keeps them in `localStorage`; a client-only tracker in the root layout awards them and shows a toast announced through an `<output aria-live="polite">`. The About page has a board with progress.
+- **Hydration-safe:** the store uses `skipHydration` and rehydrates on mount, so the server HTML and the first client render match (no mismatch warnings).
+- **Festive theme:** canvas snow plus twinkling SVG string lights; the Konami code adds an 8-second blizzard. `prefers-reduced-motion` turns the snow off and freezes animations.
+- **Tests caught two things:** axe flagged the snow canvas for sitting outside any landmark (fixed by wrapping it in an `aria-hidden` element), and an e2e test raced ahead of React's hydration (fixed by waiting until each visit is saved, like a real visitor). 40 e2e tests, achievement tests stable across 3 repeated runs.
+- **Not built:** the "Ask Bianca" AI chat. It needs an API key, costs money per message and needs abuse protection, so it's a separate decision.
+
 ---
 
 ## Journal
@@ -233,3 +241,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** fun-fact photos replaced by a hand-coded SVG mini-me (curly hair, no glasses, six outfits).
 - **2026-11-17:** mini-me hair changed from tight curls to long waves.
 - **2026-11-17:** case study pages (3 + index); soft-404 found and fixed with static routes. About map: Bari, Italy.
+- **2026-11-17:** delight features: achievements + board, festive snow and string lights, Konami blizzard.

@@ -130,3 +130,66 @@ test("every case study renders, and unknown slugs 404", async ({ page }) => {
   const res = await page.goto("/en/case-studies/nope");
   expect(res?.status()).toBe(404);
 });
+
+test.describe("achievements", () => {
+  test("switching language unlocks Polyglot", async ({ page }) => {
+    await page.goto("/en");
+    await page.locator('a[hreflang="pt"]').first().click();
+    await expect(page).toHaveURL(/\/pt$/);
+    await expect(page.getByRole("status")).toContainText("Poliglota");
+  });
+
+  test("visiting every page unlocks Explorer on the About board", async ({
+    page,
+  }) => {
+    for (const section of ["work", "case-studies", "cv", "about"]) {
+      await page.goto(`/en/${section}`);
+      // Wait until the visit is saved before moving on, like a real visitor.
+      await expect
+        .poll(() => page.evaluate(() => localStorage.getItem("achievements")))
+        .toContain(`"${section}"`);
+    }
+    await expect(
+      page.locator('[data-achievement="explorer"][data-unlocked="true"]'),
+    ).toBeVisible();
+  });
+
+  test("the Konami code unlocks Konami and starts a blizzard", async ({
+    page,
+  }) => {
+    await page.goto("/en");
+    await expect(page.locator("canvas[data-snow]")).toHaveAttribute(
+      "data-snow",
+      "off",
+    );
+    for (const key of [
+      "ArrowUp",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+      "b",
+      "a",
+    ])
+      await page.keyboard.press(key);
+    await expect(page.getByRole("status")).toContainText("Konami");
+    await expect(page.locator("canvas[data-snow]")).toHaveAttribute(
+      "data-snow",
+      "on",
+    );
+  });
+
+  test("no snow when the visitor prefers reduced motion", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.addInitScript(() => localStorage.setItem("theme", "festive"));
+    await page.goto("/en");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "festive");
+    await expect(page.locator("canvas[data-snow]")).toHaveAttribute(
+      "data-snow",
+      "off",
+    );
+  });
+});

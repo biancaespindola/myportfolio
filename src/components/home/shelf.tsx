@@ -4,7 +4,11 @@ import { container, kicker, sectionTitle } from "../ui/styles";
 
 export function Shelf({ copy }: { copy: Dictionary["shelf"] }) {
   return (
-    <section aria-labelledby="shelf-h" className={`${container} py-16`}>
+    <section
+      data-bookshelf
+      aria-labelledby="shelf-h"
+      className={`${container} py-16`}
+    >
       <p className={`${kicker} text-accent`}>{copy.kicker}</p>
       <h2 id="shelf-h" className={`${sectionTitle} mt-2 mb-8`}>
         {copy.title}

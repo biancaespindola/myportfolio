@@ -103,3 +103,16 @@ body {
     background: #fff;
   }
 }
+
+@keyframes toast-in {
+  from {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.35;
+  }
+}

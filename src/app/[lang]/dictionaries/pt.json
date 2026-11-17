@@ -236,5 +236,40 @@
       "outcome": "Resultado",
       "learned": "O que aprendi"
     }
+  },
+  "achievements": {
+    "kicker": "Conquistas",
+    "title": "Colete todas",
+    "hint": "Explore o site, troque o idioma ou o tema… e talvez tente um código famoso.",
+    "progress": "{n} / {total} desbloqueadas",
+    "unlocked": "Desbloqueada",
+    "locked": "Bloqueada",
+    "toast": "Conquista desbloqueada",
+    "items": {
+      "explorer": {
+        "name": "Exploradora",
+        "hint": "Visite todas as páginas"
+      },
+      "polyglot": {
+        "name": "Poliglota",
+        "hint": "Troque o idioma"
+      },
+      "bookworm": {
+        "name": "Traça de livros",
+        "hint": "Encontre a estante"
+      },
+      "nightowl": {
+        "name": "Coruja",
+        "hint": "Experimente o modo escuro"
+      },
+      "hohoho": {
+        "name": "Ho ho ho",
+        "hint": "Encontre o tema festivo"
+      },
+      "konami": {
+        "name": "Konami",
+        "hint": "Você conhece o código"
+      }
+    }
   }
 }

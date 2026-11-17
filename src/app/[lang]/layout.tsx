@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fraunces, Nunito, Pixelify_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
+import { AchievementTracker } from "@/components/delight/achievement-tracker";
+import { Snow } from "@/components/delight/snow";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-script";
@@ -62,6 +64,8 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         <SiteHeader locale={locale} dict={dict} />
         {children}
         <SiteFooter dict={dict} />
+        <AchievementTracker labels={dict.achievements} />
+        <Snow />
       </body>
     </html>
   );
