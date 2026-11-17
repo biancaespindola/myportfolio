@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>CV — Bianca Espindola</title>
+		<script>
+			try {
+				document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('theme')) || 'light';
+			} catch {}
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;700&family=Pixelify+Sans:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/site.css" />
+		<style>
+			body {
+				background: var(--bg-surface-alt);
+			}
+			.toolbar {
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+				gap: 24px;
+				flex-wrap: wrap;
+				padding: 24px 0 32px;
+			}
+			.toolbar h1 {
+				font-size: 32px;
+				letter-spacing: -0.5px;
+			}
+			.seg {
+				display: inline-flex;
+				gap: 4px;
+				padding: 6px;
+				border-radius: 999px;
+				background: var(--bg-surface);
+				border: 1.5px solid var(--border-default);
+			}
+			.seg button {
+				border: 0;
+				background: none;
+				padding: 6px 12px;
+				border-radius: 999px;
+				cursor: pointer;
+				color: var(--text-default);
+			}
+			.seg button[aria-pressed='true'] {
+				background: var(--brand-primary);
+				color: var(--brand-on-primary);
+			}
+			.draft {
+				color: var(--text-muted);
+				font-size: 14px;
+			}
+
+			/* The sheet is always printed in light colours, whatever the site theme. */
+			.sheet {
+				--ink: #2a1b2e;
+				--ink-muted: #6e5a6b;
+				--accent: #b4235a;
+				--rule: #f2dde5;
+				width: 794px;
+				max-width: 100%;
+				min-height: 1123px;
+				margin: 0 auto;
+				background: #fff;
+				color: var(--ink);
+				padding: 48px 56px;
+				box-shadow: 0 16px 40px rgba(42, 27, 46, 0.12);
+				border-radius: 4px;
+				display: grid;
+				gap: 18px;
+				align-content: start;
+				font-size: 10.5px;
+				line-height: 1.45;
+			}
+			.sheet h2 {
+				font: 600 30px/1.1 var(--font-display);
+				letter-spacing: -0.5px;
+			}
+			.sheet .role {
+				color: var(--accent);
+				font: 700 13px var(--font-body);
+				margin-top: 4px;
+			}
+			.sheet header {
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+				gap: 16px;
+			}
+			.sheet .contact {
+				text-align: right;
+				color: var(--ink-muted);
+				font-size: 10px;
+				display: grid;
+				gap: 2px;
+			}
+			.sheet hr {
+				border: 0;
+				border-top: 1px solid var(--rule);
+				margin: 0;
+				width: 100%;
+			}
+			.sheet h3 {
+				font: 500 10px var(--font-pixel);
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-bottom: 8px;
+			}
+			.sheet .job {
+				display: grid;
+				grid-template-columns: 110px 1fr;
+				gap: 16px;
+				margin-bottom: 8px;
+			}
+			.sheet .job .when {
+				font-weight: 700;
+				color: var(--ink-muted);
+				font-size: 9.5px;
+			}
+			.sheet .job strong {
+				font-size: 11px;
+				display: block;
+			}
+			.sheet .job .where {
+				color: var(--ink-muted);
+				font-size: 9.5px;
+			}
+			.sheet .cols {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 32px;
+			}
+			.sheet .cols section {
+				margin-bottom: 14px;
+			}
+			.sheet ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: grid;
+				gap: 4px;
+			}
+			.note {
+				text-align: center;
+				color: var(--text-muted);
+				padding: 24px 0 0;
+				font-weight: 700;
+				font-size: 14px;
+			}
+
+			@page {
+				size: A4;
+				margin: 0;
+			}
+			@media print {
+				body {
+					background: #fff;
+				}
+				.site-lights,
+				.site-nav,
+				.toolbar,
+				.note,
+				.site-footer,
+				.toast {
+					display: none !important;
+				}
+				main.wrap {
+					padding: 0;
+					max-width: none;
+				}
+				.sheet {
+					box-shadow: none;
+					border-radius: 0;
+					width: 210mm;
+					min-height: 297mm;
+				}
+			}
+			@media (max-width: 860px) {
+				.sheet {
+					padding: 32px 24px;
+				}
+				.sheet .cols,
+				.sheet header {
+					grid-template-columns: 1fr;
+					display: grid;
+				}
+				.sheet .contact {
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body data-page="cv">
+		<div data-nav></div>
+		<main class="wrap">
+			<div class="toolbar">
+				<div>
+					<div class="pixel kicker">CV</div>
+					<h1>Curriculum vitae</h1>
+				</div>
+				<div class="row">
+					<div class="seg pixel" role="group" aria-label="CV language" id="cvLang">
+						<button data-lang="EN">EN</button><button data-lang="PT">PT</button
+						><button data-lang="IT">IT</button><button data-lang="DE">DE</button>
+					</div>
+					<button class="btn btn-secondary" onclick="print()">
+						<svg class="ico"><use href="#i-printer" /></svg>Print
+					</button>
+					<button class="btn btn-primary" onclick="print()">
+						<svg class="ico"><use href="#i-download" /></svg>Download PDF
+					</button>
+				</div>
+			</div>
+			<p class="draft" id="draft" hidden>IT/DE: machine-drafted, waiting for review by a native speaker.</p>
+			<article class="sheet" id="sheet" aria-live="polite"></article>
+			<p class="note">
+				Same content as the site (content/*.ts) · print CSS → A4 PDF · no phone, birth date or home address
+			</p>
+		</main>
+		<div data-footer></div>
+		<script type="module">
+			import { getLang, setLang } from './assets/app.js';
+
+			const contact = place => [
+				place,
+				'biancadeespindola95@gmail.com',
+				'linkedin.com/in/biancadeespindola',
+				'github.com/biancaespindola'
+			];
+			const pub =
+				'Experimental evaluation of a security layer implemented in a cardiac wearable device for the IoMT — SBSEG 2022, pp. 97–110';
+			const award = 'Make It Happen — ComeOn Summer Awards 2026';
+			const CV = {
+				EN: {
+					role: 'Frontend Developer',
+					place: 'Graz, Austria',
+					h: ['Profile', 'Experience', 'Skills', 'Publication', 'Education', 'Languages', 'Awards'],
+					summary:
+						'Frontend developer with 7 years of experience building React and Next.js products, from telecom tools to sportsbook features for international markets. Main frontend developer in my team at ComeOn and winner of the Make It Happen award (2026). I care about accessibility, multilingual UX and turning fuzzy client problems into clear, friendly interfaces.',
+					jobs: [
+						[
+							'Apr 2024 – now',
+							'Frontend Developer · ComeOn Group',
+							'Graz, Austria',
+							'Sportsbook features in React/Next.js (Boosted Odds, Bet Builder, dashboards) · releases in EN, PT-BR and DE-AT · reusable UI components and docs · Make It Happen award, Summer Awards 2026'
+						],
+						[
+							'Mar 2022 – Apr 2024',
+							'Front-end Developer · Khomp',
+							'Remote, Brazil',
+							'Large TypeScript/React/MUI app from user stories to shipped features · +20% accessibility via WCAG · REST integrations with Redux, Next.js and Node.js'
+						],
+						[
+							'Jan 2021 – Feb 2022',
+							'Software Developer · Khomp',
+							'Florianópolis, Brazil',
+							'Telecom products in C, C++, PHP and JavaScript · features, testing and bug fixes in Scrum/Kanban'
+						],
+						[
+							'Oct 2019 – Jan 2021',
+							'Frontend Developer & Junior Head of HR · EJEC',
+							'Araranguá, Brazil',
+							'SPA prototypes for clients · led hiring and introduced 1:1s'
+						],
+						[
+							'2017 – 2019',
+							'Software Development Researcher · LARM, UFSC',
+							'Araranguá, Brazil',
+							'Real-time embedded communication: C++, Python, ESP32, MQTT, cryptography'
+						]
+					],
+					skills: [
+						'Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI',
+						'State & data: Zustand, Redux, TanStack Query, REST',
+						'Quality: WCAG / a11y, testing, Storybook, code review',
+						'Also: Node.js, PostgreSQL, C/C++, Figma'
+					],
+					edu: 'BSc Computer Engineering — UFSC, 2015 – 2022',
+					langs: ['Portuguese — native', 'English — C1', 'Italian — A1 (learning)', 'German — A1 (learning)']
+				},
+				PT: {
+					role: 'Desenvolvedora Frontend',
+					place: 'Graz, Áustria',
+					h: ['Perfil', 'Experiência', 'Habilidades', 'Publicação', 'Formação', 'Idiomas', 'Prêmios'],
+					summary:
+						'Desenvolvedora frontend com 7 anos de experiência criando produtos em React e Next.js, de ferramentas de telecom a funcionalidades de apostas esportivas para mercados internacionais. Principal desenvolvedora frontend do meu time na ComeOn e vencedora do prêmio Make It Happen (2026). Me importo com acessibilidade, UX multilíngue e em transformar problemas confusos de clientes em interfaces claras e amigáveis.',
+					jobs: [
+						[
+							'abr 2024 – atual',
+							'Desenvolvedora Frontend · ComeOn Group',
+							'Graz, Áustria',
+							'Funcionalidades de sportsbook em React/Next.js (Boosted Odds, Bet Builder, dashboards) · lançamentos em EN, PT-BR e DE-AT · componentes de UI reutilizáveis e documentação · prêmio Make It Happen, Summer Awards 2026'
+						],
+						[
+							'mar 2022 – abr 2024',
+							'Desenvolvedora Front-end · Khomp',
+							'Remoto, Brasil',
+							'Aplicação grande em TypeScript/React/MUI, de user stories a features entregues · +20% de acessibilidade com WCAG · integrações REST com Redux, Next.js e Node.js'
+						],
+						[
+							'jan 2021 – fev 2022',
+							'Desenvolvedora de Software · Khomp',
+							'Florianópolis, Brasil',
+							'Produtos de telecom em C, C++, PHP e JavaScript · features, testes e correção de bugs com Scrum/Kanban'
+						],
+						[
+							'out 2019 – jan 2021',
+							'Desenvolvedora Frontend e Head Júnior de RH · EJEC',
+							'Araranguá, Brasil',
+							'Protótipos de SPA para clientes · conduzi processos seletivos e implantei 1:1s'
+						],
+						[
+							'2017 – 2019',
+							'Pesquisadora em Desenvolvimento de Software · LARM, UFSC',
+							'Araranguá, Brasil',
+							'Comunicação embarcada em tempo real: C++, Python, ESP32, MQTT, criptografia'
+						]
+					],
+					skills: [
+						'Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI',
+						'Estado e dados: Zustand, Redux, TanStack Query, REST',
+						'Qualidade: WCAG / acessibilidade, testes, Storybook, code review',
+						'Também: Node.js, PostgreSQL, C/C++, Figma'
+					],
+					edu: 'Bacharelado em Engenharia de Computação — UFSC, 2015 – 2022',
+					langs: [
+						'Português — nativo',
+						'Inglês — C1',
+						'Italiano — A1 (aprendendo)',
+						'Alemão — A1 (aprendendo)'
+					]
+				},
+				IT: {
+					role: 'Sviluppatrice Frontend',
+					place: 'Graz, Austria',
+					h: ['Profilo', 'Esperienza', 'Competenze', 'Pubblicazione', 'Formazione', 'Lingue', 'Premi'],
+					summary:
+						'Sviluppatrice frontend con 7 anni di esperienza nella creazione di prodotti React e Next.js, dagli strumenti per le telecomunicazioni alle funzionalità di scommesse sportive per mercati internazionali. Principale sviluppatrice frontend del mio team in ComeOn e vincitrice del premio Make It Happen (2026). Tengo all’accessibilità, alla UX multilingue e a trasformare problemi poco chiari dei clienti in interfacce chiare e accoglienti.',
+					jobs: [
+						[
+							'apr 2024 – oggi',
+							'Sviluppatrice Frontend · ComeOn Group',
+							'Graz, Austria',
+							'Funzionalità sportsbook in React/Next.js (Boosted Odds, Bet Builder, dashboard) · rilasci in EN, PT-BR e DE-AT · componenti UI riutilizzabili e documentazione · premio Make It Happen, Summer Awards 2026'
+						],
+						[
+							'mar 2022 – apr 2024',
+							'Sviluppatrice Front-end · Khomp',
+							'Da remoto, Brasile',
+							'Grande applicazione TypeScript/React/MUI, dalle user story alle funzionalità rilasciate · +20% di accessibilità con WCAG · integrazioni REST con Redux, Next.js e Node.js'
+						],
+						[
+							'gen 2021 – feb 2022',
+							'Sviluppatrice Software · Khomp',
+							'Florianópolis, Brasile',
+							'Prodotti per telecomunicazioni in C, C++, PHP e JavaScript · funzionalità, test e bug fixing con Scrum/Kanban'
+						],
+						[
+							'ott 2019 – gen 2021',
+							'Sviluppatrice Frontend e Junior Head of HR · EJEC',
+							'Araranguá, Brasile',
+							'Prototipi SPA per i clienti · gestione delle selezioni e introduzione dei 1:1'
+						],
+						[
+							'2017 – 2019',
+							'Ricercatrice in sviluppo software · LARM, UFSC',
+							'Araranguá, Brasile',
+							'Comunicazione embedded in tempo reale: C++, Python, ESP32, MQTT, crittografia'
+						]
+					],
+					skills: [
+						'Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI',
+						'Stato e dati: Zustand, Redux, TanStack Query, REST',
+						'Qualità: WCAG / accessibilità, test, Storybook, code review',
+						'Inoltre: Node.js, PostgreSQL, C/C++, Figma'
+					],
+					edu: 'Laurea in Ingegneria Informatica — UFSC, 2015 – 2022',
+					langs: [
+						'Portoghese — madrelingua',
+						'Inglese — C1',
+						'Italiano — A1 (in apprendimento)',
+						'Tedesco — A1 (in apprendimento)'
+					]
+				},
+				DE: {
+					role: 'Frontend-Entwicklerin',
+					place: 'Graz, Österreich',
+					h: [
+						'Profil',
+						'Berufserfahrung',
+						'Kenntnisse',
+						'Publikation',
+						'Ausbildung',
+						'Sprachen',
+						'Auszeichnungen'
+					],
+					summary:
+						'Frontend-Entwicklerin mit 7 Jahren Erfahrung in der Entwicklung von React- und Next.js-Produkten – von Telekommunikations-Tools bis zu Sportwetten-Features für internationale Märkte. Wichtigste Frontend-Entwicklerin in meinem Team bei ComeOn und Gewinnerin des Make It Happen Awards (2026). Mir liegen Barrierefreiheit, mehrsprachige UX und klare, freundliche Oberflächen für unklare Kundenprobleme am Herzen.',
+					jobs: [
+						[
+							'Apr. 2024 – heute',
+							'Frontend-Entwicklerin · ComeOn Group',
+							'Graz, Österreich',
+							'Sportsbook-Features in React/Next.js (Boosted Odds, Bet Builder, Dashboards) · Releases in EN, PT-BR und DE-AT · wiederverwendbare UI-Komponenten und Dokumentation · Make It Happen Award, Summer Awards 2026'
+						],
+						[
+							'März 2022 – Apr. 2024',
+							'Front-end-Entwicklerin · Khomp',
+							'Remote, Brasilien',
+							'Große TypeScript/React/MUI-Anwendung, von User Stories bis zu ausgelieferten Features · +20 % Barrierefreiheit durch WCAG · REST-Integrationen mit Redux, Next.js und Node.js'
+						],
+						[
+							'Jan. 2021 – Feb. 2022',
+							'Softwareentwicklerin · Khomp',
+							'Florianópolis, Brasilien',
+							'Telekommunikationsprodukte in C, C++, PHP und JavaScript · Features, Tests und Bugfixes in Scrum/Kanban'
+						],
+						[
+							'Okt. 2019 – Jan. 2021',
+							'Frontend-Entwicklerin & Junior Head of HR · EJEC',
+							'Araranguá, Brasilien',
+							'SPA-Prototypen für Kunden · Recruiting geleitet und 1:1-Gespräche eingeführt'
+						],
+						[
+							'2017 – 2019',
+							'Wissenschaftliche Mitarbeiterin Softwareentwicklung · LARM, UFSC',
+							'Araranguá, Brasilien',
+							'Echtzeit-Embedded-Kommunikation: C++, Python, ESP32, MQTT, Kryptografie'
+						]
+					],
+					skills: [
+						'Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI',
+						'State & Daten: Zustand, Redux, TanStack Query, REST',
+						'Qualität: WCAG / Barrierefreiheit, Tests, Storybook, Code-Reviews',
+						'Außerdem: Node.js, PostgreSQL, C/C++, Figma'
+					],
+					edu: 'Bachelor Computer Engineering (Technische Informatik) — UFSC, 2015 – 2022',
+					langs: [
+						'Portugiesisch — Muttersprache',
+						'Englisch — C1',
+						'Italienisch — A1 (lerne ich)',
+						'Deutsch — A1 (lerne ich)'
+					]
+				}
+			};
+
+			const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+			function render(lang) {
+				const d = CV[lang] || CV.EN;
+				document.getElementById('sheet').lang = lang.toLowerCase();
+				document.getElementById('sheet').innerHTML = `
+      <header><div><h2>Bianca Espindola</h2><div class="role">${d.role}</div></div>
+        <div class="contact">${contact(d.place)
+			.map(l => `<span>${esc(l)}</span>`)
+			.join('')}</div></header>
+      <hr />
+      <section><h3>${d.h[0]}</h3><p>${esc(d.summary)}</p></section>
+      <section><h3>${d.h[1]}</h3>${d.jobs
+			.map(
+				([w, r, p, b]) => `
+        <div class="job"><span class="when">${w}</span><div><strong>${esc(r)}</strong><span class="where">${p}</span><p>${esc(b)}</p></div></div>`
+			)
+			.join('')}</section>
+      <div class="cols">
+        <div><section><h3>${d.h[2]}</h3><ul>${d.skills.map(s => `<li>${esc(s)}</li>`).join('')}</ul></section>
+             <section><h3>${d.h[3]}</h3><p>${esc(pub)}</p></section></div>
+        <div><section><h3>${d.h[4]}</h3><p>${esc(d.edu)}</p></section>
+             <section><h3>${d.h[5]}</h3><ul>${d.langs.map(s => `<li>${s}</li>`).join('')}</ul></section>
+             <section><h3>${d.h[6]}</h3><p>${award}</p></section></div>
+      </div>`;
+				document
+					.querySelectorAll('#cvLang button')
+					.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+				document.getElementById('draft').hidden = !['IT', 'DE'].includes(lang);
+			}
+			document
+				.querySelectorAll('#cvLang button')
+				.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+			document.addEventListener('lang:change', e => render(e.detail));
+			render(getLang());
+		</script>
+		<script type="module" src="assets/app.js"></script>
+	</body>
+</html>

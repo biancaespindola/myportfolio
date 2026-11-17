@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Work — Bianca Espindola</title>
+		<script>
+			try {
+				document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('theme')) || 'light';
+			} catch {}
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;700&family=Pixelify+Sans:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/site.css" />
+		<style>
+			.work-head {
+				padding: 48px 0 64px;
+				display: grid;
+				gap: 24px;
+			}
+			.work-grid {
+				display: grid;
+				grid-template-columns: 1fr 384px;
+				gap: 48px;
+				align-items: start;
+			}
+			.timeline {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.job {
+				display: grid;
+				grid-template-columns: 24px 1fr;
+				gap: 24px;
+			}
+			.rail {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-top: 6px;
+			}
+			.dot {
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: var(--brand-primary);
+				box-shadow: 0 0 0 4px var(--brand-primary-soft);
+				flex: none;
+			}
+			.line {
+				width: 2px;
+				flex: 1;
+				background: var(--border-default);
+				margin-top: 6px;
+			}
+			.job:last-child .line {
+				display: none;
+			}
+			.job-body {
+				padding-bottom: 48px;
+				display: grid;
+				gap: 12px;
+			}
+			.job-body h3 {
+				font-family: var(--font-display);
+				font-size: 32px;
+				letter-spacing: -0.5px;
+			}
+			.job-body ul {
+				margin: 0;
+				padding-left: 20px;
+				display: grid;
+				gap: 4px;
+			}
+			.job-body .award-pill {
+				display: inline-flex;
+				gap: 8px;
+				align-items: center;
+				background: var(--brand-highlight);
+				color: #2a1b2e;
+				padding: 6px 12px;
+				border-radius: 999px;
+				width: fit-content;
+			}
+			.sidebar {
+				display: grid;
+				gap: 24px;
+				position: sticky;
+				top: 24px;
+			}
+			.award {
+				border: 2px solid var(--brand-highlight);
+			}
+			.award-photo {
+				height: 180px;
+				border-radius: var(--radius-md);
+				background: var(--brand-primary-soft);
+				display: grid;
+				place-items: center;
+				color: var(--brand-primary);
+				text-align: center;
+			}
+			.award-photo .ico {
+				width: 32px;
+				height: 32px;
+				margin: 0 auto 8px;
+			}
+			.skill-group {
+				display: grid;
+				gap: 8px;
+			}
+			.pub {
+				background: var(--brand-accent-soft);
+				border-color: transparent;
+			}
+			.pub .pixel,
+			.pub a {
+				color: var(--brand-accent);
+			}
+			@media (max-width: 960px) {
+				.work-grid {
+					grid-template-columns: 1fr;
+				}
+				.sidebar {
+					position: static;
+				}
+			}
+		</style>
+	</head>
+	<body data-page="work">
+		<div data-nav></div>
+		<main class="wrap">
+			<header class="work-head">
+				<div class="pixel kicker">Work</div>
+				<h1>From IoT labs to sportsbooks.</h1>
+				<p class="lead">
+					Seven years of building for real people: real-time systems in a robotics lab, telecom products, and
+					today sportsbook features for international markets.
+				</p>
+				<div class="row">
+					<a class="btn btn-primary" href="cv.html">Download CV</a>
+					<a class="btn btn-secondary" href="https://www.linkedin.com/in/biancadeespindola/">LinkedIn</a>
+				</div>
+			</header>
+
+			<div class="work-grid">
+				<ol class="timeline" aria-label="Experience">
+					<li class="job">
+						<div class="rail" aria-hidden="true"><span class="dot"></span><span class="line"></span></div>
+						<div class="job-body">
+							<span class="pixel kicker">Apr 2024 — now</span>
+							<h3>Frontend Developer</h3>
+							<p class="muted"><strong>ComeOn Group</strong> · Graz, Austria · On-site</p>
+							<span class="award-pill pixel"
+								><svg class="ico" style="width: 16px; height: 16px"><use href="#i-trophy" /></svg>Make
+								It Happen · Summer Awards 2026</span
+							>
+							<ul>
+								<li>
+									Main frontend developer in my team: I turn client problems into features people
+									enjoy
+								</li>
+								<li>Sportsbook features in React and Next.js: Boosted Odds, Bet Builder, dashboards</li>
+								<li>Multilingual releases in EN, PT-BR and DE-AT</li>
+								<li>Reusable UI components and docs that make the whole team faster</li>
+							</ul>
+							<div class="tags">
+								<span class="tag">React</span><span class="tag">Next.js</span
+								><span class="tag">TypeScript</span><span class="tag">Zustand</span
+								><span class="tag">i18n</span><span class="tag">Figma</span>
+							</div>
+						</div>
+					</li>
+					<li class="job">
+						<div class="rail" aria-hidden="true"><span class="dot"></span><span class="line"></span></div>
+						<div class="job-body">
+							<span class="pixel kicker">Mar 2022 — Apr 2024</span>
+							<h3>Front-end Developer</h3>
+							<p class="muted"><strong>Khomp</strong> · Remote, Brazil</p>
+							<ul>
+								<li>Large TypeScript / React / MUI app, from user stories to shipped features</li>
+								<li>Raised accessibility by 20% through WCAG compliance</li>
+								<li>
+									REST integrations with Redux, Next.js and Node.js; back ends in PHP, Node and C++
+								</li>
+							</ul>
+							<div class="tags">
+								<span class="tag">TypeScript</span><span class="tag">React</span
+								><span class="tag">MUI</span><span class="tag">Redux</span><span class="tag">WCAG</span>
+							</div>
+						</div>
+					</li>
+					<li class="job">
+						<div class="rail" aria-hidden="true"><span class="dot"></span><span class="line"></span></div>
+						<div class="job-body">
+							<span class="pixel kicker">Jan 2021 — Feb 2022</span>
+							<h3>Software Developer</h3>
+							<p class="muted"><strong>Khomp</strong> · Florianópolis, Brazil</p>
+							<ul>
+								<li>Telecom products in C, C++, PHP and JavaScript</li>
+								<li>New features, product testing and bug fixes in Scrum and Kanban teams</li>
+							</ul>
+							<div class="tags">
+								<span class="tag">C/C++</span><span class="tag">PHP</span
+								><span class="tag">JavaScript</span>
+							</div>
+						</div>
+					</li>
+					<li class="job">
+						<div class="rail" aria-hidden="true"><span class="dot"></span><span class="line"></span></div>
+						<div class="job-body">
+							<span class="pixel kicker">Oct 2019 — Jan 2021</span>
+							<h3>Frontend Developer · Junior Head of HR</h3>
+							<p class="muted">
+								<strong>EJEC</strong>, Junior Enterprise of Computer Engineering · Araranguá
+							</p>
+							<ul>
+								<li>
+									Took client requirements and turned them into SPA prototypes (HTML, CSS, JS,
+									Bootstrap)
+								</li>
+								<li>Led HR: ran hiring and introduced 1:1s between leads and members</li>
+							</ul>
+							<div class="tags">
+								<span class="tag">HTML/CSS</span><span class="tag">JavaScript</span
+								><span class="tag">Leadership</span>
+							</div>
+						</div>
+					</li>
+					<li class="job">
+						<div class="rail" aria-hidden="true"><span class="dot"></span><span class="line"></span></div>
+						<div class="job-body">
+							<span class="pixel kicker">2017 — 2019</span>
+							<h3>Software Development Researcher</h3>
+							<p class="muted"><strong>LARM</strong>, Mobile Automation &amp; Robotics Lab · UFSC</p>
+							<ul>
+								<li>
+									Real-time embedded communication with C++, Python, ESP32, MQTT and cryptography,
+									visualised on the web
+								</li>
+							</ul>
+							<div class="tags">
+								<span class="tag">C++</span><span class="tag">Python</span><span class="tag">ESP32</span
+								><span class="tag">MQTT</span>
+							</div>
+						</div>
+					</li>
+				</ol>
+
+				<aside class="sidebar">
+					<section class="card award" aria-labelledby="award-h">
+						<div class="award-photo">
+							<div>
+								<svg class="ico"><use href="#i-trophy" /></svg><span class="pixel">Award photo</span>
+							</div>
+						</div>
+						<span class="pixel kicker accent">Achievement</span>
+						<h2 id="award-h" style="font-size: 32px">Make It Happen</h2>
+						<p class="muted">
+							ComeOn Summer Awards 2026, for turning tricky client problems into shipped solutions.
+						</p>
+					</section>
+					<section class="card" aria-labelledby="skills-h">
+						<h3 id="skills-h">What I do with what I know</h3>
+						<div class="skill-group">
+							<span class="muted"><strong>Build interfaces</strong></span>
+							<div class="tags">
+								<span class="tag">React</span><span class="tag">Next.js</span
+								><span class="tag">TypeScript</span><span class="tag">Tailwind</span
+								><span class="tag">MUI</span>
+							</div>
+						</div>
+						<div class="skill-group">
+							<span class="muted"><strong>Make them for everyone</strong></span>
+							<div class="tags">
+								<span class="tag">WCAG</span><span class="tag">i18n</span
+								><span class="tag">Figma → code</span>
+							</div>
+						</div>
+						<div class="skill-group">
+							<span class="muted"><strong>Keep them healthy</strong></span>
+							<div class="tags">
+								<span class="tag">Testing</span><span class="tag">Storybook</span
+								><span class="tag">CI</span><span class="tag">Code review</span>
+							</div>
+						</div>
+						<div class="skill-group">
+							<span class="muted"><strong>Talk to machines</strong></span>
+							<div class="tags">
+								<span class="tag">Node.js</span><span class="tag">REST</span
+								><span class="tag">PostgreSQL</span><span class="tag">C/C++</span>
+							</div>
+						</div>
+					</section>
+					<section class="card" aria-labelledby="edu-h">
+						<span class="pixel kicker">Education</span>
+						<h3 id="edu-h">BSc Computer Engineering</h3>
+						<p class="muted">UFSC · 2015 — 2022</p>
+					</section>
+					<section class="card pub" aria-labelledby="pub-h">
+						<span class="pixel row" style="gap: 8px"
+							><svg class="ico"><use href="#i-shield" /></svg>Published · SBSEG 2022</span
+						>
+						<h3 id="pub-h">Experimental evaluation of a security layer for a cardiac wearable (IoMT)</h3>
+						<a href="case-study.html"><strong>Read the case study →</strong></a>
+					</section>
+				</aside>
+			</div>
+		</main>
+		<div data-footer></div>
+		<script type="module" src="assets/app.js"></script>
+	</body>
+</html>

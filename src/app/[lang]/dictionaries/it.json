@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "title": "Bianca Espindola · Sviluppatrice Frontend",
+    "description": "Sviluppatrice frontend a Graz, Austria. Trasformo problemi complicati in interfacce amichevoli."
+  },
+  "a11y": {
+    "skip": "Vai al contenuto",
+    "language": "Lingua",
+    "theme": "Cambia tema",
+    "main": "Principale"
+  },
+  "theme": {
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "festive": "Festivo"
+  },
+  "nav": {
+    "work": "Lavoro",
+    "caseStudies": "Casi studio",
+    "about": "Chi sono",
+    "cv": "CV"
+  },
+  "hero": {
+    "greeting": "Oi! · Ciao! · Hallo! · Hi!",
+    "title": "Trasformo problemi complicati in interfacce amichevoli.",
+    "lead": "Sviluppatrice frontend in ComeOn a Graz, Austria. Metà brasiliana, metà italiana — alimentata da caffè, buoni libri e decisamente troppa Zelda.",
+    "ctaWork": "Guarda i miei lavori",
+    "ctaCv": "Scarica il CV",
+    "location": "Graz, Austria",
+    "languages": "EN · PT · IT · DE",
+    "open": "Aperta a due chiacchiere",
+    "photoAlt": "Bianca sorride in riva all’acqua al tramonto",
+    "toastKicker": "Obiettivo sbloccato",
+    "toast": "Prima visita — ciao!",
+    "sticker": "Giocatrice 1",
+    "festiveAlt": "Illustrazione di Bianca con il cappello di Babbo Natale e luci natalizie sullo sfondo"
+  },
+  "highlights": {
+    "title": "In evidenza",
+    "items": [
+      {
+        "value": "Make It Happen",
+        "caption": "ComeOn Summer Awards 2026"
+      },
+      {
+        "value": "7 anni",
+        "caption": "Sviluppo per il web, dalle dashboard IoT agli sportsbook"
+      },
+      {
+        "value": "Multilingue",
+        "caption": "Rilasciato in EN, PT-BR e DE-AT"
+      },
+      {
+        "value": "Amo le persone",
+        "caption": "Ex Head of HR in EJEC, ho introdotto i 1:1"
+      }
+    ]
+  },
+  "caseStudies": {
+    "kicker": "Casi studio",
+    "title": "Problema → decisione → risultato",
+    "all": "Tutti i casi studio",
+    "read": "Leggi il caso studio",
+    "items": {
+      "this-site": {
+        "title": "Come ho costruito questo sito",
+        "summary": "Ho ricostruito il mio portfolio in quattro lingue con Next.js 16, design token e un registro pubblico delle decisioni."
+      },
+      "sportsbook": {
+        "title": "Funzionalità sportsbook in ComeOn",
+        "summary": "Boosted Odds e Bet Builder in React e Next.js, rilasciati ai giocatori in tre lingue."
+      },
+      "iomt-security": {
+        "title": "Proteggere un dispositivo cardiaco indossabile",
+        "summary": "Confronto tra AES-256, SPECK e CLEFIA per i dati ECG su dispositivi IoMT. Pubblicato a SBSEG 2022."
+      }
+    }
+  },
+  "shelf": {
+    "kicker": "Fuori orario",
+    "title": "Sulla mia mensola e nella mia Switch"
+  },
+  "contact": {
+    "title": "Prendiamo un caffè?",
+    "body": "Aperta a ruoli frontend e a belle conversazioni. Rispondo a ogni messaggio — in quattro lingue, se vuoi.",
+    "sayHi": "Scrivimi",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "built": "Fatto con Next.js 16, caffè e lo-fi"
+  },
+  "work": {
+    "kicker": "Lavoro",
+    "title": "Dai laboratori IoT agli sportsbook.",
+    "lead": "Sette anni a costruire per persone reali: sistemi in tempo reale in un laboratorio di robotica, prodotti per le telecomunicazioni e oggi funzionalità sportsbook per mercati internazionali.",
+    "now": "oggi",
+    "experience": "Esperienza",
+    "award": {
+      "kicker": "Riconoscimento",
+      "title": "Make It Happen",
+      "body": "ComeOn Summer Awards 2026, per aver trasformato problemi complicati dei clienti in soluzioni rilasciate.",
+      "badge": "Make It Happen · Summer Awards 2026",
+      "photoAlt": "Bianca sorride con il trofeo del premio Make It Happen"
+    },
+    "skills": {
+      "title": "Cosa faccio con ciò che so",
+      "groups": [
+        "Costruire interfacce",
+        "Per tutte le persone",
+        "Mantenerle in salute",
+        "Parlare con le macchine"
+      ]
+    },
+    "education": {
+      "kicker": "Formazione",
+      "degree": "Laurea in Ingegneria Informatica",
+      "school": "UFSC · 2015 — 2022"
+    },
+    "publication": {
+      "kicker": "Pubblicato · SBSEG 2022",
+      "title": "Valutazione sperimentale di un livello di sicurezza per un dispositivo cardiaco indossabile (IoMT)",
+      "link": "Leggi il caso studio"
+    }
+  },
+  "cv": {
+    "kicker": "CV",
+    "title": "Curriculum vitae",
+    "print": "Stampa / salva come PDF",
+    "docTitle": "Bianca Espindola — Curriculum",
+    "role": "Sviluppatrice Frontend",
+    "place": "Graz, Austria",
+    "summary": "Sviluppatrice frontend con 7 anni di esperienza nella creazione di prodotti React e Next.js, dagli strumenti per le telecomunicazioni alle funzionalità di scommesse sportive per mercati internazionali. Principale sviluppatrice frontend del mio team in ComeOn e vincitrice del premio Make It Happen (2026). Tengo all’accessibilità, alla UX multilingue e a trasformare problemi poco chiari dei clienti in interfacce chiare e accoglienti.",
+    "headings": {
+      "profile": "Profilo",
+      "experience": "Esperienza",
+      "skills": "Competenze",
+      "publication": "Pubblicazione",
+      "education": "Formazione",
+      "languages": "Lingue",
+      "awards": "Premi"
+    },
+    "skills": [
+      "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",
+      "Stato e dati: Zustand, Redux, TanStack Query, REST",
+      "Qualità: WCAG / accessibilità, test, Storybook, code review",
+      "Inoltre: Node.js, PostgreSQL, C/C++, Figma"
+    ],
+    "education": "Laurea in Ingegneria Informatica — UFSC, 2015 – 2022",
+    "languages": [
+      "Portoghese — madrelingua",
+      "Inglese — bilingue",
+      "Italiano — A2 (in apprendimento)",
+      "Tedesco — A1 (in apprendimento)"
+    ],
+    "award": "Make It Happen — ComeOn Summer Awards 2026",
+    "note": "Stessi contenuti del resto del sito. Nessun numero di telefono, data di nascita o indirizzo."
+  },
+  "about": {
+    "kicker": "Chi sono",
+    "title": "Ciao, sono Bianca.",
+    "p1": "Metà brasiliana e metà italiana, mi sono trasferita in Europa per seguire un sogno, e oggi sono felice di chiamare quel sogno la mia vita di tutti i giorni. Amo esplorare posti nuovi, perdermi in un buon libro e condividere storie durante una bella chiacchierata.",
+    "p2": "Il Natale occupa un posto speciale nel mio cuore, per il suo calore, le sue tradizioni e la gioia di riunire le persone. Curiosa per natura, cerco sempre qualcosa di nuovo da imparare e legami significativi lungo il cammino.",
+    "photoAlt": "Bianca sorride in una grande biblioteca barocca piena di libri antichi",
+    "stickers": ["Metà BR · metà IT", "Caffè liv. 99"],
+    "map": {
+      "kicker": "La mia mappa",
+      "title": "Brasile → Italia → Austria",
+      "stops": [
+        {
+          "place": "Florianópolis, Brasile",
+          "years": "Fino al 2022",
+          "what": "UFSC · LARM · EJEC · Khomp"
+        },
+        {
+          "place": "Bari, Italia",
+          "years": "2022 — 2024",
+          "what": "Khomp, da remoto"
+        },
+        {
+          "place": "Graz, Austria",
+          "years": "2024 — oggi",
+          "what": "ComeOn"
+        }
+      ]
+    },
+    "loves": {
+      "kicker": "Curiosità",
+      "title": "Le cose che mi rendono me",
+      "items": [
+        {
+          "title": "Amo i libri",
+          "text": "Sempre persa in un buon libro, con una bella tazza accanto."
+        },
+        {
+          "title": "Gamer, fan della palestra e sciatrice in erba",
+          "text": "Con tanto entusiasmo e un po’ meno tecnica."
+        },
+        {
+          "title": "Persa nei musei",
+          "text": "Adoro perdermi nei musei e collezionare piccoli pezzi di storia lungo la strada."
+        },
+        {
+          "title": "Curiosità reali",
+          "text": "Ricordo storie stranamente precise sulla famiglia reale brasiliana. Ma non chiedetemi cosa c’era sulla lista della spesa."
+        },
+        {
+          "title": "A caccia di mercatini di Natale",
+          "text": "Il Natale è la mia stagione felice: visito ogni mercatino di Natale che trovo."
+        },
+        {
+          "title": "Colleziono tazze natalizie",
+          "text": "La mia collezione ha sempre posto per un’altra."
+        }
+      ]
+    },
+    "languages": {
+      "kicker": "Quasi poliglotta",
+      "title": "Le lingue in cui vivo",
+      "levels": [
+        "Madrelingua",
+        "Bilingue",
+        "A2 · in apprendimento",
+        "A1 · in apprendimento"
+      ]
+    }
+  },
+  "caseStudy": {
+    "back": "Tutti i casi studio",
+    "indexLead": "Problemi reali, le opzioni che ho valutato e com’è andata.",
+    "role": "Ruolo",
+    "timeline": "Periodo",
+    "stack": "Stack",
+    "englishOnly": "Per ora questo caso studio è in inglese.",
+    "chosen": "Scelta",
+    "next": "Continua a leggere",
+    "sections": {
+      "problem": "Il problema",
+      "constraints": "Vincoli",
+      "options": "Opzioni",
+      "decision": "Decisione",
+      "outcome": "Risultato",
+      "learned": "Cosa ho imparato"
+    }
+  },
+  "achievements": {
+    "kicker": "Obiettivi",
+    "title": "Collezionali tutti",
+    "hint": "Esplora il sito, cambia lingua o tema… e magari prova un famoso trucco.",
+    "progress": "{n} / {total} sbloccati",
+    "unlocked": "Sbloccato",
+    "locked": "Bloccato",
+    "toast": "Obiettivo sbloccato",
+    "items": {
+      "explorer": {
+        "name": "Esploratrice",
+        "hint": "Visita tutte le pagine"
+      },
+      "polyglot": {
+        "name": "Poliglotta",
+        "hint": "Cambia lingua"
+      },
+      "bookworm": {
+        "name": "Topo di biblioteca",
+        "hint": "Trova la libreria"
+      },
+      "nightowl": {
+        "name": "Nottambula",
+        "hint": "Prova la modalità scura"
+      },
+      "hohoho": {
+        "name": "Ho ho ho",
+        "hint": "Trova il tema festivo"
+      },
+      "konami": {
+        "name": "Konami",
+        "hint": "Conosci il codice"
+      }
+    }
+  }
+}

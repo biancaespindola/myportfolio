@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>How I built this site — Bianca Espindola</title>
+		<script>
+			try {
+				document.documentElement.dataset.theme = JSON.parse(localStorage.getItem('theme')) || 'light';
+			} catch {}
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;700&family=Pixelify+Sans:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/site.css" />
+		<style>
+			.progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 4px;
+				width: 100%;
+				transform-origin: left;
+				transform: scaleX(0);
+				background: var(--brand-primary);
+				z-index: 40;
+			}
+			.cs-head {
+				padding: 32px 0 48px;
+				display: grid;
+				gap: 24px;
+			}
+			.back {
+				display: inline-flex;
+				gap: 6px;
+				align-items: center;
+				color: var(--brand-primary);
+				font-weight: 700;
+				text-decoration: none;
+				width: fit-content;
+			}
+			.meta {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 16px;
+			}
+			.meta .card {
+				padding: 16px;
+				gap: 6px;
+				border-radius: var(--radius-md);
+			}
+			.cover {
+				background: var(--brand-primary-soft);
+				border-radius: var(--radius-xl);
+				padding: 56px 32px;
+				display: flex;
+				gap: 48px;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+			.shot {
+				display: grid;
+				gap: 12px;
+				justify-items: center;
+			}
+			.win {
+				width: min(420px, 80vw);
+				height: 280px;
+				background: var(--bg-surface);
+				border-radius: var(--radius-md);
+				overflow: hidden;
+				box-shadow: 0 12px 32px rgba(42, 27, 46, 0.15);
+				display: flex;
+				flex-direction: column;
+			}
+			.win-bar {
+				background: var(--bg-surface-alt);
+				padding: 10px 14px;
+				display: flex;
+				gap: 6px;
+			}
+			.win-bar i {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: var(--border-default);
+			}
+			.win-body {
+				padding: 24px;
+				display: grid;
+				gap: 12px;
+				align-content: start;
+			}
+			.v1 {
+				filter: grayscale(1);
+				justify-items: center;
+			}
+			.v1 .blob {
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				background: #ccc;
+			}
+			.v1 .bar {
+				height: 12px;
+				border-radius: 6px;
+				background: #ddd;
+			}
+			.v1 .pill {
+				width: 80px;
+				height: 26px;
+				border-radius: 13px;
+				background: #bbb;
+			}
+			.v2 h4 {
+				font: 600 24px/1.1 var(--font-display);
+				margin: 0;
+			}
+			.v2 .mini {
+				display: flex;
+				gap: 8px;
+			}
+			.v2 .mini span {
+				flex: 1;
+				height: 56px;
+				border-radius: 10px;
+			}
+			.arrow {
+				font: 600 48px var(--font-display);
+				color: var(--brand-primary);
+			}
+			article {
+				max-width: 760px;
+				margin: 0 auto;
+				padding: 80px 0 32px;
+				display: grid;
+				gap: 64px;
+			}
+			article section {
+				display: grid;
+				gap: 16px;
+			}
+			article p,
+			article li {
+				font-size: 20px;
+			}
+			article ul {
+				margin: 0;
+				padding-left: 22px;
+				display: grid;
+				gap: 6px;
+			}
+			.options {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 16px;
+			}
+			.options .card {
+				padding: 20px;
+			}
+			.options .chosen {
+				background: var(--brand-primary-soft);
+				border: 2px solid var(--brand-primary);
+			}
+			.badge {
+				background: var(--brand-primary);
+				color: var(--brand-on-primary);
+				padding: 3px 8px;
+				border-radius: 999px;
+				width: fit-content;
+			}
+			.callout {
+				background: var(--brand-accent-soft);
+				border-left: 4px solid var(--brand-accent);
+				border-radius: var(--radius-lg);
+				padding: 24px;
+				display: grid;
+				gap: 8px;
+			}
+			.callout q {
+				font: 700 22px/1.4 var(--font-body);
+				quotes: '“' '”';
+			}
+			.callout .pixel {
+				color: var(--brand-accent);
+			}
+			.metrics {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 16px;
+			}
+			.metrics .card strong {
+				font: 600 48px/1 var(--font-display);
+				color: var(--brand-primary);
+			}
+			.next {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+			.pcard {
+				border-radius: var(--radius-lg);
+				overflow: hidden;
+				border: 1.5px solid var(--border-default);
+				background: var(--bg-surface);
+				text-decoration: none;
+				display: flex;
+				flex-direction: column;
+				transition: transform 0.2s;
+			}
+			.pcard:hover {
+				transform: translateY(-4px) rotate(-0.4deg);
+			}
+			.pcard .pc-cover {
+				height: 180px;
+				display: grid;
+				place-items: center;
+				color: var(--brand-primary);
+			}
+			.pcard .pc-cover .ico {
+				width: 56px;
+				height: 56px;
+				stroke-width: 1.5;
+			}
+			.pcard .pc-body {
+				padding: 24px;
+				display: grid;
+				gap: 12px;
+			}
+			.pcard .link {
+				color: var(--brand-primary);
+				font-weight: 700;
+			}
+			@media (max-width: 860px) {
+				.meta,
+				.options,
+				.metrics,
+				.next {
+					grid-template-columns: 1fr 1fr;
+				}
+				.arrow {
+					transform: rotate(90deg);
+				}
+			}
+			@media (max-width: 560px) {
+				.meta,
+				.options,
+				.metrics,
+				.next {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body data-page="case-study">
+		<div class="progress" aria-hidden="true"></div>
+		<div data-nav></div>
+		<main class="wrap">
+			<header class="cs-head">
+				<a class="back" href="#"
+					><svg class="ico"><use href="#i-arrowLeft" /></svg>All case studies</a
+				>
+				<div class="tags">
+					<span class="tag">Next.js 16</span><span class="tag">Design tokens</span
+					><span class="tag">i18n</span><span class="tag">a11y</span>
+				</div>
+				<h1>How I built this site</h1>
+				<p class="lead" style="max-width: 40ch">
+					My 2023 portfolio was a hero, an About section and a CV that leaked my phone number. This is how I
+					rebuilt it to feel like meeting me, in four languages, with every decision written down.
+				</p>
+				<dl class="meta">
+					<div class="card">
+						<dt class="pixel muted">Role</dt>
+						<dd style="margin: 0"><strong>Design + frontend</strong></dd>
+					</div>
+					<div class="card">
+						<dt class="pixel muted">Timeline</dt>
+						<dd style="margin: 0"><strong>Nov 2026 — ongoing</strong></dd>
+					</div>
+					<div class="card">
+						<dt class="pixel muted">Stack</dt>
+						<dd style="margin: 0"><strong>Next.js 16 · Tailwind 4 · next-intl</strong></dd>
+					</div>
+					<div class="card">
+						<dt class="pixel muted">Languages</dt>
+						<dd style="margin: 0"><strong>EN · PT · IT · DE</strong></dd>
+					</div>
+				</dl>
+			</header>
+
+			<figure class="cover" style="margin: 0" aria-label="Before and after">
+				<div class="shot">
+					<div class="win" aria-hidden="true">
+						<div class="win-bar"><i></i><i></i><i></i></div>
+						<div class="win-body v1">
+							<span class="blob"></span><span class="bar" style="width: 200px"></span
+							><span class="bar" style="width: 140px"></span>
+							<div class="row"><span class="pill"></span><span class="pill"></span></div>
+						</div>
+					</div>
+					<figcaption class="pixel muted">v1 · 2023</figcaption>
+				</div>
+				<span class="arrow" aria-hidden="true">→</span>
+				<div class="shot">
+					<div class="win" aria-hidden="true">
+						<div class="win-bar"><i></i><i></i><i></i></div>
+						<div class="win-body v2">
+							<span class="tag" style="width: fit-content">Oi! · Ciao! · Hi!</span>
+							<h4>I turn tricky problems into friendly interfaces.</h4>
+							<div class="row">
+								<span class="btn btn-primary" style="padding: 6px 14px; font-size: 12px"
+									>View my work</span
+								><span class="btn btn-secondary" style="padding: 4px 12px; font-size: 12px"
+									>Download CV</span
+								>
+							</div>
+							<div class="mini">
+								<span style="background: var(--brand-primary-soft)"></span
+								><span style="background: var(--brand-accent-soft)"></span
+								><span style="background: var(--brand-highlight)"></span>
+							</div>
+						</div>
+					</div>
+					<figcaption class="pixel" style="color: var(--brand-primary)">v2 · 2026</figcaption>
+				</div>
+			</figure>
+
+			<article>
+				<section>
+					<span class="pixel kicker">01 · The problem</span>
+					<h2>It didn’t sound like me</h2>
+					<p>
+						The old site was a template with my name on it. No projects, no story, a dark-mode button that
+						did nothing, and a public CV with my birth date, phone and home address.
+					</p>
+				</section>
+				<section>
+					<span class="pixel kicker">02 · Constraints</span>
+					<h2>Four languages, 30-second readers</h2>
+					<ul>
+						<li>Recruiters skim: role, experience and CV must be visible right away</li>
+						<li>EN, PT, IT and DE, and I speak two of them at A1</li>
+						<li>Free hosting and a free Figma plan (one mode, three pages, a tool-call quota)</li>
+						<li>Personal data never goes in the repo again</li>
+					</ul>
+				</section>
+				<section>
+					<span class="pixel kicker">03 · Options</span>
+					<h2>Three ways forward</h2>
+					<div class="options">
+						<div class="card">
+							<h3>Patch v1</h3>
+							<p class="muted" style="font-size: 16px">Fast, but keeps every structural bug.</p>
+						</div>
+						<div class="card">
+							<h3>Astro</h3>
+							<p class="muted" style="font-size: 16px">
+								Great for content, less overlap with my day job.
+							</p>
+						</div>
+						<div class="card chosen">
+							<span class="badge pixel">Chosen</span>
+							<h3>Next.js 16</h3>
+							<p class="muted" style="font-size: 16px">
+								Same stack as work, RSC and i18n routing. Room to grow.
+							</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<span class="pixel kicker">04 · Decision</span>
+					<h2>Rebuild, and write it all down</h2>
+					<div class="callout">
+						<q
+							>Every choice gets a log entry: context, options, decision, trade-offs. This page is
+							generated from that log.</q
+						><span class="pixel">docs/case-study/decisions.md</span>
+					</div>
+				</section>
+				<section>
+					<span class="pixel kicker">05 · Outcome</span>
+					<h2>What changed</h2>
+					<div class="metrics">
+						<div class="card"><strong>4</strong><span class="muted">languages from day one</span></div>
+						<div class="card"><strong>0</strong><span class="muted">personal data in the repo</span></div>
+						<div class="card">
+							<strong>≥95</strong><span class="muted">Lighthouse, every category (target)</span>
+						</div>
+					</div>
+				</section>
+				<section>
+					<span class="pixel kicker">06 · What I learned</span>
+					<h2>Constraints are design input</h2>
+					<p>
+						Figma’s one-mode limit pushed me to name tokens exactly like the CSS variables they become. When
+						the Figma quota ran out, prototyping in HTML got me closer to the real thing, faster. Writing
+						decisions down made them quicker, not slower, and turned into this page for free.
+					</p>
+				</section>
+			</article>
+
+			<section class="section" aria-labelledby="next-h">
+				<div class="section-head">
+					<span class="pixel kicker">Keep reading</span>
+					<h2 id="next-h" class="vh">More case studies</h2>
+				</div>
+				<div class="next">
+					<a class="pcard" href="#"
+						><div class="pc-cover" style="background: var(--brand-accent-soft)">
+							<svg class="ico"><use href="#i-star" /></svg>
+						</div>
+						<div class="pc-body">
+							<div class="tags">
+								<span class="tag">React</span><span class="tag">Next.js</span
+								><span class="tag">Figma</span>
+							</div>
+							<h3>Sportsbook features at ComeOn</h3>
+							<p class="muted">
+								Boosted Odds and Bet Builder in React and Next.js, shipped to players in three locales.
+							</p>
+							<span class="link">Read case study →</span>
+						</div></a
+					>
+					<a class="pcard" href="#"
+						><div class="pc-cover" style="background: var(--bg-surface-alt)">
+							<svg class="ico"><use href="#i-shield" /></svg>
+						</div>
+						<div class="pc-body">
+							<div class="tags">
+								<span class="tag">C++</span><span class="tag">Security</span
+								><span class="tag">Research</span>
+							</div>
+							<h3>Securing a cardiac wearable</h3>
+							<p class="muted">
+								Benchmarking AES-256, SPECK and CLEFIA for ECG data on IoMT devices. Published at SBSEG
+								2022.
+							</p>
+							<span class="link">Read case study →</span>
+						</div></a
+					>
+				</div>
+			</section>
+		</main>
+		<div data-footer></div>
+		<script type="module" src="assets/app.js"></script>
+		<script>
+			const bar = document.querySelector('.progress');
+			addEventListener(
+				'scroll',
+				() => {
+					const max = document.documentElement.scrollHeight - innerHeight;
+					bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+				},
+				{ passive: true }
+			);
+		</script>
+	</body>
+</html>
