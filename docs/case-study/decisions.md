@@ -43,7 +43,7 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Decision (proposed):** `/cv` page built from the same `content/` data, with print CSS for PDF export. No DOB, phone or street address.
 - **Why:** one source of truth, so the CV can't drift from the site; better privacy.
 
-## 006 — Purge the old CV from git history · 2026-11-17 (approved, not yet run)
+## 006 — Purge the old CV from git history · 2026-11-17 (done, see 029)
 
 - **Context:** the Europass PDF in a public repo exposes date of birth, phone and home address. The live v1 site serves it too.
 - **Options:** delete going forward · rewrite history.
@@ -218,6 +218,14 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Tests caught two things:** axe flagged the snow canvas for sitting outside any landmark (fixed by wrapping it in an `aria-hidden` element), and an e2e test raced ahead of React's hydration (fixed by waiting until each visit is saved, like a real visitor). 40 e2e tests, achievement tests stable across 3 repeated runs.
 - **Not built:** the "Ask Bianca" AI chat. It needs an API key, costs money per message and needs abuse protection, so it's a separate decision.
 
+## 029 — History purge, done · 2026-11-17
+
+- **Removed from all history** (`main` + `rebuild-nextjs`, via `git filter-branch --index-filter`): 3 CV PDFs with personal contact data, 10 old photos, including a 2020 photo with **GPS coordinates** in its EXIF and the ski/market/mug photos with bystanders (children). Current site images kept.
+- **Safety:** full local `git bundle` backup first; the whole site re-verified (12 unit + 40 e2e) before pushing; `--force-with-lease` pinned to the exact old tips.
+- **v1 kept alive:** `main` (the live v1 site) imported the CV and two photos, so a small commit removed them; v1 rebuilt without the PDF and Netlify now returns 404 for it.
+- **Still to do (outside the repo):** GitHub still serves the old commits by SHA until its own cleanup, so ask GitHub Support to purge cached views and PR #1 refs. Delete old Netlify deploys, whose permalinks still contain the PDF.
+- **Lesson:** "it's only in an old commit" is still public. The privacy test now guards `public/images`, but the habit that matters is never committing personal data in the first place.
+
 ---
 
 ## Journal
@@ -242,3 +250,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** mini-me hair changed from tight curls to long waves.
 - **2026-11-17:** case study pages (3 + index); soft-404 found and fixed with static routes. About map: Bari, Italy.
 - **2026-11-17:** delight features: achievements + board, festive snow and string lights, Konami blizzard.
+- **2026-11-17:** history purged (CVs + old photos incl. one with GPS); live v1 no longer serves the CV.
