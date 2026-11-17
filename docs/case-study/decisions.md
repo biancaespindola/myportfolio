@@ -155,6 +155,14 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Axe in every theme:** checking Dark and Festive found that the hero's achievement toast flipped to a light background in Dark mode, and its yellow label failed contrast. The toast now has fixed dark-plum colours in every theme, like an in-game notification. 8 e2e tests: 4 locales + 2 themes + redirect + theme persistence.
 - **Known gap:** nav links prefetch `/work`, `/case-studies`, `/about`, `/cv`, which 404 until those pages are built.
 
+## 021 — Work page · 2026-11-17
+
+- **Built:** `/[lang]/work`: timeline of 5 roles, award card, skills grouped by what I do with them, education, publication. Experience lives in `src/content/experience.ts` (one source for Work now and the CV later), with role/place/bullets per locale.
+- **Dates via `Intl`:** stored as ISO year-month, formatted per locale on the server (`Apr 2024 — now`, `apr 2024 — oggi`, `Apr. 2024 — heute`). No hand-written month names in four languages.
+- **Bug caught on a phone:** long German words ("Softwareentwicklerin", "Wissenschaftliche Mitarbeiterin Softwareentwicklung") pushed the timeline wider than the screen. Fix: `minmax(0,1fr)` grid columns plus CSS `hyphens: auto`. Because the page has `lang="de"`, the browser hyphenates correctly ("Softwareentwick-lung"). An e2e test now fails if anything in `<main>` overflows a 375px screen in German.
+- **Award photo:** left out until a photo is picked.
+- **Tests:** 14 e2e (axe on Home + Work × 4 locales, Dark/Festive, redirect, localized dates, mobile overflow, theme persistence).
+
 ---
 
 ## Journal
@@ -166,3 +174,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** built HTML prototypes for Work, Case study, CV (4 languages, A4 print) and About (achievements board), plus an index page.
 - **2026-11-17:** Phase 0 done: Next.js 16 + TS 7 scaffold, tokens/fonts/themes, 4-locale routing, Biome/Vitest/Playwright+axe, CI. All checks green.
 - **2026-11-17:** Home page in 4 languages and 3 themes; axe clean everywhere after fixing the Dark-mode toast contrast.
+- **2026-11-17:** Work page in 4 languages; German hyphenation fix with a regression test.

@@ -87,5 +87,37 @@
   },
   "footer": {
     "built": "Fatto con Next.js 16, caffè e lo-fi"
+  },
+  "work": {
+    "kicker": "Lavoro",
+    "title": "Dai laboratori IoT agli sportsbook.",
+    "lead": "Sette anni a costruire per persone reali: sistemi in tempo reale in un laboratorio di robotica, prodotti per le telecomunicazioni e oggi funzionalità sportsbook per mercati internazionali.",
+    "now": "oggi",
+    "experience": "Esperienza",
+    "award": {
+      "kicker": "Riconoscimento",
+      "title": "Make It Happen",
+      "body": "ComeOn Summer Awards 2026, per aver trasformato problemi complicati dei clienti in soluzioni rilasciate.",
+      "badge": "Make It Happen · Summer Awards 2026"
+    },
+    "skills": {
+      "title": "Cosa faccio con ciò che so",
+      "groups": [
+        "Costruire interfacce",
+        "Per tutte le persone",
+        "Mantenerle in salute",
+        "Parlare con le macchine"
+      ]
+    },
+    "education": {
+      "kicker": "Formazione",
+      "degree": "Laurea in Ingegneria Informatica",
+      "school": "UFSC · 2015 — 2022"
+    },
+    "publication": {
+      "kicker": "Pubblicato · SBSEG 2022",
+      "title": "Valutazione sperimentale di un livello di sicurezza per un dispositivo cardiaco indossabile (IoMT)",
+      "link": "Leggi il caso studio"
+    }
   }
 }

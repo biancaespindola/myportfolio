@@ -59,7 +59,7 @@ Each phase ends with a deploy preview and a decision-log entry.
 0. ✅ **Setup** (2026-11-17, Netlify still to connect): scaffold Next.js on this branch, tooling, CI, Netlify preview. Move v1 to `legacy/` or tag `v1` so the "before" can be screenshotted for the case study.
 1. **Design**: moodboard → tokens (colour, type, radius, spacing) → light / dark / festive themes → key screens in Figma: https://www.figma.com/design/Qw47mG7PdVWPnss9eQ5VFt (done 2026-11-17: tokens, components, Home desktop in 3 themes + mobile; palette switched to Berry & cream; Christmas mode prototype in `docs/design/christmas-mode.html`; Work, Case study, CV and About designed as HTML prototypes in `docs/design/` (index at `/docs/design/index.html`) after the Figma Starter MCP limit was hit).
 2. **Content**: write `content/profile.ts`, `experience.ts`, `skills.ts`, `projects.ts` in EN; gather 2–3 testimonials; refresh the CV (see open questions).
-3. **Core build** (Home ✅ 2026-11-17): layout, nav, Home, Work, About, Contact, i18n routing, dark mode that actually works.
+3. **Core build** (Home ✅, Work ✅ 2026-11-17): layout, nav, Home, Work, About, Contact, i18n routing, dark mode that actually works.
 4. **CV page**: `/[locale]/cv` + print CSS; check the PDF output in Chrome/Safari.
 5. **Delight**: achievements, Konami easter egg, December theme + snow, bookshelf, optional "Ask Bianca" AI chat + `/llms.txt`.
 6. **Quality**: Lighthouse ≥ 95 on every category, axe clean, keyboard-only pass, OG images per locale, sitemap, `hreflang`.
