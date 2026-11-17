@@ -226,6 +226,13 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Still to do (outside the repo):** GitHub still serves the old commits by SHA until its own cleanup, so ask GitHub Support to purge cached views and PR #1 refs. Delete old Netlify deploys, whose permalinks still contain the PDF.
 - **Lesson:** "it's only in an old commit" is still public. The privacy test now guards `public/images`, but the habit that matters is never committing personal data in the first place.
 
+## 030 — Personal logo, one file for every theme · 2026-11-17
+
+- **What:** my logo kit (script "b" + sparkle, "Bianca" in Baskerville Bold, outlined) replaces the text logo in the header; the favicon is the "b" on a raspberry square (`app/icon.svg`, Next's metadata convention). The default Next favicon is gone.
+- **How it adapts:** the kit's SVG uses `currentColor` plus `--logo-accent`. It's inlined as a React component with those wired to the design tokens (`text-ink`, `--logo-accent: var(--color-primary)`), so Light, Dark and Festive recolour it with no extra files. The kit's separate light/dark SVGs weren't needed.
+- **Safety:** the kit was unpacked to a scratch folder and checked first: no scripts, links or external references in any SVG.
+- **Accessibility:** the logo is `role="img"` with `aria-label="Bianca"`, giving the home link a clear name.
+
 ---
 
 ## Journal
@@ -251,3 +258,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** case study pages (3 + index); soft-404 found and fixed with static routes. About map: Bari, Italy.
 - **2026-11-17:** delight features: achievements + board, festive snow and string lights, Konami blizzard.
 - **2026-11-17:** history purged (CVs + old photos incl. one with GPS); live v1 no longer serves the CV.
+- **2026-11-17:** personal logo + favicon from my logo kit, recoloured by theme tokens.

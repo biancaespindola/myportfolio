@@ -1,9 +1,9 @@
-import { Star } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import type { Locale } from "@/i18n/config";
 import { StringLights } from "./delight/string-lights";
 import { LanguageSwitcher } from "./language-switcher";
+import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
 import { container } from "./ui/styles";
 
@@ -27,12 +27,8 @@ export function SiteHeader({
       <header
         className={`${container} flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-8 print:hidden`}
       >
-        <Link
-          href={`/${locale}`}
-          className="flex items-center gap-2 font-display text-3xl"
-        >
-          <Star aria-hidden className="size-6 text-primary" />
-          bianca
+        <Link href={`/${locale}`} className="shrink-0">
+          <Logo className="h-11 w-auto" />
         </Link>
         <nav
           aria-label={dict.a11y.main}
