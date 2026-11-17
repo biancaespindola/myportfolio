@@ -19,6 +19,16 @@ for (const lang of ["en", "pt", "it", "de"]) {
   });
 }
 
+for (const theme of ["dark", "festive"]) {
+  test(`${theme} theme has no axe violations`, async ({ page }) => {
+    await page.addInitScript((t) => localStorage.setItem("theme", t), theme);
+    await page.goto("/en");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+    const { violations } = await new AxeBuilder({ page }).analyze();
+    expect(violations).toEqual([]);
+  });
+}
+
 test("theme toggle cycles and persists", async ({ page }) => {
   await page.goto("/en");
   const html = page.locator("html");

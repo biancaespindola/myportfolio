@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Fraunces, Nunito, Pixelify_Sans } from "next/font/google";
-import Link from "next/link";
+import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-script";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { locales } from "@/i18n/config";
+import { hasLocale, locales } from "@/i18n/config";
 import "../globals.css";
 import { getDictionary } from "./dictionaries";
 
@@ -41,6 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const [locale, dict] = await Promise.all([lang(), getDictionary()]);
+  if (!hasLocale(locale)) notFound();
 
   return (
     <html
@@ -57,28 +59,9 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         >
           {dict.a11y.skip}
         </a>
-        <header className="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-6 py-8">
-          <Link href={`/${locale}`} className="font-display text-3xl">
-            bianca
-          </Link>
-          <div className="flex items-center gap-3">
-            <nav aria-label={dict.a11y.language} className="flex gap-1">
-              {locales.map((l) => (
-                <Link
-                  key={l}
-                  href={`/${l}`}
-                  hrefLang={l}
-                  aria-current={l === locale ? "true" : undefined}
-                  className="rounded-full px-3 py-2 font-pixel text-sm uppercase aria-[current=true]:bg-primary aria-[current=true]:text-on-primary"
-                >
-                  {l}
-                </Link>
-              ))}
-            </nav>
-            <ThemeToggle labels={dict.theme} ariaLabel={dict.a11y.theme} />
-          </div>
-        </header>
+        <SiteHeader locale={locale} dict={dict} />
         {children}
+        <SiteFooter dict={dict} />
       </body>
     </html>
   );

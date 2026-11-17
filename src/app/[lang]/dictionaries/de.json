@@ -6,15 +6,86 @@
   "a11y": {
     "skip": "Zum Inhalt springen",
     "language": "Sprache",
-    "theme": "Design wechseln"
+    "theme": "Design wechseln",
+    "main": "Hauptmenü"
   },
-  "theme": { "light": "Hell", "dark": "Dunkel", "festive": "Festlich" },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "festive": "Festlich"
+  },
+  "nav": {
+    "work": "Arbeit",
+    "caseStudies": "Fallstudien",
+    "about": "Über mich",
+    "cv": "Lebenslauf"
+  },
   "hero": {
     "greeting": "Oi! · Ciao! · Hallo! · Hi!",
     "title": "Ich verwandle knifflige Probleme in freundliche Oberflächen.",
     "lead": "Frontend-Entwicklerin bei ComeOn in Graz, Österreich. Halb Brasilianerin, halb Italienerin – angetrieben von Kaffee, guten Büchern und viel zu viel Zelda.",
     "ctaWork": "Meine Arbeit ansehen",
     "ctaCv": "Lebenslauf herunterladen",
-    "location": "Graz, Österreich"
+    "location": "Graz, Österreich",
+    "languages": "EN · PT · IT · DE",
+    "open": "Offen für Gespräche",
+    "photoAlt": "Bianca lächelt vor einem See und Bergen",
+    "toastKicker": "Erfolg freigeschaltet",
+    "toast": "Erster Besuch — hallo!",
+    "sticker": "Spielerin 1"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "items": [
+      {
+        "value": "Make It Happen",
+        "caption": "ComeOn Summer Awards 2026"
+      },
+      {
+        "value": "7 Jahre",
+        "caption": "Für das Web gebaut, von IoT-Dashboards bis zu Sportsbooks"
+      },
+      {
+        "value": "Mehrsprachig",
+        "caption": "Ausgeliefert in EN, PT-BR und DE-AT"
+      },
+      {
+        "value": "Menschenfreundin",
+        "caption": "Ehemalige Head of HR bei EJEC, 1:1-Gespräche eingeführt"
+      }
+    ]
+  },
+  "caseStudies": {
+    "kicker": "Fallstudien",
+    "title": "Problem → Entscheidung → Ergebnis",
+    "all": "Alle Fallstudien",
+    "read": "Fallstudie lesen",
+    "items": {
+      "this-site": {
+        "title": "Wie ich diese Website gebaut habe",
+        "summary": "Mein Portfolio neu gebaut, in vier Sprachen, mit Next.js 16, Design-Tokens und einem öffentlichen Entscheidungsprotokoll."
+      },
+      "sportsbook": {
+        "title": "Sportsbook-Features bei ComeOn",
+        "summary": "Boosted Odds und Bet Builder in React und Next.js, für Spieler in drei Sprachen ausgeliefert."
+      },
+      "iomt-security": {
+        "title": "Ein kardiologisches Wearable absichern",
+        "summary": "AES-256, SPECK und CLEFIA im Vergleich für EKG-Daten auf IoMT-Geräten. Veröffentlicht auf der SBSEG 2022."
+      }
+    }
+  },
+  "shelf": {
+    "kicker": "Nach Feierabend",
+    "title": "In meinem Regal und auf meiner Switch"
+  },
+  "contact": {
+    "title": "Lass uns einen Kaffee trinken.",
+    "body": "Offen für Frontend-Rollen und gute Gespräche. Ich beantworte jede Nachricht – auf Wunsch in vier Sprachen.",
+    "sayHi": "Sag hallo",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "built": "Gebaut mit Next.js 16, Kaffee und Lo-Fi"
   }
 }

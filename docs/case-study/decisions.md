@@ -146,6 +146,15 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Theme before paint:** per the Next docs, the theme script is emitted with `useServerInsertedHTML` (no React `<script>` warning); December defaults to Festive unless the visitor chose a theme.
 - **Not done yet:** Netlify site + preview deploys need the account connected; Storybook, Lighthouse CI and OG images come with the real pages.
 
+## 020 — Home page · 2026-11-17
+
+- **Built:** header (nav, language switcher that keeps the current path, theme toggle), hero, highlights, case-study cards, bookshelf & games, coffee CTA, footer, in EN/PT/IT/DE. Copy lives in the dictionaries; structure (icons, covers, tags, shelf) in `src/content/home.ts`.
+- **Photo, not illustration (for now):** the hero uses my real photo inside the dashed ring until the illustrated avatar exists (decision 009 still stands).
+- **"Kind words" left out:** the Figma mock has placeholder quotes. No invented testimonials on a live site; the section comes back with real ones.
+- **Icons:** `lucide-react`, the same set as Figma and the prototypes.
+- **Axe in every theme:** checking Dark and Festive found that the hero's achievement toast flipped to a light background in Dark mode, and its yellow label failed contrast. The toast now has fixed dark-plum colours in every theme, like an in-game notification. 8 e2e tests: 4 locales + 2 themes + redirect + theme persistence.
+- **Known gap:** nav links prefetch `/work`, `/case-studies`, `/about`, `/cv`, which 404 until those pages are built.
+
 ---
 
 ## Journal
@@ -156,3 +165,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** switched to Berry & cream; added Nav/Footer/TimelineItem/AchievementBadge components; hit the Figma MCP limit; built the full Christmas-mode prototype.
 - **2026-11-17:** built HTML prototypes for Work, Case study, CV (4 languages, A4 print) and About (achievements board), plus an index page.
 - **2026-11-17:** Phase 0 done: Next.js 16 + TS 7 scaffold, tokens/fonts/themes, 4-locale routing, Biome/Vitest/Playwright+axe, CI. All checks green.
+- **2026-11-17:** Home page in 4 languages and 3 themes; axe clean everywhere after fixing the Dark-mode toast contrast.
