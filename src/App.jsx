@@ -1,10 +1,7 @@
 import ModeToggler from "./ModeToggler";
-import resume from "./assets/resumeBianca.pdf";
 import { FaBookReader } from "react-icons/fa";
 import { FaDesktop, FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import perfil from "./assets/perfil.jpg";
-import projects from "./assets/projects.jpg";
 function App() {
     return (
         <>
@@ -41,13 +38,6 @@ function App() {
                 {/** Hero */}
                 <div className=" pt-10 h-100 mx-px-10 box-border flex min-w-fit justify-center ">
                     <div className="flex justify-center gap-10 h-1/5">
-                        <div className="p-10 flex justify-center items-center ">
-                            <img
-                                src={perfil}
-                                alt=""
-                                className=" rounded-full h-[300px]"
-                            />
-                        </div>
                         <div className="p-10 flex justify-center items-center flex-col gap-4">
                             <div className=" flex justify-center items-center flex-col gap-2">
                                 {" "}
@@ -62,13 +52,6 @@ function App() {
                                 </p>
                             </div>
                             <div className="flex justify-center gap-2">
-                                <button
-                                    onClick={() => window.open(resume)}
-                                    className="relative border-2 bg-gray-50 border-gray-800 p-3 rounded-full px-6 hover:bg-gray-200 hover:border-gray-950 transition "
-                                >
-                                    Download CV
-                                </button>
-
                                 <button className=" bg-gray-900  text-gray-50 p-3 rounded-full px-6 hover:bg-black transition">
                                     Contact info
                                 </button>
@@ -102,9 +85,6 @@ function App() {
                     <p className="text-gray-500 text-lg">Get To Know More</p>
                     <h2 className="text-gray-900 text-4xl font-semibold">About Me</h2>
                     <div className="container flex justify-center gap-10 mt-10">
-                        <div className="photo max-w-[300px]">
-                            <img className="rounded-[25%]" src={projects} alt="" />
-                        </div>
                         <div className=" flex flex-col gap-10">
                             <div className="grid grid-cols-2 justify-center items-center gap-2">
                                 <div
