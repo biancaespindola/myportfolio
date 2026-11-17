@@ -106,13 +106,13 @@ Source material for the "How I built this site" case study. One entry per decisi
 
 - **Context:** a palette swap isn't enough for someone who loves Christmas.
 - **Decision:** a full December mode, not a tint:
-  - twinkling string lights above the nav; Santa hat on the logo star
-  - night-sky hero with snowfall (canvas), snow ground, wreath around the avatar
-  - multilingual greeting: "Boas festas · Buon Natale · Frohe Weihnachten"
-  - candy-cane secondary buttons, knitted pixel-sweater dividers (pixel = gamer nod)
-  - highlights as wrapped gifts; bookshelf "under my Christmas tree" with snow caps
-  - **advent calendar**: 24 doors, one per day, each a fact or site easter egg; opening doors feeds achievements
-  - "Let's grab a hot cocoa" CTA; Konami code → blizzard
+    - twinkling string lights above the nav; Santa hat on the logo star
+    - night-sky hero with snowfall (canvas), snow ground, wreath around the avatar
+    - multilingual greeting: "Boas festas · Buon Natale · Frohe Weihnachten"
+    - candy-cane secondary buttons, knitted pixel-sweater dividers (pixel = gamer nod)
+    - highlights as wrapped gifts; bookshelf "under my Christmas tree" with snow caps
+    - **advent calendar**: 24 doors, one per day, each a fact or site easter egg; opening doors feeds achievements
+    - "Let's grab a hot cocoa" CTA; Konami code → blizzard
 - **Guardrails:** auto-on in December only, "Let it snow" toggle, `prefers-reduced-motion` turns off snow/twinkle/door animation, doors are real buttons with labels.
 - **Prototype:** `docs/design/christmas-mode.html` (open via the dev server at `/docs/design/christmas-mode.html`).
 
@@ -142,7 +142,7 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Scaffold:** `create-next-app` 16.4 (Turbopack, Cache Components, React Compiler, Biome, Tailwind 4). v1 files removed on this branch (still on `main`); photos moved to `public/images`.
 - **TypeScript 7:** the Go-native compiler works with Next 16 here; build type-check went from ~1.2 s to ~0.3 s.
 - **Gates:** Biome, `tsc`, Vitest (locale negotiation), Playwright with axe on every locale, theme persistence test; all in GitHub Actions (`.github/workflows/ci.yml`).
-- **First catch:** axe flagged the theme button. Its `aria-label` ("Change theme") didn't contain the visible text ("Light") — WCAG 2.5.3 *label in name*. Fixed with a visually hidden prefix, so the name is "Change theme: Light".
+- **First catch:** axe flagged the theme button. Its `aria-label` ("Change theme") didn't contain the visible text ("Light") — WCAG 2.5.3 _label in name_. Fixed with a visually hidden prefix, so the name is "Change theme: Light".
 - **Theme before paint:** per the Next docs, the theme script is emitted with `useServerInsertedHTML` (no React `<script>` warning); December defaults to Festive unless the visitor chose a theme.
 - **Not done yet:** Netlify site + preview deploys need the account connected; Storybook, Lighthouse CI and OG images come with the real pages.
 
@@ -233,6 +233,12 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Safety:** the kit was unpacked to a scratch folder and checked first: no scripts, links or external references in any SVG.
 - **Accessibility:** the logo is `role="img"` with `aria-label="Bianca"`, giving the home link a clear name.
 
+## 031 — Go live on Netlify · 2026-11-17
+
+- **Cleanup finished:** the last Netlify deploy holding the purged CV (`main@452dbf7`, 2024) is deleted, and a GitHub Support ticket asks them to drop the cached old SHAs and PR #1 refs.
+- **Host:** stayed on Netlify. It keeps the `biancaespindola.netlify.app` URL (decision 007), it's free, and `@netlify/plugin-nextjs` already ran the deploy previews. Vercel would fit Next 16 best but changes the URL. GitHub Pages can't work: the locale redirect in `proxy.ts` needs a server.
+- **How:** merged PR #1 into `main` (the only conflict was v1's `src/App.jsx`, deleted). The merged tree is byte-identical to `rebuild-nextjs`, and the full gate (lint, types, unit, build, 40 e2e) passed before the push. Netlify auto-published it in about a minute; every locale and page returns 200, and the old CV URL still returns 404.
+
 ---
 
 ## Journal
@@ -259,3 +265,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** delight features: achievements + board, festive snow and string lights, Konami blizzard.
 - **2026-11-17:** history purged (CVs + old photos incl. one with GPS); live v1 no longer serves the CV.
 - **2026-11-17:** personal logo + favicon from my logo kit, recoloured by theme tokens.
+- **2026-11-17:** old Netlify deploy deleted, GitHub Support ticket sent; the new site is live on biancaespindola.netlify.app.
