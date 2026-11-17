@@ -154,5 +154,78 @@
     ],
     "award": "Make It Happen — ComeOn Summer Awards 2026",
     "note": "Stessi contenuti del resto del sito. Nessun numero di telefono, data di nascita o indirizzo."
+  },
+  "about": {
+    "kicker": "Chi sono",
+    "title": "Ciao, sono Bianca.",
+    "p1": "Metà brasiliana e metà italiana, mi sono trasferita in Europa per seguire un sogno, e oggi sono felice di chiamare quel sogno la mia vita di tutti i giorni. Amo esplorare posti nuovi, perdermi in un buon libro e condividere storie durante una bella chiacchierata.",
+    "p2": "Il Natale occupa un posto speciale nel mio cuore, per il suo calore, le sue tradizioni e la gioia di riunire le persone. Curiosa per natura, cerco sempre qualcosa di nuovo da imparare e legami significativi lungo il cammino.",
+    "photoAlt": "Bianca sorride in una grande biblioteca barocca piena di libri antichi",
+    "stickers": ["Metà BR · metà IT", "Caffè liv. 99"],
+    "map": {
+      "kicker": "La mia mappa",
+      "title": "Brasile → Italia → Austria",
+      "stops": [
+        {
+          "place": "Florianópolis, Brasile",
+          "years": "Fino al 2022",
+          "what": "UFSC · LARM · EJEC · Khomp"
+        },
+        {
+          "place": "Italia",
+          "years": "2022 — 2024",
+          "what": "Khomp, da remoto"
+        },
+        {
+          "place": "Graz, Austria",
+          "years": "2024 — oggi",
+          "what": "ComeOn"
+        }
+      ]
+    },
+    "loves": {
+      "kicker": "Curiosità",
+      "title": "Le cose che mi rendono me",
+      "items": [
+        {
+          "title": "Amo i libri",
+          "text": "Sempre persa in un buon libro, con una bella tazza accanto."
+        },
+        {
+          "title": "Gamer, fan della palestra e sciatrice in erba",
+          "text": "Con tanto entusiasmo e un po’ meno tecnica."
+        },
+        {
+          "title": "Persa nei musei",
+          "text": "Adoro perdermi nei musei e collezionare piccoli pezzi di storia lungo la strada."
+        },
+        {
+          "title": "Curiosità reali",
+          "text": "Ricordo storie stranamente precise sulla famiglia reale brasiliana. Ma non chiedetemi cosa c’era sulla lista della spesa."
+        },
+        {
+          "title": "A caccia di mercatini di Natale",
+          "text": "Il Natale è la mia stagione felice: visito ogni mercatino di Natale che trovo."
+        },
+        {
+          "title": "Colleziono tazze natalizie",
+          "text": "La mia collezione ha sempre posto per un’altra."
+        }
+      ]
+    },
+    "languages": {
+      "kicker": "Quasi poliglotta",
+      "title": "Le lingue in cui vivo",
+      "levels": [
+        "Madrelingua",
+        "C1",
+        "A1 · in apprendimento",
+        "A1 · in apprendimento"
+      ]
+    },
+    "christmasAlt": "Bianca a un mercatino di Natale con le corna da renna",
+    "bookAlt": "Tavola della colazione con un e-reader che mostra “Quarto de despejo” di Carolina Maria de Jesus, caffè e una tazza natalizia",
+    "skiAlt": "Bianca sorride su una pista da sci soleggiata in montagna",
+    "mugAlt": "Bianca con un berretto rosso e una tazza del mercatino di Natale 2025"
   }
 }

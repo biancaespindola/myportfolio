@@ -154,5 +154,73 @@
     ],
     "award": "Make It Happen — ComeOn Summer Awards 2026",
     "note": "Mesmo conteúdo do resto do site. Sem telefone, data de nascimento ou endereço."
+  },
+  "about": {
+    "kicker": "Sobre mim",
+    "title": "Oi, eu sou a Bianca.",
+    "p1": "Meio brasileira, meio italiana, vim para a Europa seguir um sonho, e hoje fico feliz em chamar esse sonho de rotina. Adoro explorar lugares novos, me perder num bom livro e trocar histórias numa boa conversa.",
+    "p2": "O Natal tem um lugar especial no meu coração, pelo aconchego, pelas tradições e pela alegria de reunir as pessoas. Curiosa por natureza, estou sempre buscando algo novo para aprender e conexões significativas pelo caminho.",
+    "photoAlt": "Bianca sorrindo numa grande biblioteca barroca cheia de livros antigos",
+    "stickers": ["Meio BR · meio IT", "Café nível 99"],
+    "map": {
+      "kicker": "Meu mapa",
+      "title": "Brasil → Itália → Áustria",
+      "stops": [
+        {
+          "place": "Florianópolis, Brasil",
+          "years": "Até 2022",
+          "what": "UFSC · LARM · EJEC · Khomp"
+        },
+        {
+          "place": "Itália",
+          "years": "2022 — 2024",
+          "what": "Khomp, remoto"
+        },
+        {
+          "place": "Graz, Áustria",
+          "years": "2024 — hoje",
+          "what": "ComeOn"
+        }
+      ]
+    },
+    "loves": {
+      "kicker": "Curiosidades",
+      "title": "O que me faz ser eu",
+      "items": [
+        {
+          "title": "Amo livros",
+          "text": "Sempre perdida num bom livro, com uma boa xícara do lado."
+        },
+        {
+          "title": "Gamer, fã de academia e esquiadora em formação",
+          "text": "Com muito entusiasmo e um pouco menos de técnica."
+        },
+        {
+          "title": "Exploradora de museus",
+          "text": "Adoro me perder em museus e colecionar pedacinhos da história pelo caminho."
+        },
+        {
+          "title": "Curiosidades reais",
+          "text": "Lembro de histórias estranhamente específicas sobre a família real brasileira. Só não me pergunte o que estava na minha lista de compras."
+        },
+        {
+          "title": "Caçadora de mercados de Natal",
+          "text": "O Natal é a minha estação feliz, e eu visito todos os mercados de Natal que encontro."
+        },
+        {
+          "title": "Coleciono canecas de Natal",
+          "text": "Minha coleção sempre tem espaço para mais uma."
+        }
+      ]
+    },
+    "languages": {
+      "kicker": "Quase poliglota",
+      "title": "Idiomas em que eu vivo",
+      "levels": ["Nativo", "C1", "A1 · aprendendo", "A1 · aprendendo"]
+    },
+    "christmasAlt": "Bianca num mercado de Natal com tiara de rena",
+    "bookAlt": "Mesa de café da manhã com um leitor digital mostrando “Quarto de despejo”, de Carolina Maria de Jesus, café e uma caneca de Natal",
+    "skiAlt": "Bianca sorrindo numa pista de esqui ensolarada nas montanhas",
+    "mugAlt": "Bianca de gorro vermelho segurando uma caneca de mercado de Natal de 2025"
   }
 }

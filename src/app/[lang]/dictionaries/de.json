@@ -154,5 +154,73 @@
     ],
     "award": "Make It Happen — ComeOn Summer Awards 2026",
     "note": "Gleicher Inhalt wie auf der übrigen Website. Keine Telefonnummer, kein Geburtsdatum, keine Adresse."
+  },
+  "about": {
+    "kicker": "Über mich",
+    "title": "Hallo, ich bin Bianca.",
+    "p1": "Halb Brasilianerin, halb Italienerin: Ich bin nach Europa gezogen, um einem Traum zu folgen, und heute darf ich diesen Traum meinen Alltag nennen. Ich liebe es, neue Orte zu entdecken, mich in einem guten Buch zu verlieren und bei einem schönen Gespräch Geschichten zu teilen.",
+    "p2": "Weihnachten hat einen besonderen Platz in meinem Herzen, wegen der Wärme, der Traditionen und der Freude, Menschen zusammenzubringen. Von Natur aus neugierig, suche ich immer nach etwas Neuem zum Lernen und nach echten Verbindungen auf dem Weg.",
+    "photoAlt": "Bianca lächelt in einer prunkvollen Barockbibliothek voller alter Bücher",
+    "stickers": ["Halb BR · halb IT", "Kaffee Lvl 99"],
+    "map": {
+      "kicker": "Meine Karte",
+      "title": "Brasilien → Italien → Österreich",
+      "stops": [
+        {
+          "place": "Florianópolis, Brasilien",
+          "years": "Bis 2022",
+          "what": "UFSC · LARM · EJEC · Khomp"
+        },
+        {
+          "place": "Italien",
+          "years": "2022 — 2024",
+          "what": "Khomp, remote"
+        },
+        {
+          "place": "Graz, Österreich",
+          "years": "2024 — heute",
+          "what": "ComeOn"
+        }
+      ]
+    },
+    "loves": {
+      "kicker": "Fun Facts",
+      "title": "Was mich ausmacht",
+      "items": [
+        {
+          "title": "Bücherwurm",
+          "text": "Immer in ein gutes Buch vertieft, mit einer guten Tasse daneben."
+        },
+        {
+          "title": "Gamerin, Gym-Fan, Ski-Anfängerin",
+          "text": "Mit viel Begeisterung und etwas weniger Technik."
+        },
+        {
+          "title": "Museumsliebhaberin",
+          "text": "Ich verliere mich gern in Museen und sammle unterwegs kleine Stücke Geschichte."
+        },
+        {
+          "title": "Royale Anekdoten",
+          "text": "Ich kenne erstaunlich genaue Geschichten über die brasilianische Kaiserfamilie. Fragt mich aber bitte nicht, was auf meiner Einkaufsliste stand."
+        },
+        {
+          "title": "Weihnachtsmarkt-Jägerin",
+          "text": "Weihnachten ist meine Lieblingszeit, und ich besuche jeden Weihnachtsmarkt, den ich finden kann."
+        },
+        {
+          "title": "Ich sammle Weihnachtstassen",
+          "text": "In meiner Sammlung ist immer Platz für eine mehr."
+        }
+      ]
+    },
+    "languages": {
+      "kicker": "Fast polyglott",
+      "title": "Sprachen, in denen ich lebe",
+      "levels": ["Muttersprache", "C1", "A1 · lerne ich", "A1 · lerne ich"]
+    },
+    "christmasAlt": "Bianca auf einem Weihnachtsmarkt mit Rentiergeweih",
+    "bookAlt": "Frühstückstisch mit einem E-Reader, der „Quarto de despejo“ von Carolina Maria de Jesus zeigt, Kaffee und einer Weihnachtstasse",
+    "skiAlt": "Bianca lächelt auf einer sonnigen Skipiste in den Bergen",
+    "mugAlt": "Bianca mit roter Mütze und einer Weihnachtsmarkttasse von 2025"
   }
 }

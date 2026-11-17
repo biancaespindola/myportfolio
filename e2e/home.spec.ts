@@ -11,7 +11,7 @@ test("redirects / to the visitor's language", async ({ browser }) => {
 });
 
 for (const lang of ["en", "pt", "it", "de"]) {
-  for (const path of ["", "/work", "/cv"]) {
+  for (const path of ["", "/work", "/cv", "/about"]) {
     test(`/${lang}${path} has no axe violations`, async ({ page }) => {
       await page.goto(`/${lang}${path}`);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -48,7 +48,7 @@ test("work page lists experience with localized dates", async ({ page }) => {
 
 test("long German words don't overflow on a phone", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  for (const path of ["/de", "/de/work"]) {
+  for (const path of ["/de", "/de/work", "/de/about"]) {
     await page.goto(path);
     const overflowing = await page.evaluate(() => {
       const clippedByAncestor = (el: Element) => {

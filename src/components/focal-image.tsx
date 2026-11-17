@@ -15,6 +15,7 @@ export function FocalImage({
   sizes,
   priority,
   className,
+  frame = 1,
 }: {
   src: string;
   alt: string;
@@ -25,14 +26,18 @@ export function FocalImage({
   sizes: string;
   priority?: boolean;
   className?: string;
+  /** Parent height ÷ width (1 = square, 1.25 = 4:5 portrait). */
+  frame?: number;
 }) {
   const ratio = height / width;
-  // Square parent: the image is `zoom` parent-widths wide, so the focal point
-  // sits at (fx·zoom, fy·zoom·ratio) parent-widths; offset it to (0.5, 0.5).
+  // In parent-widths the image is `zoom` wide and `zoom·ratio` tall, so the
+  // focal point sits at (fx·zoom, fy·zoom·ratio); move it to the parent's
+  // centre (0.5, frame/2). `top` is a % of the parent's height, hence ÷ frame.
   // Clamped so the image always covers the parent, even for edge focal points.
   const clamp = (v: number, min: number) => Math.min(0, Math.max(min, v));
+  const imageHeight = (zoom * ratio) / frame;
   const left = clamp(0.5 - fx * zoom, 1 - zoom) * 100;
-  const top = clamp(0.5 - fy * zoom * ratio, 1 - zoom * ratio) * 100;
+  const top = clamp(0.5 - (fy * zoom * ratio) / frame, 1 - imageHeight) * 100;
 
   return (
     <span

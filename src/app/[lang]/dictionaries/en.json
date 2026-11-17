@@ -154,5 +154,73 @@
     ],
     "award": "Make It Happen — ComeOn Summer Awards 2026",
     "note": "Same content as the rest of the site. No phone number, birth date or home address."
+  },
+  "about": {
+    "kicker": "About me",
+    "title": "Hi, I’m Bianca.",
+    "p1": "Half Brazilian, half Italian, I moved to Europe to follow a dream, and I’m happy to call that dream my everyday life. I love exploring new places, getting lost in a good book, and sharing stories over a great conversation.",
+    "p2": "Christmas holds a special place in my heart for its warmth, traditions, and the joy of bringing people together. Curious by nature, I’m always looking for something new to learn and meaningful connections along the way.",
+    "photoAlt": "Bianca smiling in a grand baroque library full of old books",
+    "stickers": ["Half BR · half IT", "Coffee lvl 99"],
+    "map": {
+      "kicker": "My map",
+      "title": "Brazil → Italy → Austria",
+      "stops": [
+        {
+          "place": "Florianópolis, Brazil",
+          "years": "Until 2022",
+          "what": "UFSC · LARM · EJEC · Khomp"
+        },
+        {
+          "place": "Italy",
+          "years": "2022 — 2024",
+          "what": "Khomp, remote"
+        },
+        {
+          "place": "Graz, Austria",
+          "years": "2024 — now",
+          "what": "ComeOn"
+        }
+      ]
+    },
+    "loves": {
+      "kicker": "Fun facts",
+      "title": "Things that make me, me",
+      "items": [
+        {
+          "title": "Book lover",
+          "text": "Always lost in a good book, with a good cup next to it."
+        },
+        {
+          "title": "Gamer, gym lover, skier in the making",
+          "text": "With plenty of enthusiasm and a little less technique."
+        },
+        {
+          "title": "Museum wanderer",
+          "text": "I love getting lost in museums and collecting little pieces of history along the way."
+        },
+        {
+          "title": "Royal trivia",
+          "text": "I remember oddly specific stories about the Brazilian royal family. Please don’t ask me what was on my grocery list."
+        },
+        {
+          "title": "Christmas market hunter",
+          "text": "Christmas is my happy season, and I’ll visit every Christmas market I can find."
+        },
+        {
+          "title": "Festive mug collector",
+          "text": "My collection somehow always has room for one more."
+        }
+      ]
+    },
+    "languages": {
+      "kicker": "Polyglot-ish",
+      "title": "Languages I live in",
+      "levels": ["Native", "C1", "A1 · learning", "A1 · learning"]
+    },
+    "christmasAlt": "Bianca at a Christmas market wearing reindeer antlers",
+    "bookAlt": "Breakfast table with an e-reader showing “Quarto de despejo” by Carolina Maria de Jesus, coffee and a Christmas mug",
+    "skiAlt": "Bianca smiling on a sunny ski slope in the mountains",
+    "mugAlt": "Bianca in a red beanie holding a 2025 Christmas market mug"
   }
 }

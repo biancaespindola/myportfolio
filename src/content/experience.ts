@@ -158,7 +158,7 @@ export const experience: Job[] = [
     text: {
       en: {
         role: "Frontend Developer · Junior Head of HR",
-        place: "Junior Enterprise of Computer Engineering · Araranguá, Brazil",
+        place: "Junior Enterprise of Computer Engineering · Brazil",
         bullets: [
           "Turned client requirements into SPA prototypes (HTML, CSS, JS, Bootstrap)",
           "Led HR: ran hiring and introduced 1:1s between leads and members",
@@ -166,7 +166,7 @@ export const experience: Job[] = [
       },
       pt: {
         role: "Desenvolvedora Frontend · Head Júnior de RH",
-        place: "Empresa Júnior de Engenharia de Computação · Araranguá, Brasil",
+        place: "Empresa Júnior de Engenharia de Computação · Brasil",
         bullets: [
           "Transformei requisitos de clientes em protótipos de SPA (HTML, CSS, JS, Bootstrap)",
           "Liderei o RH: conduzi processos seletivos e implantei 1:1s entre líderes e membros",
@@ -174,8 +174,7 @@ export const experience: Job[] = [
       },
       it: {
         role: "Sviluppatrice Frontend · Junior Head of HR",
-        place:
-          "Junior Enterprise di Ingegneria Informatica · Araranguá, Brasile",
+        place: "Junior Enterprise di Ingegneria Informatica · Brasile",
         bullets: [
           "Ho trasformato i requisiti dei clienti in prototipi SPA (HTML, CSS, JS, Bootstrap)",
           "Ho guidato le risorse umane: selezioni e 1:1 tra responsabili e membri",
@@ -183,8 +182,7 @@ export const experience: Job[] = [
       },
       de: {
         role: "Frontend-Entwicklerin · Junior Head of HR",
-        place:
-          "Junior Enterprise für Computer Engineering · Araranguá, Brasilien",
+        place: "Junior Enterprise für Computer Engineering · Brasilien",
         bullets: [
           "Kundenanforderungen in SPA-Prototypen umgesetzt (HTML, CSS, JS, Bootstrap)",
           "HR geleitet: Recruiting verantwortet und 1:1-Gespräche zwischen Leads und Mitgliedern eingeführt",
@@ -201,31 +199,28 @@ export const experience: Job[] = [
     text: {
       en: {
         role: "Software Development Researcher",
-        place: "Mobile Automation & Robotics Lab, UFSC · Araranguá, Brazil",
+        place: "Mobile Automation & Robotics Lab, UFSC · Brazil",
         bullets: [
           "Real-time embedded communication with C++, Python, ESP32, MQTT and cryptography, visualised on the web",
         ],
       },
       pt: {
         role: "Pesquisadora em Desenvolvimento de Software",
-        place:
-          "Laboratório de Automação e Robótica Móvel, UFSC · Araranguá, Brasil",
+        place: "Laboratório de Automação e Robótica Móvel, UFSC · Brasil",
         bullets: [
           "Comunicação embarcada em tempo real com C++, Python, ESP32, MQTT e criptografia, visualizada na web",
         ],
       },
       it: {
         role: "Ricercatrice in sviluppo software",
-        place:
-          "Laboratorio di automazione e robotica mobile, UFSC · Araranguá, Brasile",
+        place: "Laboratorio di automazione e robotica mobile, UFSC · Brasile",
         bullets: [
           "Comunicazione embedded in tempo reale con C++, Python, ESP32, MQTT e crittografia, visualizzata sul web",
         ],
       },
       de: {
         role: "Wissenschaftliche Mitarbeiterin Softwareentwicklung",
-        place:
-          "Labor für mobile Automatisierung und Robotik, UFSC · Araranguá, Brasilien",
+        place: "Labor für mobile Automatisierung und Robotik, UFSC · Brasilien",
         bullets: [
           "Echtzeit-Embedded-Kommunikation mit C++, Python, ESP32, MQTT und Kryptografie, im Web visualisiert",
         ],

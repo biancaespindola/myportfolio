@@ -185,6 +185,15 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **How:** a `festive:` Tailwind variant (`@custom-variant festive (&:where([data-theme="festive"], …))`). Both images are in the HTML and CSS shows one. The theme is set before first paint, so there's no flash and no extra JavaScript, and the hidden lazy image isn't downloaded.
 - **`FocalImage` hardened:** the offset is clamped so a focal point near an edge can never leave an empty gap in the circle.
 
+## 025 — About page in my own words · 2026-11-17
+
+- **Built:** `/[lang]/about` with my own story, a map (Florianópolis → Italy 2022 → Graz 2024), six fun-fact cards and language bars, in EN/PT/IT/DE. The text is mine; I asked for the translations.
+- **Photos:** new library portrait (hero) plus ski, Christmas-market and Christmas-mug photos on fun-fact cards. The old 2023 photos are gone (see the cleanup entry).
+- **Other people's privacy:** three photos had bystanders: ski-school children, market visitors, an ad poster with someone's face. `FocalImage` crops keep them out of frame (or too small and distant to recognise). That's GDPR-friendly, and children never appear.
+- **`FocalImage` grew a `frame` prop** so the same focal-point math works for 4:5 portraits as well as squares and circles.
+- **Places trimmed** at my request: Araranguá removed everywhere (map, Work, CV); only the country is listed for EJEC and LARM.
+- **Pending:** the book-lover breakfast photo (it arrived without a file).
+
 ---
 
 ## Journal
@@ -203,3 +212,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** Christmas avatar in Festive mode.
 - **2026-11-17:** award photo added to the Make It Happen card (4:5, anchored at the bottom so the trophy text stays in frame). The Work sidebar is no longer sticky: with the photo it's taller than the viewport, and a sticky element taller than the screen hides its own bottom.
 - **2026-11-17:** removed the old 2023 iPhone photos from the site and added a Vitest guard that parses each image's EXIF and fails on GPS, camera make or model (verified against an old iPhone photo). They still exist in git history; the planned history purge (decision 006) should drop them too.
+- **2026-11-17:** About page with my story, fun facts and four new photos, cropped to keep other people out.
