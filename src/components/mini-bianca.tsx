@@ -20,55 +20,19 @@ const sweater: Record<Outfit, string> = {
   mug: "#2a1b2e",
 };
 
-type Curl = [cx: number, cy: number, r: number];
-
-// A halo of curls behind the face…
-const backCurls: Curl[] = [
-  [56, 92, 16],
-  [50, 116, 15],
-  [48, 140, 15],
-  [52, 164, 14],
-  [66, 182, 13],
-  [144, 92, 16],
-  [150, 116, 15],
-  [152, 140, 15],
-  [148, 164, 14],
-  [134, 182, 13],
-  [70, 62, 18],
-  [100, 50, 20],
-  [130, 62, 18],
-];
-// …ringlets framing the face…
-const sideCurls: Curl[] = [
-  [63, 102, 8],
-  [60, 120, 8],
-  [62, 138, 8],
-  [137, 102, 8],
-  [140, 120, 8],
-  [138, 138, 8],
-];
-// …and a curly fringe with a middle part.
-const fringeCurls: Curl[] = [
-  [70, 76, 11],
-  [82, 66, 11],
-  [94, 62, 10],
-  [106, 62, 10],
-  [118, 66, 11],
-  [130, 76, 11],
-];
-
-const curl = ([cx, cy, r]: Curl) => (
-  <g key={`${cx}-${cy}`}>
-    <circle cx={cx} cy={cy} r={r} fill={C.hair} />
-    <path
-      d={`M${cx - r * 0.45} ${cy} a${r * 0.45} ${r * 0.45} 0 1 1 ${r * 0.45} ${r * 0.45}`}
-      stroke={C.hairShine}
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      fill="none"
-    />
-  </g>
-);
+// Long wavy hair: an S-curved silhouette behind the face…
+const HAIR_BACK =
+  "M100 38 Q150 40 148 92 Q160 112 150 132 Q140 150 154 170 Q160 186 140 188 Q128 194 116 186 L84 186 Q72 194 60 188 Q40 186 46 170 Q60 150 50 132 Q40 112 52 92 Q50 40 100 38 Z";
+// …wavy strands falling past the face…
+const STRAND_LEFT =
+  "M66 86 Q52 108 62 126 Q72 144 60 162 Q54 176 66 182 L74 176 Q66 168 72 158 Q84 140 72 124 Q64 108 74 92 Z";
+const STRAND_RIGHT =
+  "M134 86 Q148 108 138 126 Q128 144 140 162 Q146 176 134 182 L126 176 Q134 168 128 158 Q116 140 128 124 Q136 108 126 92 Z";
+// …a soft fringe with a middle part, and highlights that follow the waves.
+const FRINGE =
+  "M62 96 Q58 54 100 52 Q142 54 138 96 Q132 70 104 62 L100 68 L96 62 Q68 70 62 96 Z";
+const SHINE =
+  "M58 108 Q50 124 58 138 M142 108 Q150 124 142 138 M78 60 Q88 56 96 61";
 
 /** Cute illustrated "mini Bianca"; one character, a different outfit per fun fact. */
 export function MiniBianca({ outfit }: { outfit: Outfit }) {
@@ -81,12 +45,8 @@ export function MiniBianca({ outfit }: { outfit: Outfit }) {
     >
       <circle cx="100" cy="104" r="86" fill="var(--color-primary-soft)" />
 
-      {/* Curly hair, behind everything */}
-      <path
-        d="M54 96 Q48 42 100 38 Q152 42 146 96 Q156 140 148 180 L52 180 Q44 140 54 96 Z"
-        fill={C.hair}
-      />
-      {backCurls.map(curl)}
+      {/* Wavy hair, behind everything */}
+      <path d={HAIR_BACK} fill={C.hair} />
 
       {/* Shoulders */}
       <path
@@ -140,8 +100,16 @@ export function MiniBianca({ outfit }: { outfit: Outfit }) {
       <circle cx="63.5" cy="112" r="2.4" fill={C.gold} />
       <circle cx="136.5" cy="112" r="2.4" fill={C.gold} />
 
-      {sideCurls.map(curl)}
-      {outfit !== "mug" && fringeCurls.map(curl)}
+      <path d={STRAND_LEFT} fill={C.hair} />
+      <path d={STRAND_RIGHT} fill={C.hair} />
+      {outfit !== "mug" && <path d={FRINGE} fill={C.hair} />}
+      <path
+        d={SHINE}
+        stroke={C.hairShine}
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        fill="none"
+      />
 
       {outfit === "royal" && (
         <g>
