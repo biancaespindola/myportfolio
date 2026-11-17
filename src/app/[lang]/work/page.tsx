@@ -1,5 +1,6 @@
 import { Shield, Trophy } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
@@ -95,12 +96,19 @@ export default async function WorkPage() {
           </ol>
         </section>
 
-        <aside className="grid gap-6 lg:sticky lg:top-6">
+        <aside className="grid gap-6">
           <section
             aria-labelledby="award-h"
             className={`${card} grid gap-3 border-2 border-highlight p-6`}
           >
-            <Trophy aria-hidden className="size-8 text-primary" />
+            <Image
+              src="/images/award.jpg"
+              alt={work.award.photoAlt}
+              width={1500}
+              height={2000}
+              sizes="(min-width: 1024px) 336px, 90vw"
+              className="aspect-[4/5] w-full rounded-2xl object-cover object-bottom"
+            />
             <p className={`${kicker} text-accent`}>{work.award.kicker}</p>
             <h2 id="award-h" className="font-display text-[32px] leading-tight">
               {work.award.title}

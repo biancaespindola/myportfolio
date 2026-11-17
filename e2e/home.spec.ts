@@ -41,6 +41,9 @@ test("work page lists experience with localized dates", async ({ page }) => {
   const experience = page.getByRole("region", { name: "Berufserfahrung" });
   await expect(experience.getByRole("heading", { level: 3 })).toHaveCount(5);
   await expect(page.getByText("Apr. 2024 — heute")).toBeVisible();
+  await expect(
+    page.getByRole("img", { name: /Make-It-Happen-Trophäe/ }),
+  ).toBeVisible();
 });
 
 test("long German words don't overflow on a phone", async ({ page }) => {

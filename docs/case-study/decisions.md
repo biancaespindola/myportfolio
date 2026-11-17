@@ -201,3 +201,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** new hero photo, framed on the face with a focal-point component.
 - **2026-11-17:** pushed 042d92d with a failing e2e test (my script grepped the output instead of checking the exit code). The overflow test was flagging the zoomed hero photo, which its circle clips. Fixed the test to ignore ancestor-clipped content and confirmed it still catches the German overflow bug.
 - **2026-11-17:** Christmas avatar in Festive mode.
+- **2026-11-17:** award photo added to the Make It Happen card (4:5, anchored at the bottom so the trophy text stays in frame). The Work sidebar is no longer sticky: with the photo it's taller than the viewport, and a sticky element taller than the screen hides its own bottom.
