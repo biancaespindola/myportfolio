@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant festive (&:where(
+    [data-theme="festive"],
+    [data-theme="festive"] *
+  ));
+
 /* Token names match the Figma variables (Theme · Light / Dark / Festive). */
 :root,
 [data-theme="light"] {

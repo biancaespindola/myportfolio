@@ -14,6 +14,7 @@ export function FocalImage({
   zoom,
   sizes,
   priority,
+  className,
 }: {
   src: string;
   alt: string;
@@ -23,16 +24,19 @@ export function FocalImage({
   zoom: number;
   sizes: string;
   priority?: boolean;
+  className?: string;
 }) {
   const ratio = height / width;
   // Square parent: the image is `zoom` parent-widths wide, so the focal point
   // sits at (fx·zoom, fy·zoom·ratio) parent-widths; offset it to (0.5, 0.5).
-  const left = (0.5 - fx * zoom) * 100;
-  const top = (0.5 - fy * zoom * ratio) * 100;
+  // Clamped so the image always covers the parent, even for edge focal points.
+  const clamp = (v: number, min: number) => Math.min(0, Math.max(min, v));
+  const left = clamp(0.5 - fx * zoom, 1 - zoom) * 100;
+  const top = clamp(0.5 - fy * zoom * ratio, 1 - zoom * ratio) * 100;
 
   return (
     <span
-      className="absolute block"
+      className={`absolute ${className ?? ""}`}
       style={{
         left: `${left}%`,
         top: `${top}%`,

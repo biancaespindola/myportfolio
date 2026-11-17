@@ -179,6 +179,12 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Face in focus, by code:** a small `FocalImage` component takes a focal point (`[0.67, 0.41]`, where the face is) and a zoom (2.2×). It sizes and offsets the image in percentages of the circle, so the face stays centred at every screen size. No pre-cropped files, and the framing can be tuned by changing two numbers.
 - **Award photo:** still waiting for the file. Pasted images aren't saved to disk.
 
+## 024 — Christmas avatar for Festive mode · 2026-11-17
+
+- **What:** an illustrated portrait of me in a Santa hat replaces the hero photo whenever the theme is Festive (automatic in December). This is the "illustrated avatar" from decision 009, in its Christmas outfit.
+- **How:** a `festive:` Tailwind variant (`@custom-variant festive (&:where([data-theme="festive"], …))`). Both images are in the HTML and CSS shows one. The theme is set before first paint, so there's no flash and no extra JavaScript, and the hidden lazy image isn't downloaded.
+- **`FocalImage` hardened:** the offset is clamped so a focal point near an edge can never leave an empty gap in the circle.
+
 ---
 
 ## Journal
@@ -194,3 +200,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** CV page in 4 languages, one A4 page each, with the new headshot.
 - **2026-11-17:** new hero photo, framed on the face with a focal-point component.
 - **2026-11-17:** pushed 042d92d with a failing e2e test (my script grepped the output instead of checking the exit code). The overflow test was flagging the zoomed hero photo, which its circle clips. Fixed the test to ignore ancestor-clipped content and confirmed it still catches the German overflow bug.
+- **2026-11-17:** Christmas avatar in Festive mode.

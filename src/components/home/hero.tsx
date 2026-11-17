@@ -60,6 +60,17 @@ export function Hero({
             zoom={2.2}
             sizes="(min-width: 1024px) 900px, 200vw"
             priority
+            className="festive:hidden"
+          />
+          <FocalImage
+            src="/images/avatar-christmas.webp"
+            alt={hero.festiveAlt}
+            width={866}
+            height={864}
+            focus={[0.53, 0.46]}
+            zoom={1.15}
+            sizes="(min-width: 1024px) 460px, 100vw"
+            className="hidden festive:block"
           />
         </div>
         <p

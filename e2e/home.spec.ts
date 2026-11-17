@@ -87,3 +87,18 @@ test("theme toggle cycles and persists", async ({ page }) => {
   await page.reload();
   await expect(html).toHaveAttribute("data-theme", "dark");
 });
+
+test("hero shows the photo, or the Christmas avatar in festive mode", async ({
+  page,
+}) => {
+  await page.goto("/en");
+  const photo = page.getByRole("img", { name: /by the water at sunset/ });
+  const avatar = page.getByRole("img", { name: /Santa hat/ });
+  await expect(photo).toBeVisible();
+  await expect(avatar).toBeHidden();
+
+  await page.evaluate(() => localStorage.setItem("theme", "festive"));
+  await page.reload();
+  await expect(avatar).toBeVisible();
+  await expect(photo).toBeHidden();
+});
