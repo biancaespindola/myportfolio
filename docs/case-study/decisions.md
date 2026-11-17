@@ -194,6 +194,14 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Places trimmed** at my request: Araranguá removed everywhere (map, Work, CV); only the country is listed for EJEC and LARM.
 - **Pending:** the book-lover breakfast photo (it arrived without a file).
 
+## 026 — Mini Bianca: an SVG avatar for the fun facts · 2026-11-17
+
+- **Context:** I wanted illustrations instead of my photos on the "Things that make me, me" cards. Real photos stay on Home and in the About hero.
+- **Decision:** one hand-coded SVG character (`MiniBianca`) with six outfits: book, ski goggles + controller, museum painting, crown, reindeer antlers + scarf, red beanie + Christmas mug. Curly hair, no glasses, big smile, like me.
+- **Why code, not image files:** ~6 KB for all six, crisp at any size, the background circle follows the theme tokens (Light/Dark/Festive), and there are no bystanders to crop or metadata to strip. The ski, market and mug photos were removed from the site.
+- **Bug found while doing it:** card text was clipped because the SVG stretched the card's implicit grid column. Fixed with `grid-cols-1` (`minmax(0,1fr)`).
+- **Accessibility:** the avatar is decorative (`aria-hidden="true"`); each card's title and text carry the meaning.
+
 ---
 
 ## Journal
@@ -214,3 +222,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** removed the old 2023 iPhone photos from the site and added a Vitest guard that parses each image's EXIF and fails on GPS, camera make or model (verified against an old iPhone photo). They still exist in git history; the planned history purge (decision 006) should drop them too.
 - **2026-11-17:** About page with my story, fun facts and four new photos, cropped to keep other people out.
 - **2026-11-17:** language levels updated: English is now bilingual (was C1), Italian A2 (was A1), on About and the CV in all four languages.
+- **2026-11-17:** fun-fact photos replaced by a hand-coded SVG mini-me (curly hair, no glasses, six outfits).

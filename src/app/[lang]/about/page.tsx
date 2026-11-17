@@ -12,6 +12,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import { FocalImage } from "@/components/focal-image";
+import { MiniBianca, type Outfit } from "@/components/mini-bianca";
 import {
   button,
   card,
@@ -28,41 +29,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const loveIcons = [BookOpen, Gamepad2, Landmark, Crown, TreePine, Coffee];
-// Photos for some fun-fact cards, keyed by card index; framed with FocalImage.
-// Crops deliberately keep other people (ski-school kids, market visitors,
-// an ad poster) out of frame.
-const lovePhotos: Record<
-  number,
-  {
-    src: string;
-    alt: "skiAlt" | "christmasAlt" | "mugAlt";
-    size: [number, number];
-    focus: [number, number];
-    zoom: number;
-  }
-> = {
-  1: {
-    src: "/images/ski.jpg",
-    alt: "skiAlt",
-    size: [1500, 2000],
-    focus: [0.757, 0.48],
-    zoom: 2.05,
-  },
-  4: {
-    src: "/images/christmas-market.jpg",
-    alt: "christmasAlt",
-    size: [1500, 2000],
-    focus: [0.627, 0.3675],
-    zoom: 2,
-  },
-  5: {
-    src: "/images/christmas-mug.jpg",
-    alt: "mugAlt",
-    size: [1126, 2000],
-    focus: [0.54, 0.42],
-    zoom: 1.15,
-  },
-};
+const loveOutfits: Outfit[] = [
+  "book",
+  "gamer",
+  "museum",
+  "royal",
+  "market",
+  "mug",
+];
 const languages = [
   { name: "Português", lang: "pt", level: 5 },
   { name: "English", lang: "en", level: 5 },
@@ -162,21 +136,13 @@ export default async function AboutPage() {
             return (
               <li
                 key={item.title}
-                className={`${card} grid content-start gap-2 overflow-hidden p-6`}
+                className={`${card} grid grid-cols-1 content-start gap-2 overflow-hidden p-6`}
               >
-                {lovePhotos[i] && (
-                  <div className="relative -mx-6 -mt-6 mb-2 aspect-square overflow-hidden bg-surface-alt">
-                    <FocalImage
-                      src={lovePhotos[i].src}
-                      alt={about[lovePhotos[i].alt]}
-                      width={lovePhotos[i].size[0]}
-                      height={lovePhotos[i].size[1]}
-                      focus={lovePhotos[i].focus}
-                      zoom={lovePhotos[i].zoom}
-                      sizes="(min-width: 1024px) 520px, 200vw"
-                    />
+                <div className="-mx-6 -mt-6 mb-2 grid aspect-[4/3] place-items-center bg-surface-alt">
+                  <div className="size-[90%]">
+                    <MiniBianca outfit={loveOutfits[i]} />
                   </div>
-                )}
+                </div>
                 <Icon aria-hidden className="size-8 text-primary" />
                 <h3 className="text-[22px] font-bold leading-tight">
                   {item.title}
