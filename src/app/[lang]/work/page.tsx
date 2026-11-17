@@ -6,27 +6,13 @@ import { lang } from "next/root-params";
 import { button, card, container, kicker, tag } from "@/components/ui/styles";
 import { experience, skillGroups } from "@/content/experience";
 import { contact } from "@/content/home";
-import { hasLocale, type Locale } from "@/i18n/config";
+import { hasLocale } from "@/i18n/config";
+import { period } from "@/lib/format";
 import { getDictionary } from "../dictionaries";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { work } = await getDictionary();
   return { title: `${work.kicker} · Bianca Espindola`, description: work.lead };
-}
-
-function period(
-  locale: Locale,
-  start: string,
-  end: string | undefined,
-  now: string,
-) {
-  const fmt = new Intl.DateTimeFormat(locale, {
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-  const toDate = (ym: string) => new Date(`${ym}-01T00:00:00Z`);
-  return `${fmt.format(toDate(start))} — ${end ? fmt.format(toDate(end)) : now}`;
 }
 
 export default async function WorkPage() {

@@ -119,5 +119,38 @@
       "title": "Valutazione sperimentale di un livello di sicurezza per un dispositivo cardiaco indossabile (IoMT)",
       "link": "Leggi il caso studio"
     }
+  },
+  "cv": {
+    "kicker": "CV",
+    "title": "Curriculum vitae",
+    "print": "Stampa / salva come PDF",
+    "docTitle": "Bianca Espindola — Curriculum",
+    "role": "Sviluppatrice Frontend",
+    "place": "Graz, Austria",
+    "summary": "Sviluppatrice frontend con 7 anni di esperienza nella creazione di prodotti React e Next.js, dagli strumenti per le telecomunicazioni alle funzionalità di scommesse sportive per mercati internazionali. Principale sviluppatrice frontend del mio team in ComeOn e vincitrice del premio Make It Happen (2026). Tengo all’accessibilità, alla UX multilingue e a trasformare problemi poco chiari dei clienti in interfacce chiare e accoglienti.",
+    "headings": {
+      "profile": "Profilo",
+      "experience": "Esperienza",
+      "skills": "Competenze",
+      "publication": "Pubblicazione",
+      "education": "Formazione",
+      "languages": "Lingue",
+      "awards": "Premi"
+    },
+    "skills": [
+      "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",
+      "Stato e dati: Zustand, Redux, TanStack Query, REST",
+      "Qualità: WCAG / accessibilità, test, Storybook, code review",
+      "Inoltre: Node.js, PostgreSQL, C/C++, Figma"
+    ],
+    "education": "Laurea in Ingegneria Informatica — UFSC, 2015 – 2022",
+    "languages": [
+      "Portoghese — madrelingua",
+      "Inglese — C1",
+      "Italiano — A1 (in apprendimento)",
+      "Tedesco — A1 (in apprendimento)"
+    ],
+    "award": "Make It Happen — ComeOn Summer Awards 2026",
+    "note": "Stessi contenuti del resto del sito. Nessun numero di telefono, data di nascita o indirizzo."
   }
 }

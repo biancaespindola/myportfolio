@@ -163,6 +163,16 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Award photo:** left out until a photo is picked.
 - **Tests:** 14 e2e (axe on Home + Work × 4 locales, Dark/Festive, redirect, localized dates, mobile overflow, theme persistence).
 
+## 022 — CV page that prints itself · 2026-11-17
+
+- **Built:** `/[lang]/cv`, an A4 sheet generated from the same `experience.ts` as the Work page, plus CV copy in the dictionaries. "Print / save as PDF" calls `window.print()`; print CSS hides the site chrome and sets `@page { size: A4; margin: 0 }`.
+- **Photo:** a new professional headshot, converted from a 2.2 MB PNG to a 235 KB JPG (900 px).
+- **Fixed sheet colours:** the sheet ignores the site theme, so a visitor in Dark or Festive mode still gets a clean white CV.
+- **PDF file name for free:** the page `<title>` is "Bianca Espindola — Lebenslauf" (etc.), which Chrome uses as the default PDF name.
+- **Privacy:** no phone number, birth date or home address (see 005/006).
+- **Test that a recruiter would care about:** Playwright renders a real PDF per locale and asserts it's exactly **one A4 page**, with the header hidden and the photo present. 22 e2e tests in total.
+- **Open:** IT/DE wording still needs a native speaker's review. Not shown on the site, tracked here.
+
 ---
 
 ## Journal
@@ -175,3 +185,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** Phase 0 done: Next.js 16 + TS 7 scaffold, tokens/fonts/themes, 4-locale routing, Biome/Vitest/Playwright+axe, CI. All checks green.
 - **2026-11-17:** Home page in 4 languages and 3 themes; axe clean everywhere after fixing the Dark-mode toast contrast.
 - **2026-11-17:** Work page in 4 languages; German hyphenation fix with a regression test.
+- **2026-11-17:** CV page in 4 languages, one A4 page each, with the new headshot.

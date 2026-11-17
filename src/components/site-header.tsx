@@ -22,7 +22,7 @@ export function SiteHeader({
 
   return (
     <header
-      className={`${container} flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-8`}
+      className={`${container} flex flex-wrap items-center justify-between gap-x-6 gap-y-3 py-8 print:hidden`}
     >
       <Link
         href={`/${locale}`}

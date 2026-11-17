@@ -119,5 +119,38 @@
       "title": "Experimental evaluation of a security layer for a cardiac wearable (IoMT)",
       "link": "Read the case study"
     }
+  },
+  "cv": {
+    "kicker": "CV",
+    "title": "Curriculum vitae",
+    "print": "Print / save as PDF",
+    "docTitle": "Bianca Espindola — CV",
+    "role": "Frontend Developer",
+    "place": "Graz, Austria",
+    "summary": "Frontend developer with 7 years of experience building React and Next.js products, from telecom tools to sportsbook features for international markets. Main frontend developer in my team at ComeOn and winner of the Make It Happen award (2026). I care about accessibility, multilingual UX and turning fuzzy client problems into clear, friendly interfaces.",
+    "headings": {
+      "profile": "Profile",
+      "experience": "Experience",
+      "skills": "Skills",
+      "publication": "Publication",
+      "education": "Education",
+      "languages": "Languages",
+      "awards": "Awards"
+    },
+    "skills": [
+      "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",
+      "State & data: Zustand, Redux, TanStack Query, REST",
+      "Quality: WCAG / a11y, testing, Storybook, code review",
+      "Also: Node.js, PostgreSQL, C/C++, Figma"
+    ],
+    "education": "BSc Computer Engineering — UFSC, 2015 – 2022",
+    "languages": [
+      "Portuguese — native",
+      "English — C1",
+      "Italian — A1 (learning)",
+      "German — A1 (learning)"
+    ],
+    "award": "Make It Happen — ComeOn Summer Awards 2026",
+    "note": "Same content as the rest of the site. No phone number, birth date or home address."
   }
 }

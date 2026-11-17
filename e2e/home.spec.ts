@@ -11,7 +11,7 @@ test("redirects / to the visitor's language", async ({ browser }) => {
 });
 
 for (const lang of ["en", "pt", "it", "de"]) {
-  for (const path of ["", "/work"]) {
+  for (const path of ["", "/work", "/cv"]) {
     test(`/${lang}${path} has no axe violations`, async ({ page }) => {
       await page.goto(`/${lang}${path}`);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
@@ -19,6 +19,21 @@ for (const lang of ["en", "pt", "it", "de"]) {
       expect(violations).toEqual([]);
     });
   }
+
+  test(`/${lang}/cv prints on one A4 page without site chrome`, async ({
+    page,
+  }) => {
+    await page.goto(`/${lang}/cv`);
+    await page.emulateMedia({ media: "print" });
+    await expect(page.locator("header").first()).toBeHidden();
+    const sheet = page.getByRole("article");
+    await expect(
+      sheet.getByRole("img", { name: "Bianca Espindola" }),
+    ).toBeVisible();
+    const pdf = await page.pdf({ format: "A4", printBackground: true });
+    const pages = pdf.toString("latin1").match(/\/Type\s*\/Page[^s]/g) ?? [];
+    expect(pages.length).toBe(1);
+  });
 }
 
 test("work page lists experience with localized dates", async ({ page }) => {

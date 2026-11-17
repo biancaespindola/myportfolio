@@ -119,5 +119,38 @@
       "title": "Experimentelle Bewertung einer Sicherheitsschicht für ein kardiologisches Wearable (IoMT)",
       "link": "Fallstudie lesen"
     }
+  },
+  "cv": {
+    "kicker": "CV",
+    "title": "Lebenslauf",
+    "print": "Drucken / als PDF speichern",
+    "docTitle": "Bianca Espindola — Lebenslauf",
+    "role": "Frontend-Entwicklerin",
+    "place": "Graz, Österreich",
+    "summary": "Frontend-Entwicklerin mit 7 Jahren Erfahrung in der Entwicklung von React- und Next.js-Produkten – von Telekommunikations-Tools bis zu Sportwetten-Features für internationale Märkte. Wichtigste Frontend-Entwicklerin in meinem Team bei ComeOn und Gewinnerin des Make It Happen Awards (2026). Mir liegen Barrierefreiheit, mehrsprachige UX und klare, freundliche Oberflächen für unklare Kundenprobleme am Herzen.",
+    "headings": {
+      "profile": "Profil",
+      "experience": "Berufserfahrung",
+      "skills": "Kenntnisse",
+      "publication": "Publikation",
+      "education": "Ausbildung",
+      "languages": "Sprachen",
+      "awards": "Auszeichnungen"
+    },
+    "skills": [
+      "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",
+      "State & Daten: Zustand, Redux, TanStack Query, REST",
+      "Qualität: WCAG / Barrierefreiheit, Tests, Storybook, Code-Reviews",
+      "Außerdem: Node.js, PostgreSQL, C/C++, Figma"
+    ],
+    "education": "Bachelor Computer Engineering (Technische Informatik) — UFSC, 2015 – 2022",
+    "languages": [
+      "Portugiesisch — Muttersprache",
+      "Englisch — C1",
+      "Italienisch — A1 (lerne ich)",
+      "Deutsch — A1 (lerne ich)"
+    ],
+    "award": "Make It Happen — ComeOn Summer Awards 2026",
+    "note": "Gleicher Inhalt wie auf der übrigen Website. Keine Telefonnummer, kein Geburtsdatum, keine Adresse."
   }
 }
