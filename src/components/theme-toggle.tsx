@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const THEMES = ["light", "dark", "festive"] as const;
 type Theme = (typeof THEMES)[number];
@@ -29,6 +29,20 @@ export function ThemeToggle({
     if (!isTheme(current)) return;
     document.documentElement.setAttribute("data-theme", current);
     setTheme(current);
+  }, []);
+
+  // The header and the mobile menu each render a toggle; keep both labels in sync.
+  useEffect(() => {
+    const html = document.documentElement;
+    const observer = new MutationObserver(() => {
+      const value = html.getAttribute("data-theme");
+      if (isTheme(value)) setTheme(value);
+    });
+    observer.observe(html, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
   }, []);
 
   function cycle() {

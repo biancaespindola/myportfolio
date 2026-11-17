@@ -7,7 +7,9 @@
     "skip": "Vai al contenuto",
     "language": "Lingua",
     "theme": "Cambia tema",
-    "main": "Principale"
+    "main": "Principale",
+    "menu": "Menu",
+    "closeMenu": "Chiudi menu"
   },
   "theme": {
     "light": "Chiaro",

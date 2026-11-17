@@ -7,7 +7,9 @@
     "skip": "Zum Inhalt springen",
     "language": "Sprache",
     "theme": "Design wechseln",
-    "main": "Hauptmenü"
+    "main": "Hauptmenü",
+    "menu": "Menü",
+    "closeMenu": "Menü schließen"
   },
   "theme": {
     "light": "Hell",

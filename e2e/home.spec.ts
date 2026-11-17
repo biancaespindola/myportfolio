@@ -84,6 +84,60 @@ test("long German words don't overflow on a phone", async ({ page }) => {
   }
 });
 
+test.describe("on a phone", () => {
+  test.use({ viewport: { width: 375, height: 812 } });
+
+  test("the header is one row and the menu opens, navigates and closes", async ({
+    page,
+  }) => {
+    await page.goto("/de");
+    const header = page.locator("header").first();
+    expect((await header.boundingBox())?.height).toBeLessThan(120);
+    await expect(
+      header.getByRole("navigation", { name: "Hauptmenü" }),
+    ).toBeHidden();
+
+    await page.getByRole("button", { name: "Menü", exact: true }).click();
+    const menu = page.getByRole("dialog", { name: "Menü" });
+    await expect(menu).toBeVisible();
+    await expect(menu.getByRole("link", { name: "Start" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+    await expect(
+      menu.getByRole("button", { name: /^Design wechseln/ }),
+    ).toBeVisible();
+    const { violations } = await new AxeBuilder({ page }).analyze();
+    expect(violations).toEqual([]);
+
+    await menu.getByRole("link", { name: "Arbeit" }).click();
+    await expect(page).toHaveURL(/\/de\/work$/);
+    await expect(menu).toBeHidden();
+
+    await page.getByRole("button", { name: "Menü", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await expect(menu).toBeHidden();
+  });
+});
+
+test("desktop keeps the inline nav, and the German header fits at 1024px", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto("/de");
+  const header = page.locator("header").first();
+  await expect(
+    header.getByRole("navigation", { name: "Hauptmenü" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Menü", exact: true }),
+  ).toBeHidden();
+  const theme = await header
+    .getByRole("button", { name: /^Design wechseln/ })
+    .boundingBox();
+  expect((theme?.x ?? 0) + (theme?.width ?? 0)).toBeLessThanOrEqual(1024);
+});
+
 for (const theme of ["dark", "festive"]) {
   test(`${theme} theme has no axe violations`, async ({ page }) => {
     await page.addInitScript((t) => localStorage.setItem("theme", t), theme);

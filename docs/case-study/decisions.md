@@ -246,6 +246,15 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Weight:** with `sharp`, 2.7 MB of PNGs became six 512×512 WebPs of about 11 KB each. Re-encoding also strips any metadata, and the privacy test checks every file in `public/images`.
 - **Theming:** each illustration fills its card edge to edge as a square with its own cream background, so it reads as artwork in Light, Dark and Festive with no recolouring. `alt=""`, because the card title right below says the same thing.
 
+## 033 — Mobile header and full-screen menu · 2026-11-17
+
+- **Problem:** the site was already responsive, but on a phone the header took three rows (about 195px): logo, then languages and theme, then a sideways-scrolling nav. That's a quarter of the screen before any content.
+- **Chosen:** an app-like menu. Below 1024px the header is one row (logo plus a menu button). The button opens a full-screen menu with big Fraunces links, the current page in the brand colour, and languages and theme at the bottom, within thumb reach. Desktop is unchanged. A bottom tab bar, an installable PWA and Figma-first designs were the alternatives.
+- **Why a native `<dialog>`:** `showModal()` gives focus trapping, Escape to close, an inert page behind and focus returning to the button, all for free. The menu also closes on any route change, including a language switch. `html:has(dialog[open])` stops the page scrolling underneath.
+- **Breakpoint found by testing:** 768px was the first plan, but German labels pushed the theme button off-screen at tablet width, so the switch moved to 1024px. A regression test checks that the German header fits at 1024px.
+- **Two theme toggles:** the header and the menu each render one, so the toggle now watches `data-theme` and both labels stay in sync.
+- **Tests:** a phone e2e test checks the header is a single row, the menu opens, `aria-current` is set, axe passes with the menu open, a link navigates and closes it, and Escape closes it.
+
 ---
 
 ## Journal
@@ -274,3 +283,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** personal logo + favicon from my logo kit, recoloured by theme tokens.
 - **2026-11-17:** old Netlify deploy deleted, GitHub Support ticket sent; the new site is live on biancaespindola.netlify.app.
 - **2026-11-17:** fun-fact avatars replaced by my illustrated set; the SVG mini-me was retired.
+- **2026-11-17:** mobile version: a one-row header and a full-screen menu below 1024px.

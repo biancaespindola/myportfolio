@@ -116,3 +116,14 @@ body {
     opacity: 0.35;
   }
 }
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
