@@ -1,8 +1,8 @@
 import { Coffee, Gamepad2, Globe, MapPin, Trophy } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import type { Locale } from "@/i18n/config";
+import { FocalImage } from "../focal-image";
 import { button, container } from "../ui/styles";
 
 export function Hero({
@@ -51,13 +51,15 @@ export function Hero({
       <div className="relative mx-auto aspect-square w-full max-w-[440px]">
         <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary" />
         <div className="absolute inset-[22px] overflow-hidden rounded-full bg-primary-soft">
-          <Image
-            src="/images/perfil.jpg"
+          <FocalImage
+            src="/images/hero-photo.jpg"
             alt={hero.photoAlt}
-            fill
-            sizes="(min-width: 1024px) 400px, 80vw"
-            fetchPriority="high"
-            className="object-cover"
+            width={1500}
+            height={2000}
+            focus={[0.67, 0.41]}
+            zoom={2.2}
+            sizes="(min-width: 1024px) 900px, 200vw"
+            priority
           />
         </div>
         <p

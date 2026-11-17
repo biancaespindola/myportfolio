@@ -173,6 +173,12 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Test that a recruiter would care about:** Playwright renders a real PDF per locale and asserts it's exactly **one A4 page**, with the header hidden and the photo present. 22 e2e tests in total.
 - **Open:** IT/DE wording still needs a native speaker's review. Not shown on the site, tracked here.
 
+## 023 — Hero photo with a focal point · 2026-11-17
+
+- **Photo:** a sunset portrait by the water replaces the old lake photo on Home. It arrived with no EXIF/GPS metadata, so there's no location leak.
+- **Face in focus, by code:** a small `FocalImage` component takes a focal point (`[0.67, 0.41]`, where the face is) and a zoom (2.2×). It sizes and offsets the image in percentages of the circle, so the face stays centred at every screen size. No pre-cropped files, and the framing can be tuned by changing two numbers.
+- **Award photo:** still waiting for the file. Pasted images aren't saved to disk.
+
 ---
 
 ## Journal
@@ -186,3 +192,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** Home page in 4 languages and 3 themes; axe clean everywhere after fixing the Dark-mode toast contrast.
 - **2026-11-17:** Work page in 4 languages; German hyphenation fix with a regression test.
 - **2026-11-17:** CV page in 4 languages, one A4 page each, with the new headshot.
+- **2026-11-17:** new hero photo, framed on the face with a focal-point component.
