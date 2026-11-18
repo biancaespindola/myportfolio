@@ -71,7 +71,7 @@ export function Advent({ copy }: { copy: Dictionary["advent"] }) {
                 </span>
                 <span
                   aria-hidden
-                  className={`${locked ? "border-[1.5px] border-dashed border-line bg-surface-alt text-muted" : FRONTS[i % 3]} absolute inset-0 flex origin-left flex-col items-center justify-center gap-1 rounded-[14px] font-display text-[28px] leading-none backface-hidden motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-[cubic-bezier(.2,.8,.2,1)] ${open ? "rotate-y-[-105deg]" : ""}`}
+                  className={`${FRONTS[i % 3]} absolute inset-0 flex origin-left flex-col items-center justify-center gap-1 rounded-[14px] font-display text-[28px] leading-none backface-hidden motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-[cubic-bezier(.2,.8,.2,1)] ${open ? "rotate-y-[-105deg]" : ""}`}
                 >
                   {day}
                   {locked && <Lock className="size-4" strokeWidth={2} />}
