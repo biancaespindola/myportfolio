@@ -1,5 +1,12 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
+
+// The achievement tracker listens for keys only after it has restored saved
+// progress; recording the current language is the first thing it does then.
+const trackerReady = (page: Page) =>
+  page.waitForFunction(() =>
+    localStorage.getItem("achievements")?.includes('"lastLocale"'),
+  );
 
 test("redirects / to the visitor's language", async ({ browser }) => {
   const context = await browser.newContext({ locale: "pt-BR" });
@@ -188,6 +195,7 @@ test("every case study renders, and unknown slugs 404", async ({ page }) => {
 test.describe("achievements", () => {
   test("switching language unlocks Polyglot", async ({ page }) => {
     await page.goto("/en");
+    await trackerReady(page);
     await page.locator('a[hreflang="pt"]').first().click();
     await expect(page).toHaveURL(/\/pt$/);
     await expect(page.getByRole("status")).toContainText("Poliglota");
@@ -216,6 +224,7 @@ test.describe("achievements", () => {
       "data-snow",
       "off",
     );
+    await trackerReady(page);
     for (const key of [
       "ArrowUp",
       "ArrowUp",
@@ -248,6 +257,7 @@ test.describe("achievements", () => {
       );
     });
     await page.goto("/en");
+    await trackerReady(page);
     await expect(page.getByText("0 / 10 opened")).toBeVisible();
     await expect(
       page.getByRole("button", { name: "Day 11, opens on 11 December" }),
