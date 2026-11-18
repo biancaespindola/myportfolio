@@ -81,13 +81,53 @@
   },
   "shelf": {
     "kicker": "Fuori orario",
-    "title": "Sulla mia mensola e nella mia Switch"
+    "title": "Sulla mia mensola e nella mia Switch",
+    "festiveKicker": "Atmosfera natalizia",
+    "festiveTitle": "Sotto il mio albero di Natale"
+  },
+  "advent": {
+    "kicker": "Calendario dell’Avvento",
+    "title": "24 porte, 24 piccole sorprese",
+    "note": "Ogni giorno si apre una porta fino a Natale. Aprirne una sblocca un traguardo.",
+    "count": "{n} / {total} aperte",
+    "notYet": "Le porte si aprono dal 1° dicembre",
+    "open": "Apri il giorno {day}",
+    "locked": "Giorno {day}, si apre il {day} dicembre",
+    "opened": "Giorno {day}: {surprise}",
+    "surprises": [
+      "Benvenuto! La modalità dicembre è attiva 🎄",
+      "Metà brasiliana, metà italiana, vivo in Austria",
+      "Florianópolis → Bari → Graz",
+      "Gioco preferito: Zelda: Ocarina of Time",
+      "Cambia lingua → traguardo Poliglotta",
+      "Sto rileggendo Il Signore degli Anelli",
+      "Premio Make It Happen, estate 2026",
+      "Ho introdotto i 1:1 in EJEC",
+      "Prova la modalità scura → Nottambula",
+      "↑↑↓↓←→←→BA… dai",
+      "Questo sito parla quattro lingue",
+      "Orgogliosa collezionista di tazze natalizie ☕",
+      "Visita tutte le pagine → Esploratrice",
+      "Anna dai capelli rossi, tutta la serie",
+      "La mia ricerca sulla sicurezza degli ECG: SBSEG 2022",
+      "Ogni decisione dietro questo sito è pubblica",
+      "Gioco cozy preferito: Stardew Valley",
+      "Trova la libreria → Topo di biblioteca",
+      "Pale Blue Dot vive sulla mia mensola",
+      "Chiedimi della famiglia imperiale brasiliana 👑",
+      "Ogni dicembre vado a caccia di mercatini di Natale",
+      "Ho sviluppato Boosted Odds e Bet Builder",
+      "Il mio CV sta esattamente su una pagina A4",
+      "Feliz Natal · Buon Natale · Frohe Weihnachten 🎁"
+    ]
   },
   "contact": {
     "title": "Prendiamo un caffè?",
     "body": "Aperta a ruoli frontend e a belle conversazioni. Rispondo a ogni messaggio — in quattro lingue, se vuoi.",
     "sayHi": "Scrivimi",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "festiveTitle": "Prendiamo una cioccolata calda?",
+    "festiveBody": "Aperta a ruoli frontend e a belle conversazioni, anche a dicembre. Rispondo a ogni messaggio — in quattro lingue, se vuoi."
   },
   "footer": {
     "built": "Fatto con Next.js 16, caffè e lo-fi"
@@ -277,6 +317,10 @@
       "konami": {
         "name": "Konami",
         "hint": "Conosci il codice"
+      },
+      "elf": {
+        "name": "Elfa",
+        "hint": "Apri una porta del calendario dell’Avvento"
       }
     }
   }

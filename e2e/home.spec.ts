@@ -236,6 +236,33 @@ test.describe("achievements", () => {
     );
   });
 
+  test("opening an advent door reveals its surprise and unlocks Elf", async ({
+    page,
+  }) => {
+    await page.clock.setFixedTime(new Date("2026-12-10T10:00:00"));
+    await page.addInitScript(() => {
+      localStorage.setItem("theme", "festive");
+      localStorage.setItem(
+        "achievements",
+        JSON.stringify({ state: { unlocked: ["hohoho"] }, version: 0 }),
+      );
+    });
+    await page.goto("/en");
+    await expect(page.getByText("0 / 10 opened")).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Day 11, opens on 11 December" }),
+    ).toBeDisabled();
+
+    await page.getByRole("button", { name: "Open day 7" }).click();
+    await expect(page.getByRole("status")).toContainText("Elf");
+    await expect(
+      page.getByRole("button", {
+        name: "Day 7: Make It Happen award, Summer 2026",
+      }),
+    ).toBeVisible();
+    await expect(page.getByText("1 / 10 opened")).toBeVisible();
+  });
+
   test("no snow when the visitor prefers reduced motion", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.addInitScript(() => localStorage.setItem("theme", "festive"));

@@ -19,7 +19,7 @@ export function AchievementBoard({
       <p className="mb-6 font-pixel text-sm uppercase text-primary">
         {progress}
       </p>
-      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
         {ACHIEVEMENTS.map((id) => {
           const got = unlocked.includes(id);
           const item = labels.items[id];

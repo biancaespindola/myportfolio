@@ -8,6 +8,7 @@ export const ACHIEVEMENTS = [
   "nightowl",
   "hohoho",
   "konami",
+  "elf",
 ] as const;
 export type AchievementId = (typeof ACHIEVEMENTS)[number];
 
@@ -20,6 +21,8 @@ type State = {
   unlocked: AchievementId[];
   visited: string[];
   lastLocale: string | null;
+  /** Advent calendar days opened. */
+  doors: number[];
   /** Newly unlocked, waiting to be announced. Not persisted. */
   queue: AchievementId[];
   /** Timestamp of the last Konami blizzard. Not persisted. */
@@ -32,12 +35,14 @@ type Actions = {
   seeLocale: (locale: string) => void;
   dismiss: () => void;
   blizzard: () => void;
+  openDoor: (day: number) => void;
 };
 
 const initialState: State = {
   unlocked: [],
   visited: [],
   lastLocale: null,
+  doors: [],
   queue: [],
   blizzardAt: null,
 };
@@ -69,14 +74,21 @@ export const useAchievements = create<State & Actions>()(
       },
       dismiss: () => set((s) => ({ queue: s.queue.slice(1) })),
       blizzard: () => set({ blizzardAt: Date.now() }),
+      openDoor: (day) => {
+        const { doors, unlock } = get();
+        if (doors.includes(day)) return;
+        set({ doors: [...doors, day] });
+        unlock("elf");
+      },
     }),
     {
       name: "achievements",
       storage: createJSONStorage(() => localStorage),
-      partialize: ({ unlocked, visited, lastLocale }) => ({
+      partialize: ({ unlocked, visited, lastLocale, doors }) => ({
         unlocked,
         visited,
         lastLocale,
+        doors,
       }),
       // Rehydrated on mount (AchievementTracker) so server and first client render match.
       skipHydration: true,
@@ -88,4 +100,5 @@ export const useAchievements = create<State & Actions>()(
 
 export const useUnlocked = () => useAchievements((s) => s.unlocked);
 export const useToastQueue = () => useAchievements((s) => s.queue);
+export const useDoors = () => useAchievements((s) => s.doors);
 export const useBlizzardAt = () => useAchievements((s) => s.blizzardAt);

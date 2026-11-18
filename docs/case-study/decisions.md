@@ -255,6 +255,18 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Two theme toggles:** the header and the menu each render one, so the toggle now watches `data-theme` and both labels stay in sync.
 - **Tests:** a phone e2e test checks the header is a single row, the menu opens, `aria-current` is set, axe passes with the menu open, a link navigates and closes it, and Escape closes it.
 
+## 034 — Advent calendar, gift shelf and cocoa contact in Festive mode · 2026-11-18
+
+- **Problem:** Festive mode only recoloured the site and added snow, lights and the Christmas avatar. The prototype (`docs/design/christmas-mode.html`) had three Christmas-only sections that never shipped, and the Figma Festive frame was also just the Light layout recoloured.
+- **Chosen:** the three prototype sections, Festive only. An advent calendar with 24 doors on the home page, between the case studies and the shelf. The shelf becomes "Under my Christmas tree", with snow on top of each cover. The contact block becomes "Let's grab a hot cocoa", with a mug in place of the coffee cup. The sweater band, the "Let it snow" toggle and the Santa-hat logo stay in the prototype for now.
+- **Theme swap without JavaScript:** like the hero avatar, each section renders both texts and the `festive:` variant shows one. Server-rendered pages stay the same for every theme, and the theme script already sets `data-theme` before first paint.
+- **Real dates:** in December, doors up to today's date can be opened, and from Christmas Eve all 24 can. The rest of the year every door is locked and the calendar says doors open on 1 December. The date is read on the client, so a cached page never fixes the day. The rule lives in `advent-day.ts` and has its own unit test.
+- **Achievement:** opening a door unlocks a seventh achievement, Elf. Opened doors are saved with the other achievement progress in localStorage, so they stay open on a return visit. The About board now shows seven cards per row.
+- **Surprises:** 24 short messages in four languages, all true facts about me or hints for the other achievements. The Konami hint is on day 10 and a four-language Christmas greeting is on day 24.
+- **Accessibility:** each door is a button whose label says what it does: "Open day 7", "Day 11, opens on 11 December", or the surprise itself once open. The opened count is a polite live region. The door flip only animates with `motion-safe`.
+- **Tests:** an e2e test fixes the clock to 10 December, checks that a future door is disabled, opens a door, and expects the Elf toast and the surprise label. Axe passes in Festive mode.
+- **Lesson:** the e2e config reuses any server already on port 3100, and an old `next start` there made the new test fail against a stale build. Kill the port and rebuild before trusting an e2e run.
+
 ---
 
 ## Journal
@@ -284,3 +296,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** old Netlify deploy deleted, GitHub Support ticket sent; the new site is live on biancaespindola.netlify.app.
 - **2026-11-17:** fun-fact avatars replaced by my illustrated set; the SVG mini-me was retired.
 - **2026-11-17:** mobile version: a one-row header and a full-screen menu below 1024px.
+- **2026-11-18:** Festive mode gets an advent calendar (new Elf achievement), the Christmas-tree shelf and the hot-cocoa contact block, in four languages.
