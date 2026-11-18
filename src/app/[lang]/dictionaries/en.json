@@ -25,6 +25,7 @@
   },
   "hero": {
     "greeting": "Oi! · Ciao! · Hallo! · Hi!",
+    "festiveGreeting": "Boas festas · Buon Natale · Frohe Weihnachten · Merry Christmas",
     "title": "I turn tricky problems into friendly interfaces.",
     "lead": "Frontend developer at ComeOn in Graz, Austria. Half Brazilian, half Italian — powered by coffee, good books and way too much Zelda.",
     "ctaWork": "View my work",
@@ -130,7 +131,8 @@
     "festiveBody": "Open to frontend roles and good conversations, even in December. I answer every message — in four languages, if you like."
   },
   "footer": {
-    "built": "Built with Next.js 16, coffee and lo-fi"
+    "built": "Built with Next.js 16, coffee and lo-fi",
+    "festiveBuilt": "Built with Next.js 16, hot cocoa and Christmas lo-fi"
   },
   "work": {
     "kicker": "Work",

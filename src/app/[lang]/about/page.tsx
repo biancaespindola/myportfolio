@@ -63,7 +63,7 @@ export default async function AboutPage() {
           </div>
           <p
             aria-hidden
-            className="absolute -top-3 -right-3 rotate-6 rounded-full bg-highlight px-3 py-2 font-pixel text-sm uppercase text-[#2a1b2e] shadow-md"
+            className="absolute -top-3 -right-3 rotate-6 rounded-full bg-highlight px-3 py-2 font-pixel text-sm uppercase text-on-highlight shadow-md"
           >
             {about.stickers[0]}
           </p>

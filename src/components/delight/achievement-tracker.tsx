@@ -110,13 +110,13 @@ export function AchievementTracker({
       {current && (
         <div
           key={current}
-          className="flex animate-[toast-in_.4s_cubic-bezier(.2,.8,.2,1)] items-center gap-3 rounded-2xl bg-[#2a1b2e] px-4 py-3 text-[#fff7f2] shadow-[0_12px_32px_rgb(42_27_46/0.3)]"
+          className="flex animate-[toast-in_.4s_cubic-bezier(.2,.8,.2,1)] items-center gap-3 rounded-2xl bg-toast px-4 py-3 text-toast-text shadow-[0_12px_32px_rgb(42_27_46/0.3)]"
         >
-          <span className="grid size-10 place-items-center rounded-lg bg-highlight text-[#2a1b2e]">
+          <span className="grid size-10 place-items-center rounded-lg bg-highlight text-on-highlight">
             <Trophy aria-hidden className="size-[22px]" />
           </span>
           <span>
-            <span className="block font-pixel text-xs uppercase text-[#ffd166]">
+            <span className="block font-pixel text-xs uppercase text-toast-accent">
               {labels.toast}
             </span>
             <span className="font-bold">

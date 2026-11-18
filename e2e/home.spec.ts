@@ -1,6 +1,12 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
 
+// December switches visitors with no saved theme to festive; pin a November
+// date so tests that expect the light theme pass all year.
+test.beforeEach(async ({ page }) => {
+  await page.clock.setFixedTime(new Date("2026-11-18T10:00:00"));
+});
+
 // The achievement tracker listens for keys only after it has restored saved
 // progress; recording the current language is the first thing it does then.
 const trackerReady = (page: Page) =>
@@ -154,6 +160,46 @@ for (const theme of ["dark", "festive"]) {
     expect(violations).toEqual([]);
   });
 }
+
+test("with no saved choice, the theme follows the system and sets the browser bar colour", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({ colorScheme: "dark" });
+  const page = await context.newPage();
+  // Outside December, which defaults to festive instead.
+  await page.clock.setFixedTime(new Date("2026-11-18T10:00:00"));
+  await page.goto("/en");
+  const html = page.locator("html");
+  const themeColor = page.locator('meta[name="theme-color"]');
+  await expect(html).toHaveAttribute("data-theme", "dark");
+  await expect(themeColor).toHaveCount(1);
+  await expect(themeColor).toHaveAttribute("content", "#1a1220");
+
+  await page
+    .getByRole("button", { name: /^Change theme/ })
+    .first()
+    .click();
+  await expect(html).toHaveAttribute("data-theme", "festive");
+  await expect(themeColor).toHaveAttribute("content", "#fff8f1");
+  await context.close();
+});
+
+test("in December, festive is the default and stays accessible and printable", async ({
+  page,
+}) => {
+  await page.clock.setFixedTime(new Date("2026-12-10T10:00:00"));
+  await page.goto("/en");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "festive");
+  await expect(page.getByRole("button", { name: "Open day 10" })).toBeEnabled();
+  const { violations } = await new AxeBuilder({ page }).analyze();
+  expect(violations).toEqual([]);
+
+  await page.goto("/en/cv");
+  await page.emulateMedia({ media: "print" });
+  const pdf = await page.pdf({ format: "A4", printBackground: true });
+  const pages = pdf.toString("latin1").match(/\/Type\s*\/Page[^s]/g) ?? [];
+  expect(pages.length).toBe(1);
+});
 
 test("theme toggle cycles and persists", async ({ page }) => {
   await page.goto("/en");

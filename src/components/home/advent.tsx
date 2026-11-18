@@ -1,5 +1,6 @@
 "use client";
 
+import { Lock } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import { useAchievements, useDoors } from "@/stores/achievements";
@@ -13,7 +14,7 @@ const ORDER = [
 const FRONTS = [
   "bg-primary text-on-primary",
   "bg-accent text-on-primary",
-  "bg-highlight text-[#2a1b2e]",
+  "bg-highlight text-on-highlight",
 ];
 
 const fill = (text: string, values: Record<string, string | number>) =>
@@ -63,16 +64,17 @@ export function Advent({ copy }: { copy: Dictionary["advent"] }) {
                     surprise,
                   },
                 )}
-                className="relative block aspect-square w-full rounded-[14px] perspective-[600px] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-highlight enabled:cursor-pointer disabled:cursor-not-allowed"
+                className="relative block aspect-square w-full rounded-[14px] perspective-[600px] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-primary enabled:cursor-pointer disabled:cursor-not-allowed"
               >
                 <span className="absolute inset-0 grid place-items-center overflow-hidden rounded-[14px] border-[1.5px] border-dashed border-line bg-surface p-1.5 text-center text-[11px] leading-tight break-words text-muted hyphens-auto sm:text-xs">
-                  {!locked && surprise}
+                  {open && surprise}
                 </span>
                 <span
                   aria-hidden
-                  className={`${FRONTS[i % 3]} absolute inset-0 grid origin-left place-items-center rounded-[14px] font-display text-[28px] backface-hidden motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-[cubic-bezier(.2,.8,.2,1)] ${open ? "rotate-y-[-105deg]" : ""} ${locked ? "brightness-95 saturate-[.35]" : ""}`}
+                  className={`${locked ? "border-[1.5px] border-dashed border-line bg-surface-alt text-muted" : FRONTS[i % 3]} absolute inset-0 flex origin-left flex-col items-center justify-center gap-1 rounded-[14px] font-display text-[28px] leading-none backface-hidden motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-[cubic-bezier(.2,.8,.2,1)] ${open ? "rotate-y-[-105deg]" : ""}`}
                 >
                   {day}
+                  {locked && <Lock className="size-4" strokeWidth={2} />}
                 </span>
               </button>
             </li>

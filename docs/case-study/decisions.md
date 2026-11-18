@@ -267,6 +267,17 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Tests:** an e2e test fixes the clock to 10 December, checks that a future door is disabled, opens a door, and expects the Elf toast and the surprise label. Axe passes in Festive mode.
 - **Lesson:** the e2e config reuses any server already on port 3100, and an old `next start` there made the new test fail against a stale build. Kill the port and rebuild before trusting an e2e run.
 
+## 035 — Colour and theme audit · 2026-11-18
+
+- **Checked:** WCAG contrast for every text/background token pair in Light, Dark and Festive. All text passes AA; the lowest is muted text in the contact block at 5.0:1. Card borders are 1.2–1.5:1, which is fine because they're decorative: the cards are readable without them.
+- **Advent doors:** the yellow focus ring was 2.1:1 on cream, below the 3:1 a focus indicator needs, so it's now the primary red (5.9:1). Locked doors used a grey-out filter that turned the palette into maroon, khaki and olive and made them look heavier than the doors you can open. They're now soft dashed tiles with a small lock, so the colourful doors are the ones to click.
+- **System dark mode:** with no saved choice, the site now follows the visitor's light/dark setting (December still defaults to Festive). The trade-off is that dark-mode visitors unlock Night owl without trying, the same way December visitors already unlock Ho ho ho.
+- **Browser bar:** the theme script keeps a `theme-color` meta on the current page background, so the mobile browser bar matches the theme. The script turned out to be emitted twice in the server HTML, so the meta part reuses an existing tag.
+- **Tokens instead of hex:** the dark achievement pop-ups and the text on yellow stickers were hard-coded Light-theme plum. They're now `--toast-*` and `--brand-on-highlight` tokens, near-black red in Festive. The CV keeps its fixed print colours.
+- **Festive copy:** the hero greeting becomes "Boas festas · Buon Natale · Frohe Weihnachten · Merry Christmas", and the footer says "hot cocoa and Christmas lo-fi", in all four languages.
+- **December bugs found by testing:** running the suite with the clock set to December failed 13 tests. Two were real bugs that would have reached visitors on 1 December. (1) Openable advent doors already contained their hidden surprise text, so the button's text didn't match its label (axe `label-content-name-mismatch`); surprises now render only once a door is open. (2) `festive:block` beat `print:hidden` in the CSS order, so the string lights printed and pushed the CV onto a second page; it's now `print:hidden!`. The rest assumed the Light theme.
+- **Tests:** the e2e clock is pinned to November so the suite passes all year. New tests check the system dark default and the `theme-color` tag, and that December defaults to Festive, passes axe with doors openable, and prints the CV on one page.
+
 ---
 
 ## Journal
@@ -297,3 +308,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** fun-fact avatars replaced by my illustrated set; the SVG mini-me was retired.
 - **2026-11-17:** mobile version: a one-row header and a full-screen menu below 1024px.
 - **2026-11-18:** Festive mode gets an advent calendar (new Elf achievement), the Christmas-tree shelf and the hot-cocoa contact block, in four languages.
+- **2026-11-18:** colour audit: advent focus and locked doors, system dark mode, browser bar colour, festive tokens and copy; two December-only bugs found and fixed before December.

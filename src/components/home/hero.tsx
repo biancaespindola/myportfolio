@@ -24,7 +24,8 @@ export function Hero({
     >
       <div>
         <p className="mb-6 inline-block rounded-full bg-accent-soft px-3 py-2 font-pixel text-sm uppercase text-accent">
-          {hero.greeting}
+          <span className="festive:hidden">{hero.greeting}</span>
+          <span className="hidden festive:inline">{hero.festiveGreeting}</span>
         </p>
         <h1 className="max-w-[16ch] font-display text-[clamp(44px,6vw,72px)] leading-[1.05] tracking-[-1.5px]">
           {hero.title}
@@ -75,20 +76,20 @@ export function Hero({
         </div>
         <p
           aria-hidden
-          className="absolute top-6 right-0 flex rotate-[8deg] items-center gap-1.5 rounded-full bg-highlight px-3 py-2 font-pixel text-sm uppercase text-[#2a1b2e]"
+          className="absolute top-6 right-0 flex rotate-[8deg] items-center gap-1.5 rounded-full bg-highlight px-3 py-2 font-pixel text-sm uppercase text-on-highlight"
         >
           <Gamepad2 className="size-[18px]" />
           {hero.sticker}
         </p>
         <div
           aria-hidden
-          className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap rounded-2xl bg-[#2a1b2e] px-4 py-3 text-[#fff7f2] shadow-[0_12px_32px_rgb(42_27_46/0.3)]"
+          className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap rounded-2xl bg-toast px-4 py-3 text-toast-text shadow-[0_12px_32px_rgb(42_27_46/0.3)]"
         >
-          <span className="grid size-10 place-items-center rounded-lg bg-highlight text-[#2a1b2e]">
+          <span className="grid size-10 place-items-center rounded-lg bg-highlight text-on-highlight">
             <Trophy className="size-[22px]" />
           </span>
           <span>
-            <span className="block font-pixel text-xs uppercase text-[#ffd166]">
+            <span className="block font-pixel text-xs uppercase text-toast-accent">
               {hero.toastKicker}
             </span>
             <span className="font-bold">{hero.toast}</span>

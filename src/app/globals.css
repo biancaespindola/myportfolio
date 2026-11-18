@@ -21,6 +21,10 @@
   --brand-accent: #276b5c;
   --brand-accent-soft: #d8f0e8;
   --brand-highlight: #ffd166;
+  --brand-on-highlight: #2a1b2e;
+  --toast-bg: #2a1b2e;
+  --toast-text: #fff7f2;
+  --toast-accent: #ffd166;
   color-scheme: light;
 }
 
@@ -38,6 +42,10 @@
   --brand-accent: #7dd3bc;
   --brand-accent-soft: #1d3a35;
   --brand-highlight: #ffd166;
+  --brand-on-highlight: #2a1b2e;
+  --toast-bg: #2a1b2e;
+  --toast-text: #fff7f2;
+  --toast-accent: #ffd166;
   color-scheme: dark;
 }
 
@@ -55,6 +63,10 @@
   --brand-accent: #14532d;
   --brand-accent-soft: #dcefe3;
   --brand-highlight: #e0a526;
+  --brand-on-highlight: #2b1416;
+  --toast-bg: #2b1416;
+  --toast-text: #fff8f1;
+  --toast-accent: #e0a526;
   color-scheme: light;
 }
 
@@ -72,6 +84,10 @@
   --color-accent: var(--brand-accent);
   --color-accent-soft: var(--brand-accent-soft);
   --color-highlight: var(--brand-highlight);
+  --color-on-highlight: var(--brand-on-highlight);
+  --color-toast: var(--toast-bg);
+  --color-toast-text: var(--toast-text);
+  --color-toast-accent: var(--toast-accent);
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-sans: var(--font-nunito), system-ui, sans-serif;
   --font-pixel: var(--font-pixelify), ui-monospace, monospace;

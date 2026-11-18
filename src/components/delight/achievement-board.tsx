@@ -31,7 +31,7 @@ export function AchievementBoard({
               className={`grid justify-items-center gap-2 rounded-3xl p-5 text-center ${got ? "border-2 border-highlight bg-surface" : "border-[1.5px] border-dashed border-line bg-surface-alt"}`}
             >
               <span
-                className={`grid size-14 place-items-center rounded-full ${got ? "bg-highlight text-[#2a1b2e]" : "bg-line text-muted"}`}
+                className={`grid size-14 place-items-center rounded-full ${got ? "bg-highlight text-on-highlight" : "bg-line text-muted"}`}
               >
                 <Trophy aria-hidden className="size-7" />
               </span>

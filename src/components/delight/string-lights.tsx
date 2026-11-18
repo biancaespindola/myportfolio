@@ -9,7 +9,7 @@ const WIRE = `M0 4${BULBS.map((b) => ` Q ${b.cx} 18 ${b.cx + 25} 4`).join("")}`;
 /** Twinkling fairy lights above the header, only in the festive theme. */
 export function StringLights() {
   return (
-    <div className="hidden h-[30px] overflow-hidden festive:block print:hidden">
+    <div className="hidden h-[30px] overflow-hidden festive:block print:hidden!">
       <svg
         aria-hidden="true"
         viewBox={`0 0 ${BULBS.length * 50} 30`}
