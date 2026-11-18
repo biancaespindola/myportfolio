@@ -2,15 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useBlizzardAt } from "@/stores/achievements";
+import { useSnow, useSnowOn } from "@/stores/snow";
 
 const BLIZZARD_MS = 8000;
 
 type Flake = { x: number; y: number; r: number; speed: number; drift: number };
 
-/** Gentle snow in the festive theme; a short blizzard after the Konami code. */
+/** Gentle snow in the festive theme unless switched off; a short blizzard after the Konami code. */
 export function Snow() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const blizzardAt = useBlizzardAt();
+  const snowOn = useSnowOn();
   const [festive, setFestive] = useState(false);
   const [blizzard, setBlizzard] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -42,7 +44,12 @@ export function Snow() {
     return () => clearTimeout(timer);
   }, [blizzardAt]);
 
-  const active = !reduced && (festive || blizzard);
+  useEffect(() => {
+    useSnow.persist.rehydrate();
+  }, []);
+
+  // The Konami blizzard ignores the off switch: it's an explicit request.
+  const active = !reduced && ((festive && snowOn) || blizzard);
 
   useEffect(() => {
     const el = canvas.current;

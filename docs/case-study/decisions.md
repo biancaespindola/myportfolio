@@ -278,6 +278,16 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **December bugs found by testing:** running the suite with the clock set to December failed 13 tests. Two were real bugs that would have reached visitors on 1 December. (1) Openable advent doors already contained their hidden surprise text, so the button's text didn't match its label (axe `label-content-name-mismatch`); surprises now render only once a door is open. (2) `festive:block` beat `print:hidden` in the CSS order, so the string lights printed and pushed the CV onto a second page; it's now `print:hidden!`. The rest assumed the Light theme.
 - **Tests:** the e2e clock is pinned to November so the suite passes all year. New tests check the system dark default and the `theme-color` tag, and that December defaults to Festive, passes axe with doors openable, and prints the CV on one page.
 
+## 036 — "Let it snow" switch · 2026-11-18
+
+- **Problem:** in Festive mode the snow always fell. Some visitors find moving particles distracting while reading, and the only way to stop it was to leave the theme or turn on reduced motion system-wide.
+- **Chosen:** the prototype's "Let it snow" chip, next to the language switcher in the header and in the mobile menu. It's a toggle button (`aria-pressed`), filled red when snow is on, and on by default.
+- **State:** a small Zustand store, persisted to localStorage, so the choice survives reloads and the header and menu chips stay in sync. Like the achievements store, it rehydrates on mount so the server HTML and the first client render match.
+- **When it shows:** only in Festive, and hidden for visitors who prefer reduced motion, because snow never falls for them and a switch that does nothing would be confusing.
+- **Konami still wins:** the blizzard ignores the switch, because typing the code is an explicit request for snow.
+- **Header width:** the German label "Lass es schneien" pushed the 1024px header to 1096px. Below 1280px the header chip shows only the snowflake and keeps the full label for screen readers. The mobile menu always shows the label. The 1024px German header test now also runs in Festive.
+- **Tests:** an e2e test switches snow off, checks the canvas stops, reloads, and checks it stays off.
+
 ---
 
 ## Journal
@@ -309,3 +319,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-17:** mobile version: a one-row header and a full-screen menu below 1024px.
 - **2026-11-18:** Festive mode gets an advent calendar (new Elf achievement), the Christmas-tree shelf and the hot-cocoa contact block, in four languages.
 - **2026-11-18:** colour audit: advent focus and locked doors, system dark mode, browser bar colour, festive tokens and copy; two December-only bugs found and fixed before December.
+- **2026-11-18:** "Let it snow" switch in Festive mode, remembered across visits.

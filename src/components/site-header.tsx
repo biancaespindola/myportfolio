@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import type { Locale } from "@/i18n/config";
+import { SnowToggle } from "./delight/snow-toggle";
 import { StringLights } from "./delight/string-lights";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
@@ -48,6 +49,7 @@ export function SiteHeader({
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <LanguageSwitcher current={locale} label={dict.a11y.language} />
+          <SnowToggle label={dict.snow.toggle} compact />
           <ThemeToggle labels={dict.theme} ariaLabel={dict.a11y.theme} />
         </div>
         <MobileMenu locale={locale} links={links} dict={dict} />

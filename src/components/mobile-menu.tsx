@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 import type { Locale } from "@/i18n/config";
+import { SnowToggle } from "./delight/snow-toggle";
 import { LanguageSwitcher } from "./language-switcher";
 import { Logo } from "./logo";
 import { ThemeToggle } from "./theme-toggle";
@@ -21,7 +22,7 @@ export function MobileMenu({
 }: {
   locale: Locale;
   links: readonly (readonly [href: string, label: string])[];
-  dict: Pick<Dictionary, "a11y" | "theme">;
+  dict: Pick<Dictionary, "a11y" | "theme" | "snow">;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
@@ -74,7 +75,10 @@ export function MobileMenu({
           </nav>
           <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-10">
             <LanguageSwitcher current={locale} label={dict.a11y.language} />
-            <ThemeToggle labels={dict.theme} ariaLabel={dict.a11y.theme} />
+            <div className="flex items-center gap-2">
+              <SnowToggle label={dict.snow.toggle} />
+              <ThemeToggle labels={dict.theme} ariaLabel={dict.a11y.theme} />
+            </div>
           </div>
         </div>
       </dialog>

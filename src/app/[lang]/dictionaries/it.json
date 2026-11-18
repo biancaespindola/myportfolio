@@ -16,6 +16,9 @@
     "dark": "Scuro",
     "festive": "Festivo"
   },
+  "snow": {
+    "toggle": "Che nevichi"
+  },
   "nav": {
     "home": "Home",
     "work": "Lavoro",

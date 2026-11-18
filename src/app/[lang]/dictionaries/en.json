@@ -16,6 +16,9 @@
     "dark": "Dark",
     "festive": "Festive"
   },
+  "snow": {
+    "toggle": "Let it snow"
+  },
   "nav": {
     "home": "Home",
     "work": "Work",

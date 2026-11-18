@@ -149,6 +149,16 @@ test("desktop keeps the inline nav, and the German header fits at 1024px", async
     .getByRole("button", { name: /^Design wechseln/ })
     .boundingBox();
   expect((theme?.x ?? 0) + (theme?.width ?? 0)).toBeLessThanOrEqual(1024);
+
+  // Festive adds the snow chip to the same row.
+  await page.evaluate(() => localStorage.setItem("theme", "festive"));
+  await page.reload();
+  await expect(
+    header.getByRole("button", { name: "Lass es schneien" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(1024);
 });
 
 for (const theme of ["dark", "festive"]) {
@@ -317,6 +327,24 @@ test.describe("achievements", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText("1 / 10 opened")).toBeVisible();
+  });
+
+  test("the Let it snow chip turns the snow off and remembers it", async ({
+    page,
+  }) => {
+    await page.addInitScript(() => localStorage.setItem("theme", "festive"));
+    await page.goto("/en");
+    const chip = page.getByRole("button", { name: "Let it snow" });
+    const snow = page.locator("canvas[data-snow]");
+    await expect(chip).toHaveAttribute("aria-pressed", "true");
+    await expect(snow).toHaveAttribute("data-snow", "on");
+
+    await chip.click();
+    await expect(chip).toHaveAttribute("aria-pressed", "false");
+    await expect(snow).toHaveAttribute("data-snow", "off");
+    await page.reload();
+    await expect(chip).toHaveAttribute("aria-pressed", "false");
+    await expect(snow).toHaveAttribute("data-snow", "off");
   });
 
   test("no snow when the visitor prefers reduced motion", async ({ page }) => {

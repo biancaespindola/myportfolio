@@ -16,6 +16,9 @@
     "dark": "Dunkel",
     "festive": "Festlich"
   },
+  "snow": {
+    "toggle": "Lass es schneien"
+  },
   "nav": {
     "home": "Start",
     "work": "Arbeit",
