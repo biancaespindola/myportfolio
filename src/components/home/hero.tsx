@@ -57,9 +57,9 @@ export function Hero({
             alt={hero.photoAlt}
             width={1500}
             height={2000}
-            focus={[0.67, 0.41]}
-            zoom={2.2}
-            sizes="(min-width: 1024px) 900px, 200vw"
+            focus={[0.676, 0.425]}
+            zoom={2.87}
+            sizes="(min-width: 1024px) 1200px, 220vw"
             priority
             className="festive:hidden"
           />

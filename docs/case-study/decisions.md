@@ -320,3 +320,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-18:** Festive mode gets an advent calendar (new Elf achievement), the Christmas-tree shelf and the hot-cocoa contact block, in four languages.
 - **2026-11-18:** colour audit: advent focus and locked doors, system dark mode, browser bar colour, festive tokens and copy; two December-only bugs found and fixed before December.
 - **2026-11-18:** "Let it snow" switch in Festive mode, remembered across visits.
+- **2026-11-18:** hero photo reframed to match the Christmas avatar: both faces measured by eyes and mouth in the source images, so the face sits in the same spot and at the same size when the theme changes (zoom 2.2 → 2.87).
