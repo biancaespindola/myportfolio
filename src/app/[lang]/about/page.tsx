@@ -22,11 +22,18 @@ import {
   sectionTitle,
 } from "@/components/ui/styles";
 import { hasLocale } from "@/i18n/config";
+import { pageMetadata } from "@/i18n/seo";
 import { getDictionary } from "../dictionaries";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { about } = await getDictionary();
-  return { title: `${about.kicker} · Bianca Espindola`, description: about.p1 };
+  const [locale, { about }] = await Promise.all([lang(), getDictionary()]);
+  if (!hasLocale(locale)) notFound();
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: `${about.kicker} · Bianca Espindola`,
+    description: about.p1,
+  });
 }
 
 const loveIcons = [BookOpen, Gamepad2, Landmark, Crown, TreePine, Coffee];

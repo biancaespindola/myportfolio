@@ -8,12 +8,19 @@ import { button, card, container, kicker, tag } from "@/components/ui/styles";
 import { experience, skillGroups } from "@/content/experience";
 import { contact } from "@/content/home";
 import { hasLocale } from "@/i18n/config";
+import { pageMetadata } from "@/i18n/seo";
 import { period } from "@/lib/format";
 import { getDictionary } from "../dictionaries";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { work } = await getDictionary();
-  return { title: `${work.kicker} · Bianca Espindola`, description: work.lead };
+  const [locale, { work }] = await Promise.all([lang(), getDictionary()]);
+  if (!hasLocale(locale)) notFound();
+  return pageMetadata({
+    locale,
+    path: "/work",
+    title: `${work.kicker} · Bianca Espindola`,
+    description: work.lead,
+  });
 }
 
 export default async function WorkPage() {

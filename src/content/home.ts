@@ -13,7 +13,7 @@ import {
 
 export const contact = {
   email: "biancadeespindola95@gmail.com",
-  linkedin: "https://www.linkedin.com/in/biancadeespindola/",
+  linkedin: "https://www.linkedin.com/in/espindolabianca/",
   github: "https://github.com/biancaespindola",
 };
 

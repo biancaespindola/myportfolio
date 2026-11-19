@@ -358,3 +358,36 @@ test.describe("achievements", () => {
     );
   });
 });
+
+test("search engines get robots, a sitemap, canonical links and who the site is about", async ({
+  page,
+  request,
+}) => {
+  const robots = await (await request.get("/robots.txt")).text();
+  expect(robots).toContain(
+    "Sitemap: https://biancaespindola.is-a.dev/sitemap.xml",
+  );
+  const sitemap = await (await request.get("/sitemap.xml")).text();
+  expect(sitemap.match(/<url>/g)).toHaveLength(32);
+  expect(sitemap).toContain("https://biancaespindola.is-a.dev/de/cv");
+
+  await page.goto("/de/about");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://biancaespindola.is-a.dev/de/about",
+  );
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    "content",
+    "https://biancaespindola.is-a.dev/images/og.png",
+  );
+
+  await page.goto("/en");
+  const person = JSON.parse(
+    (await page.locator('script[type="application/ld+json"]').textContent()) ??
+      "{}",
+  );
+  expect(person.name).toBe("Bianca Espindola");
+  expect(person.sameAs).toContain(
+    "https://www.linkedin.com/in/espindolabianca/",
+  );
+});

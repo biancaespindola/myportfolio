@@ -299,6 +299,17 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Absolute language links:** `metadataBase` is set to the new domain, so the `hreflang` alternates are full URLs (`https://biancaespindola.is-a.dev/en`) instead of `/en`, which search engines need.
 - **Links elsewhere:** the GitHub profile README and the repo's website field now point to the new domain.
 
+## 038 — Findable by name: SEO basics · 2026-11-19
+
+- **Problem:** with the new domain live, Google still had nothing to work with. There was no `robots.txt` or sitemap, no canonical links, the language links only existed for the home pages, nothing for link previews, and nothing machine-readable saying who the site is about.
+- **Sitemap and robots:** `app/sitemap.ts` lists all 32 pages (8 pages × 4 languages), each with its language alternates. `app/robots.ts` allows everything and points to the sitemap. The proxy already skips paths with a dot, so both are served as-is.
+- **One helper per page:** `pageMetadata()` in `src/i18n/seo.ts` gives every page its title, description, canonical URL, the same page in the other languages, plus `x-default`, and link-preview tags. `x-default` is the path without a locale, which the proxy already sends to the visitor's language. Before this, every subpage advertised the home pages as its translations.
+- **Share image:** a 1200×630 card with my name, role and the reframed photo, rendered with the site's own fonts in Playwright. I first used Next's `opengraph-image` file convention, but it only reached the home page: pages that set their own link-preview tags dropped it, and it was served from an odd `/-/` path. It's now `public/images/og.png`, referenced explicitly, which also puts it under the image privacy test.
+- **Who the site is about:** schema.org `Person` structured data on the home page with my name and its accented spelling, role, employer, city, languages, and `sameAs` links to LinkedIn and GitHub. Those links help Google treat the three profiles as one person. Everything in it is already on the site.
+- **LinkedIn:** my profile moved to `linkedin.com/in/espindolabianca`. The site, the design prototypes and the GitHub profile README now use it.
+- **Still to do (outside the code):** verify the site in Google Search Console, submit the sitemap and request indexing.
+- **Tests:** an e2e test checks robots, the sitemap count, a canonical link and share image on a translated subpage, and the structured data's name and LinkedIn link.
+
 ---
 
 ## Journal
@@ -333,3 +344,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-18:** "Let it snow" switch in Festive mode, remembered across visits.
 - **2026-11-18:** hero photo reframed to match the Christmas avatar: both faces measured by eyes and mouth in the source images, so the face sits in the same spot and at the same size when the theme changes (zoom 2.2 → 2.87).
 - **2026-11-19:** biancaespindola.is-a.dev is live with HTTPS, as the primary domain on Netlify.
+- **2026-11-19:** SEO basics (sitemap, robots, canonical and language links, share image, Person data) and the new LinkedIn URL.

@@ -7,13 +7,20 @@ import { container, kicker } from "@/components/ui/styles";
 import { experience } from "@/content/experience";
 import { contact } from "@/content/home";
 import { hasLocale } from "@/i18n/config";
+import { pageMetadata } from "@/i18n/seo";
 import { period } from "@/lib/format";
 import { getDictionary } from "../dictionaries";
 
 // The browser uses the document title as the default PDF file name.
 export async function generateMetadata(): Promise<Metadata> {
-  const { cv } = await getDictionary();
-  return { title: cv.docTitle, description: cv.summary };
+  const [locale, { cv }] = await Promise.all([lang(), getDictionary()]);
+  if (!hasLocale(locale)) notFound();
+  return pageMetadata({
+    locale,
+    path: "/cv",
+    title: cv.docTitle,
+    description: cv.summary,
+  });
 }
 
 const strip = (url: string) =>

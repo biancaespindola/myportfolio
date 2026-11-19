@@ -4,14 +4,21 @@ import { lang } from "next/root-params";
 import { CaseStudyGrid } from "@/components/case-study-grid";
 import { container, kicker } from "@/components/ui/styles";
 import { hasLocale } from "@/i18n/config";
+import { pageMetadata } from "@/i18n/seo";
 import { getDictionary } from "../dictionaries";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { caseStudies, caseStudy } = await getDictionary();
-  return {
+  const [locale, { caseStudies, caseStudy }] = await Promise.all([
+    lang(),
+    getDictionary(),
+  ]);
+  if (!hasLocale(locale)) notFound();
+  return pageMetadata({
+    locale,
+    path: "/case-studies",
     title: `${caseStudies.kicker} · Bianca Espindola`,
     description: caseStudy.indexLead,
-  };
+  });
 }
 
 export default async function CaseStudiesPage() {

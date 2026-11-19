@@ -9,13 +9,20 @@ import { card, container, kicker, tag } from "@/components/ui/styles";
 import { caseStudyContent } from "@/content/case-studies";
 import { type CaseStudySlug, caseStudies } from "@/content/home";
 import { hasLocale } from "@/i18n/config";
+import { pageMetadata } from "@/i18n/seo";
 
-export function caseStudyMetadata(slug: CaseStudySlug): Metadata {
+export async function caseStudyMetadata(
+  slug: CaseStudySlug,
+): Promise<Metadata> {
+  const locale = await lang();
+  if (!hasLocale(locale)) notFound();
   const study = caseStudyContent[slug];
-  return {
+  return pageMetadata({
+    locale,
+    path: `/case-studies/${slug}`,
     title: `${study.title} · Bianca Espindola`,
     description: study.lead,
-  };
+  });
 }
 
 /** One static route per case study (see decision 027): unknown slugs get a real 404. */

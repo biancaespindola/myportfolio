@@ -37,9 +37,6 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://biancaespindola.is-a.dev"),
     title: dict.meta.title,
     description: dict.meta.description,
-    alternates: {
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
-    },
   };
 }
 
