@@ -288,6 +288,15 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Header width:** the German label "Lass es schneien" pushed the 1024px header to 1096px. Below 1280px the header chip shows only the snowflake and keeps the full label for screen readers. The mobile menu always shows the label. The 1024px German header test now also runs in Festive.
 - **Tests:** an e2e test switches snow off, checks the canvas stops, reloads, and checks it stays off.
 
+## 037 — Free custom domain: biancaespindola.is-a.dev · 2026-11-19
+
+- **Supersedes 007**, which kept `biancaespindola.netlify.app` because a paid domain wasn't worth it yet.
+- **Chosen:** [is-a.dev](https://is-a.dev), a free subdomain service for developers' personal, non-commercial sites. Registration is a pull request to `is-a-dev/register` adding JSON files with DNS records; I opened it myself, as their rules ask for no AI-generated requests.
+- **Records:** `biancaespindola.json` with an A record to Netlify's load balancer (75.2.60.5), and `www.biancaespindola.json` with a CNAME to `biancaespindola.netlify.app`. Contact: GitHub username plus Discord, keeping my personal email off a public repo.
+- **Timeline:** PR is-a-dev/register#61787 opened 2026-11-18 and was approved and merged the same day. DNS was live by the next morning.
+- **Netlify:** added the domain as primary, with `www` redirecting to it. The first Let's Encrypt attempt failed; re-running the DNS check and provisioning the certificate worked within about 3 minutes. HTTP redirects to HTTPS.
+- **Still open:** `biancaespindola.netlify.app` keeps serving the site rather than redirecting, and links elsewhere (GitHub profile, LinkedIn) still point to it.
+
 ---
 
 ## Journal
@@ -321,3 +330,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-18:** colour audit: advent focus and locked doors, system dark mode, browser bar colour, festive tokens and copy; two December-only bugs found and fixed before December.
 - **2026-11-18:** "Let it snow" switch in Festive mode, remembered across visits.
 - **2026-11-18:** hero photo reframed to match the Christmas avatar: both faces measured by eyes and mouth in the source images, so the face sits in the same spot and at the same size when the theme changes (zoom 2.2 → 2.87).
+- **2026-11-19:** biancaespindola.is-a.dev is live with HTTPS, as the primary domain on Netlify.
