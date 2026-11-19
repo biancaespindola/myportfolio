@@ -37,6 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://biancaespindola.is-a.dev"),
     title: dict.meta.title,
     description: dict.meta.description,
+    verification: { google: "JmhNNmKU5-TMj-Nl0_EtQQDW-WxZwm1qr4bszXBaUeM" },
   };
 }
 
