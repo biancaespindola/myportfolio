@@ -34,6 +34,7 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const dict = await getDictionary();
   return {
+    metadataBase: new URL("https://biancaespindola.is-a.dev"),
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: {

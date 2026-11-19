@@ -7,3 +7,10 @@ NODE_VERSION = "22"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
+
+# One public address: the old Netlify subdomain forwards to the custom domain.
+[[redirects]]
+from = "https://biancaespindola.netlify.app/*"
+to = "https://biancaespindola.is-a.dev/:splat"
+status = 301
+force = true

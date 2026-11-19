@@ -295,7 +295,9 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Records:** `biancaespindola.json` with an A record to Netlify's load balancer (75.2.60.5), and `www.biancaespindola.json` with a CNAME to `biancaespindola.netlify.app`. Contact: GitHub username plus Discord, keeping my personal email off a public repo.
 - **Timeline:** PR is-a-dev/register#61787 opened 2026-11-18 and was approved and merged the same day. DNS was live by the next morning.
 - **Netlify:** added the domain as primary, with `www` redirecting to it. The first Let's Encrypt attempt failed; re-running the DNS check and provisioning the certificate worked within about 3 minutes. HTTP redirects to HTTPS.
-- **Still open:** `biancaespindola.netlify.app` keeps serving the site rather than redirecting, and links elsewhere (GitHub profile, LinkedIn) still point to it.
+- **One address:** a forced 301 in `netlify.toml` sends `biancaespindola.netlify.app/*` to the same path on the new domain, so search engines don't see two copies of the site. Deploy previews live on other hostnames and aren't affected.
+- **Absolute language links:** `metadataBase` is set to the new domain, so the `hreflang` alternates are full URLs (`https://biancaespindola.is-a.dev/en`) instead of `/en`, which search engines need.
+- **Links elsewhere:** the GitHub profile README and the repo's website field now point to the new domain.
 
 ---
 
