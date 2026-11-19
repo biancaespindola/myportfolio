@@ -307,7 +307,7 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Share image:** a 1200×630 card with my name, role and the reframed photo, rendered with the site's own fonts in Playwright. I first used Next's `opengraph-image` file convention, but it only reached the home page: pages that set their own link-preview tags dropped it, and it was served from an odd `/-/` path. It's now `public/images/og.png`, referenced explicitly, which also puts it under the image privacy test.
 - **Who the site is about:** schema.org `Person` structured data on the home page with my name and its accented spelling, role, employer, city, languages, and `sameAs` links to LinkedIn and GitHub. Those links help Google treat the three profiles as one person. Everything in it is already on the site.
 - **LinkedIn:** my profile moved to `linkedin.com/in/espindolabianca`. The site, the design prototypes and the GitHub profile README now use it.
-- **Still to do (outside the code):** verify the site in Google Search Console, submit the sitemap and request indexing.
+- **Google Search Console:** added as a URL-prefix property. The HTML-tag method failed: Google checks `/`, which the proxy redirects to a language, so the checker never saw the tag. The HTML-file method worked, because paths with a dot skip the proxy. Both stay on the site, since removing either can un-verify it. The sitemap was read straight away (32 pages discovered). A manual "request indexing" hit the new property's daily quota; it's optional, because the sitemap already queues every page.
 - **Tests:** an e2e test checks robots, the sitemap count, a canonical link and share image on a translated subpage, and the structured data's name and LinkedIn link.
 
 ---
@@ -345,3 +345,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-18:** hero photo reframed to match the Christmas avatar: both faces measured by eyes and mouth in the source images, so the face sits in the same spot and at the same size when the theme changes (zoom 2.2 → 2.87).
 - **2026-11-19:** biancaespindola.is-a.dev is live with HTTPS, as the primary domain on Netlify.
 - **2026-11-19:** SEO basics (sitemap, robots, canonical and language links, share image, Person data) and the new LinkedIn URL.
+- **2026-11-19:** verified in Google Search Console and submitted the sitemap; Google discovered all 32 pages.
