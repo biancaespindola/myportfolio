@@ -5,7 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import { button, card, container, kicker, tag } from "@/components/ui/styles";
-import { experience, skillGroups } from "@/content/experience";
+import { experience, projects, skillGroups } from "@/content/experience";
 import { contact } from "@/content/home";
 import { hasLocale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/seo";
@@ -172,6 +172,65 @@ export default async function WorkPage() {
           </section>
         </aside>
       </div>
+
+      {projects.map((project) => {
+        const text = project.text[locale];
+        return (
+          <section
+            key={project.id}
+            aria-labelledby={`${project.id}-h`}
+            className="grid gap-6 border-line border-t pt-16 pb-8"
+          >
+            <div className="grid max-w-[68ch] gap-3">
+              <p className={`${kicker} text-primary`}>{work.personalProject}</p>
+              <h2
+                id={`${project.id}-h`}
+                className="font-display text-[32px] leading-tight tracking-[-0.5px]"
+              >
+                {text.title}
+              </h2>
+              <p className="text-muted">{text.context}</p>
+              <ul className="grid list-disc gap-1 pl-5">
+                {text.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+              <ul className="flex flex-wrap gap-2">
+                {project.tags.map((t) => (
+                  <li key={t} className={tag}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {project.gallery.map((shot) => (
+                <li key={shot.src}>
+                  <figure className="grid gap-2">
+                    <a
+                      href={`/images/${shot.src}`}
+                      className={`${card} block p-3 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-primary`}
+                    >
+                      <Image
+                        src={`/images/${shot.src}`}
+                        alt={shot.caption[locale]}
+                        width={shot.width}
+                        height={shot.height}
+                        sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+                        className="aspect-square w-full object-contain"
+                      />
+                    </a>
+                    <figcaption className="text-muted text-sm">
+                      {shot.caption[locale]}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+            <p className="text-muted text-sm">{work.placeholderNote}</p>
+          </section>
+        );
+      })}
     </main>
   );
 }

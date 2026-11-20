@@ -168,7 +168,9 @@
       "kicker": "Pubblicato · SBSEG 2022",
       "title": "Valutazione sperimentale di un livello di sicurezza per un dispositivo cardiaco indossabile (IoMT)",
       "link": "Leggi il caso studio"
-    }
+    },
+    "personalProject": "Progetto personale",
+    "placeholderNote": "Mostrato con nome e contatti di fantasia. Ogni documento esiste anche come file Word modificabile."
   },
   "cv": {
     "kicker": "CV",
@@ -185,7 +187,8 @@
       "publication": "Pubblicazione",
       "education": "Formazione",
       "languages": "Lingue",
-      "awards": "Premi"
+      "awards": "Premi",
+      "projects": "Progetti"
     },
     "skills": [
       "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",

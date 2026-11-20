@@ -168,7 +168,9 @@
       "kicker": "Veröffentlicht · SBSEG 2022",
       "title": "Experimentelle Bewertung einer Sicherheitsschicht für ein kardiologisches Wearable (IoMT)",
       "link": "Fallstudie lesen"
-    }
+    },
+    "personalProject": "Persönliches Projekt",
+    "placeholderNote": "Mit erfundenem Namen und Kontaktdaten gezeigt. Jedes Dokument gibt es auch als bearbeitbare Word-Datei."
   },
   "cv": {
     "kicker": "CV",
@@ -185,7 +187,8 @@
       "publication": "Publikation",
       "education": "Ausbildung",
       "languages": "Sprachen",
-      "awards": "Auszeichnungen"
+      "awards": "Auszeichnungen",
+      "projects": "Projekte"
     },
     "skills": [
       "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",

@@ -168,7 +168,9 @@
       "kicker": "Published · SBSEG 2022",
       "title": "Experimental evaluation of a security layer for a cardiac wearable (IoMT)",
       "link": "Read the case study"
-    }
+    },
+    "personalProject": "Personal project",
+    "placeholderNote": "Shown with a made-up name and contact details. Every document also exists as an editable Word file."
   },
   "cv": {
     "kicker": "CV",
@@ -185,7 +187,8 @@
       "publication": "Publication",
       "education": "Education",
       "languages": "Languages",
-      "awards": "Awards"
+      "awards": "Awards",
+      "projects": "Projects"
     },
     "skills": [
       "Frontend: React, Next.js, TypeScript, JavaScript, Tailwind, MUI",

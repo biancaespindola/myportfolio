@@ -310,6 +310,16 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **Google Search Console:** added as a URL-prefix property. The HTML-tag method failed: Google checks `/`, which the proxy redirects to a language, so the checker never saw the tag. The HTML-file method worked, because paths with a dot skip the proxy. Both stay on the site, since removing either can un-verify it. The sitemap was read straight away (32 pages discovered). A manual "request indexing" hit the new property's daily quota; it's optional, because the sitemap already queues every page.
 - **Tests:** an e2e test checks robots, the sitemap count, a canonical link and share image on a translated subpage, and the structured data's name and LinkedIn link.
 
+## 039 — A personal project: a brand and document system · 2026-11-19
+
+- **Problem:** I built a full brand and clinical document kit for a family member, a home-care physiotherapist in Rio de Janeiro: logo, brand guide, stationery, and 13 print and Word templates. It shows real skills, but it was unpaid family help, not a job. My employment contract doesn't allow side work, so it must not read as freelance work.
+- **First try, rejected:** a dateless "Freelance" entry in the experience list, right after ComeOn. Hiding the dates wasn't enough: the label and the position still said "paid side work during my current job".
+- **Where it lives now:** a separate `projects` list in `src/content/experience.ts`. On the CV, it's a "Projects" section under Experience, labelled "Personal project". On the Work page, it's its own section after the job timeline. The context line says it was for a family member. Projects have no dates by design.
+- **Anonymous client:** her name only goes public if she agrees.
+- **Evidence without personal data:** the Work page shows five previews: the business card, the letterhead, page 1 of the assessment form, the exercise sheet and the privacy notice. The real documents carry her name, WhatsApp, email and professional registration number. Blurring them would look redacted, so I swapped in a made-up name ("Ana Souza") and placeholder contacts in a copy of the project, re-ran the card generator and rendered the other pages from their HTML. The pipeline is single-source, so this was a text swap, and the result looks like the real thing. A note under the gallery says the data is made up. The exercise illustrations are AI-generated, so no real person appears. The images sit at the top level of `public/images`, so the image privacy test covers them.
+- **What to show:** the engineering, not just the design. Each document is written once as HTML/CSS. Headless Chrome renders the PDF, and docx-js builds the Word file from the same source, so the two never drift apart.
+- **Tests:** the CV still fits on one A4 page in all four languages, and axe passes on both pages.
+
 ---
 
 ## Journal
@@ -346,3 +356,4 @@ Source material for the "How I built this site" case study. One entry per decisi
 - **2026-11-19:** biancaespindola.is-a.dev is live with HTTPS, as the primary domain on Netlify.
 - **2026-11-19:** SEO basics (sitemap, robots, canonical and language links, share image, Person data) and the new LinkedIn URL.
 - **2026-11-19:** verified in Google Search Console and submitted the sitemap; Google discovered all 32 pages.
+- **2026-11-19:** added a personal project, the brand and document system for a family member, to the CV and the Work page, kept apart from the job history. The Work page shows a gallery of the documents with a made-up name and contacts.

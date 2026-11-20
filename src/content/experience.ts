@@ -236,3 +236,122 @@ export const skillGroups: string[][] = [
   ["Testing", "Storybook", "CI", "Code review"],
   ["Node.js", "REST", "PostgreSQL", "C/C++"],
 ];
+
+type ProjectText = { title: string; context: string; bullets: string[] };
+
+type Shot = {
+  /** File in public/images. */
+  src: string;
+  width: number;
+  height: number;
+  caption: Record<Locale, string>;
+};
+
+export type Project = {
+  id: string;
+  tags: string[];
+  text: Record<Locale, ProjectText>;
+  gallery: Shot[];
+};
+
+export const projects: Project[] = [
+  {
+    id: "physio-brand",
+    tags: ["Python", "HTML/CSS", "Headless Chrome", "docx-js", "Branding"],
+    text: {
+      en: {
+        title: "Brand & document system",
+        context:
+          "For a family member, a home-care physiotherapist in Rio de Janeiro",
+        bullets: [
+          "Full brand identity and print kit: logo, brand guide, stationery and 13 clinical and admin templates",
+          "One source for every document: Python-generated HTML/CSS becomes a PDF in headless Chrome and a Word file via docx-js, so they never drift apart",
+        ],
+      },
+      pt: {
+        title: "Sistema de marca e documentos",
+        context:
+          "Para uma familiar, fisioterapeuta domiciliar no Rio de Janeiro",
+        bullets: [
+          "Identidade visual completa e kit de impressão: logo, guia de marca, papelaria e 13 modelos clínicos e administrativos",
+          "Uma fonte para todos os documentos: HTML/CSS gerado em Python vira PDF no Chrome headless e Word via docx-js, sem nunca divergirem",
+        ],
+      },
+      it: {
+        title: "Sistema di brand e documenti",
+        context:
+          "Per una familiare, fisioterapista a domicilio a Rio de Janeiro",
+        bullets: [
+          "Identità visiva completa e kit di stampa: logo, brand guide, cancelleria e 13 modelli clinici e amministrativi",
+          "Un'unica fonte per ogni documento: HTML/CSS generato in Python diventa PDF in Chrome headless e Word con docx-js, sempre allineati",
+        ],
+      },
+      de: {
+        title: "Marken- und Dokumentensystem",
+        context:
+          "Für eine Verwandte, mobile Physiotherapeutin in Rio de Janeiro",
+        bullets: [
+          "Komplette Markenidentität und Druckpaket: Logo, Brand Guide, Geschäftsausstattung und 13 klinische und administrative Vorlagen",
+          "Eine Quelle für jedes Dokument: In Python generiertes HTML/CSS wird in Headless Chrome zum PDF und mit docx-js zur Word-Datei, ohne Abweichungen",
+        ],
+      },
+    },
+    gallery: [
+      {
+        src: "physio-business-card.jpg",
+        width: 1400,
+        height: 955,
+        caption: {
+          en: "Business card, front and back",
+          pt: "Cartão de visita, frente e verso",
+          it: "Biglietto da visita, fronte e retro",
+          de: "Visitenkarte, Vorder- und Rückseite",
+        },
+      },
+      {
+        src: "physio-letterhead.jpg",
+        width: 989,
+        height: 1400,
+        caption: {
+          en: "A4 letterhead",
+          pt: "Papel timbrado A4",
+          it: "Carta intestata A4",
+          de: "A4-Briefpapier",
+        },
+      },
+      {
+        src: "physio-assessment-form.jpg",
+        width: 989,
+        height: 1400,
+        caption: {
+          en: "Assessment form, page 1 of 8",
+          pt: "Ficha de avaliação, folha 1 de 8",
+          it: "Scheda di valutazione, pagina 1 di 8",
+          de: "Befundbogen, Seite 1 von 8",
+        },
+      },
+      {
+        src: "physio-exercise-sheet.jpg",
+        width: 1400,
+        height: 989,
+        caption: {
+          en: "Exercise sheet for patients",
+          pt: "Folha de exercícios para o paciente",
+          it: "Scheda di esercizi per il paziente",
+          de: "Übungsblatt für Patientinnen und Patienten",
+        },
+      },
+      {
+        src: "physio-privacy-notice.jpg",
+        width: 989,
+        height: 1400,
+        caption: {
+          en: "Privacy notice under Brazil's data protection law (LGPD)",
+          pt: "Aviso de privacidade conforme a LGPD",
+          it: "Informativa sulla privacy secondo la legge brasiliana (LGPD)",
+          de: "Datenschutzhinweis nach brasilianischem Recht (LGPD)",
+        },
+      },
+    ],
+  },
+];

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import { PrintButton } from "@/components/print-button";
 import { container, kicker } from "@/components/ui/styles";
-import { experience } from "@/content/experience";
+import { experience, projects } from "@/content/experience";
 import { contact } from "@/content/home";
 import { hasLocale } from "@/i18n/config";
 import { pageMetadata } from "@/i18n/seo";
@@ -111,6 +111,24 @@ export default async function CvPage() {
               );
             })}
           </ol>
+        </section>
+
+        <section>
+          <h3 className={h3}>{cv.headings.projects}</h3>
+          <ul className="grid gap-2.5">
+            {projects.map((project) => {
+              const text = project.text[locale];
+              return (
+                <li key={project.id}>
+                  <p className="text-[11px] font-bold">
+                    {text.title} · {dict.work.personalProject}
+                  </p>
+                  <p className="text-[9.5px] text-[#6e5a6b]">{text.context}</p>
+                  <p>{text.bullets.join(" · ")}</p>
+                </li>
+              );
+            })}
+          </ul>
         </section>
 
         <div className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
