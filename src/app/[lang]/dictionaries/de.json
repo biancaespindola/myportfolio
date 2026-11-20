@@ -23,6 +23,7 @@
     "home": "Start",
     "work": "Arbeit",
     "caseStudies": "Fallstudien",
+    "projects": "Projekte",
     "about": "Über mich",
     "cv": "Lebenslauf"
   },
@@ -169,8 +170,7 @@
       "title": "Experimentelle Bewertung einer Sicherheitsschicht für ein kardiologisches Wearable (IoMT)",
       "link": "Fallstudie lesen"
     },
-    "personalProject": "Persönliches Projekt",
-    "placeholderNote": "Mit erfundenem Namen und Kontaktdaten gezeigt. Jedes Dokument gibt es auch als bearbeitbare Word-Datei."
+    "personalProject": "Persönliches Projekt"
   },
   "cv": {
     "kicker": "CV",
@@ -331,5 +331,11 @@
         "hint": "Öffne ein Adventstürchen"
       }
     }
+  },
+  "projects": {
+    "kicker": "Persönliche Projekte",
+    "title": "Gebaut für Menschen, die ich liebe.",
+    "lead": "Unbezahlte Projekte außerhalb meines Jobs, für Familie und Freunde.",
+    "placeholderNote": "Mit erfundenem Namen und Kontaktdaten gezeigt."
   }
 }

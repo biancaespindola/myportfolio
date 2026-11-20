@@ -23,6 +23,7 @@
     "home": "Início",
     "work": "Trabalho",
     "caseStudies": "Estudos de caso",
+    "projects": "Projetos",
     "about": "Sobre",
     "cv": "CV"
   },
@@ -169,8 +170,7 @@
       "title": "Avaliação experimental de uma camada de segurança para um wearable cardíaco (IoMT)",
       "link": "Ler o estudo de caso"
     },
-    "personalProject": "Projeto pessoal",
-    "placeholderNote": "Exibido com nome e contatos fictícios. Todo documento também existe como arquivo Word editável."
+    "personalProject": "Projeto pessoal"
   },
   "cv": {
     "kicker": "CV",
@@ -326,5 +326,11 @@
         "hint": "Abra uma porta do calendário do Advento"
       }
     }
+  },
+  "projects": {
+    "kicker": "Projetos pessoais",
+    "title": "Feito para quem eu amo.",
+    "lead": "Projetos não remunerados, fora do meu trabalho, feitos para família e amigos.",
+    "placeholderNote": "Exibido com nome e contatos fictícios."
   }
 }

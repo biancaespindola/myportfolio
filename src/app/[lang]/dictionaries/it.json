@@ -23,6 +23,7 @@
     "home": "Home",
     "work": "Lavoro",
     "caseStudies": "Casi studio",
+    "projects": "Progetti",
     "about": "Chi sono",
     "cv": "CV"
   },
@@ -169,8 +170,7 @@
       "title": "Valutazione sperimentale di un livello di sicurezza per un dispositivo cardiaco indossabile (IoMT)",
       "link": "Leggi il caso studio"
     },
-    "personalProject": "Progetto personale",
-    "placeholderNote": "Mostrato con nome e contatti di fantasia. Ogni documento esiste anche come file Word modificabile."
+    "personalProject": "Progetto personale"
   },
   "cv": {
     "kicker": "CV",
@@ -331,5 +331,11 @@
         "hint": "Apri una porta del calendario dell’Avvento"
       }
     }
+  },
+  "projects": {
+    "kicker": "Progetti personali",
+    "title": "Fatto per le persone a cui voglio bene.",
+    "lead": "Progetti non retribuiti, fuori dal mio lavoro, fatti per famiglia e amici.",
+    "placeholderNote": "Mostrato con nome e contatti di fantasia."
   }
 }

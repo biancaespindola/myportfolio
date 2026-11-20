@@ -23,6 +23,7 @@
     "home": "Home",
     "work": "Work",
     "caseStudies": "Case studies",
+    "projects": "Projects",
     "about": "About",
     "cv": "CV"
   },
@@ -169,8 +170,7 @@
       "title": "Experimental evaluation of a security layer for a cardiac wearable (IoMT)",
       "link": "Read the case study"
     },
-    "personalProject": "Personal project",
-    "placeholderNote": "Shown with a made-up name and contact details. Every document also exists as an editable Word file."
+    "personalProject": "Personal project"
   },
   "cv": {
     "kicker": "CV",
@@ -326,5 +326,11 @@
         "hint": "Open an advent door"
       }
     }
+  },
+  "projects": {
+    "kicker": "Personal projects",
+    "title": "Built for people I love.",
+    "lead": "Unpaid projects outside my job, made for family and friends.",
+    "placeholderNote": "Shown with a made-up name and contacts."
   }
 }

@@ -31,6 +31,7 @@ for (const lang of ["en", "pt", "it", "de"]) {
     "/about",
     "/case-studies",
     "/case-studies/this-site",
+    "/projects",
   ]) {
     test(`/${lang}${path} has no axe violations`, async ({ page }) => {
       await page.goto(`/${lang}${path}`);
@@ -72,6 +73,7 @@ test("long German words don't overflow on a phone", async ({ page }) => {
     "/de",
     "/de/work",
     "/de/about",
+    "/de/projects",
     "/de/case-studies/iomt-security",
   ]) {
     await page.goto(path);
@@ -368,7 +370,7 @@ test("search engines get robots, a sitemap, canonical links and who the site is 
     "Sitemap: https://biancaespindola.is-a.dev/sitemap.xml",
   );
   const sitemap = await (await request.get("/sitemap.xml")).text();
-  expect(sitemap.match(/<url>/g)).toHaveLength(32);
+  expect(sitemap.match(/<url>/g)).toHaveLength(36);
   expect(sitemap).toContain("https://biancaespindola.is-a.dev/de/cv");
 
   await page.goto("/de/about");

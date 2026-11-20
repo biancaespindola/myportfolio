@@ -11,6 +11,7 @@ export const PAGES = [
   "/case-studies/this-site",
   "/case-studies/sportsbook",
   "/case-studies/iomt-security",
+  "/projects",
   "/about",
   "/cv",
 ] as const;

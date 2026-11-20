@@ -237,7 +237,13 @@ export const skillGroups: string[][] = [
   ["Node.js", "REST", "PostgreSQL", "C/C++"],
 ];
 
-type ProjectText = { title: string; context: string; bullets: string[] };
+type ProjectText = {
+  title: string;
+  context: string;
+  bullets: string[];
+  /** Case-study write-up shown on the Projects page. */
+  story: { heading: string; body: string }[];
+};
 
 type Shot = {
   /** File in public/images. */
@@ -267,6 +273,20 @@ export const projects: Project[] = [
           "Full brand identity and print kit: logo, brand guide, stationery and 13 clinical and admin templates",
           "One source for every document: Python-generated HTML/CSS becomes a PDF in headless Chrome and a Word file via docx-js, so they never drift apart",
         ],
+        story: [
+          {
+            heading: "The brief",
+            body: "Brand, stationery, clinical forms and legal templates for a physio who treats older patients at home. She edits in Word and prints at home, so everything had to work there.",
+          },
+          {
+            heading: "One source, two formats",
+            body: "Each document is written once in HTML and CSS. Headless Chrome makes the PDF and docx-js builds the Word file from the same source, so they never drift apart.",
+          },
+          {
+            heading: "How it was made",
+            body: "From ChatGPT drafts and her own sketches, built with Claude Code and checked page by page against her feedback. Not used with patients yet.",
+          },
+        ],
       },
       pt: {
         title: "Sistema de marca e documentos",
@@ -275,6 +295,20 @@ export const projects: Project[] = [
         bullets: [
           "Identidade visual completa e kit de impressão: logo, guia de marca, papelaria e 13 modelos clínicos e administrativos",
           "Uma fonte para todos os documentos: HTML/CSS gerado em Python vira PDF no Chrome headless e Word via docx-js, sem nunca divergirem",
+        ],
+        story: [
+          {
+            heading: "O pedido",
+            body: "Marca, papelaria, fichas clínicas e modelos jurídicos para uma fisioterapeuta que atende idosos em casa. Ela edita no Word e imprime em casa, então tudo tinha que funcionar ali.",
+          },
+          {
+            heading: "Uma fonte, dois formatos",
+            body: "Cada documento é escrito uma vez em HTML e CSS. O Chrome headless gera o PDF e o docx-js monta o Word a partir da mesma fonte, então eles nunca divergem.",
+          },
+          {
+            heading: "Como foi feito",
+            body: "A partir de rascunhos do ChatGPT e de esboços dela, construído com o Claude Code e conferido página por página com o retorno dela. Ainda não usado com pacientes.",
+          },
         ],
       },
       it: {
@@ -285,6 +319,20 @@ export const projects: Project[] = [
           "Identità visiva completa e kit di stampa: logo, brand guide, cancelleria e 13 modelli clinici e amministrativi",
           "Un'unica fonte per ogni documento: HTML/CSS generato in Python diventa PDF in Chrome headless e Word con docx-js, sempre allineati",
         ],
+        story: [
+          {
+            heading: "La richiesta",
+            body: "Brand, cancelleria, schede cliniche e modelli legali per una fisioterapista che segue pazienti anziani a domicilio. Lavora in Word e stampa a casa, quindi tutto doveva funzionare lì.",
+          },
+          {
+            heading: "Una fonte, due formati",
+            body: "Ogni documento è scritto una sola volta in HTML e CSS. Chrome headless crea il PDF e docx-js costruisce il file Word dalla stessa fonte, così non divergono mai.",
+          },
+          {
+            heading: "Come è nato",
+            body: "Da bozze di ChatGPT e dai suoi schizzi, costruito con Claude Code e controllato pagina per pagina con il suo feedback. Non ancora usato con i pazienti.",
+          },
+        ],
       },
       de: {
         title: "Marken- und Dokumentensystem",
@@ -293,6 +341,20 @@ export const projects: Project[] = [
         bullets: [
           "Komplette Markenidentität und Druckpaket: Logo, Brand Guide, Geschäftsausstattung und 13 klinische und administrative Vorlagen",
           "Eine Quelle für jedes Dokument: In Python generiertes HTML/CSS wird in Headless Chrome zum PDF und mit docx-js zur Word-Datei, ohne Abweichungen",
+        ],
+        story: [
+          {
+            heading: "Der Auftrag",
+            body: "Marke, Geschäftsausstattung, klinische Formulare und rechtliche Vorlagen für eine Physiotherapeutin, die ältere Menschen zu Hause behandelt. Sie arbeitet mit Word und druckt zu Hause, also musste alles dort funktionieren.",
+          },
+          {
+            heading: "Eine Quelle, zwei Formate",
+            body: "Jedes Dokument wird einmal in HTML und CSS geschrieben. Headless Chrome erzeugt das PDF, docx-js baut die Word-Datei aus derselben Quelle, so laufen sie nie auseinander.",
+          },
+          {
+            heading: "Wie es entstand",
+            body: "Aus ChatGPT-Entwürfen und ihren eigenen Skizzen, mit Claude Code gebaut und Seite für Seite mit ihrem Feedback abgeglichen. Noch nicht mit Patientinnen und Patienten im Einsatz.",
+          },
         ],
       },
     },

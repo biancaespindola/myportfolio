@@ -20,6 +20,7 @@ export function SiteHeader({
     [`/${locale}`, dict.nav.home],
     [`/${locale}/work`, dict.nav.work],
     [`/${locale}/case-studies`, dict.nav.caseStudies],
+    [`/${locale}/projects`, dict.nav.projects],
     [`/${locale}/about`, dict.nav.about],
     [`/${locale}/cv`, dict.nav.cv],
   ] as const;
@@ -35,7 +36,7 @@ export function SiteHeader({
         </Link>
         <nav
           aria-label={dict.a11y.main}
-          className="hidden gap-8 text-[15px] font-bold lg:flex"
+          className="hidden gap-5 text-[15px] font-bold lg:flex xl:gap-8"
         >
           {links.map(([href, label]) => (
             <Link
